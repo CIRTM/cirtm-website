@@ -1,0 +1,21 @@
+# IDE
+.idea/
+.claude/
+
+# Local dev tooling
+dev.py
+crawler/
+crawl_output/
+CLAUDE.md
+
+# Python
+pyproject.toml
+uv.lock
+.python-version
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.venv

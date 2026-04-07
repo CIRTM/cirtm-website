@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #29242b;
+  --color-navy-50: #F0EFF0;
+  --color-navy-100: #D5D2D6;
+  --color-navy-200: #ABA6AD;
+  --color-navy-300: #817A84;
+  --color-navy-400: #574F5A;
+  --color-navy-500: #29242b;
+  --color-navy-600: #221E24;
+  --color-navy-700: #1A171C;
+  --color-navy-800: #110F13;
+  --color-navy-900: #09080A;
+
+  --color-teal: #00A99D;
+  --color-teal-50: #E0F7F5;
+  --color-teal-100: #B3EDE9;
+  --color-teal-200: #66DBD4;
+  --color-teal-300: #1AC9BF;
+  --color-teal-400: #00B8AC;
+  --color-teal-500: #00A99D;
+  --color-teal-600: #008F84;
+  --color-teal-700: #00756C;
+  --color-teal-800: #005B54;
+  --color-teal-900: #00413C;
+
+  --font-family-sans: Inter, system-ui, sans-serif;
+  --font-family-serif: Georgia, Cambria, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: white;
+    color: #29242b;
+    font-family: Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .section-heading {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #29242b;
+    letter-spacing: -0.025em;
+  }
+  .section-subheading {
+    font-size: 1.125rem;
+    color: #6B7A99;
+    margin-top: 0.75rem;
+    max-width: 42rem;
+  }
+  .card {
+    background-color: white;
+    border-radius: 1rem;
+    border: 1px solid #f3f4f6;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    transition: box-shadow 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #00A99D;
+    color: white;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: background-color 0.15s;
+  }
+  .btn-primary:hover {
+    background-color: #008F84;
+  }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #29242b;
+    color: #29242b;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: background-color 0.15s, color 0.15s;
+  }
+  .btn-outline:hover {
+    background-color: #29242b;
+    color: white;
+  }
+  .tag {
+    display: inline-block;
+    background-color: #E0F7F5;
+    color: #00756C;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
