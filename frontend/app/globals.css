@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Barlow:wght@700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -28,6 +28,7 @@
 
   --font-family-sans: Inter, system-ui, sans-serif;
   --font-family-serif: Georgia, Cambria, serif;
+  --font-family-display: 'Barlow', system-ui, sans-serif;
 }
 
 @layer base {

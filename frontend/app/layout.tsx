@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+const microgramma = localFont({
+  src: "./fonts/microgrammanormal.ttf",
+  variable: "--font-microgramma",
+});
 
 export const metadata: Metadata = {
   title: "CIRTM | Centre for Inflammation Research and Translational Medicine",
@@ -16,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={microgramma.variable}>
         <Navbar />
         <main>{children}</main>
         <Footer />

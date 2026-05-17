@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-navy text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
@@ -76,13 +76,20 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} Centre for Inflammation Research and Translational Medicine, Brunel University London
+      </div>
+      <div className="bg-white">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-black text-sm">
+            &copy; 2026 Centre for Inflammation Research and Translational Medicine, Brunel University London
           </p>
-          <p className="text-gray-500 text-xs">
-            Part of the Division of Biosciences
-          </p>
+          <Image
+            src="/images/brunel-univeristy.png"
+            alt="Brunel University London"
+            width={120}
+            height={40}
+            className="object-contain"
+            unoptimized
+          />
         </div>
       </div>
     </footer>

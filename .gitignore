@@ -4,8 +4,10 @@
 
 # Local dev tooling
 dev.py
+reference_list.txt
 crawler/
 crawl_output/
+.scratch/
 CLAUDE.md
 
 # Python
