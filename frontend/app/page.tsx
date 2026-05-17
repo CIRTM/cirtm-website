@@ -73,7 +73,7 @@ export default function Home() {
               { value: "16", label: "Research Projects" },
               { value: "15", label: "Principal Investigators" },
               { value: String(people.reduce((n, p) => n + (p.publications?.length ?? 0), 0)) + "+", label: "Publications" },
-              { value: "7", label: "Research Focus Areas" },
+              { value: "4", label: "Core Research Areas" },
               { value: "2019", label: "Year Established" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
@@ -334,43 +334,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Our Approach */}
+      <section className="py-20" style={{ backgroundColor: "#0B1F3A" }}>
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="block w-6 h-px bg-white/40" />
+              <span className="text-xs font-semibold uppercase tracking-widest text-white/60">Our Approach</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
+              From <em style={{ fontFamily: "Georgia, serif" }}>bench to bedside</em>
+            </h2>
+            <p className="text-white/60 leading-relaxed max-w-md">
+              Everything we do is designed to compress the time between scientific discovery and real clinical impact — because patients cannot wait.
+            </p>
+          </div>
+          <div className="relative">
+            <div className="hidden lg:block absolute top-7 left-[10%] right-[10%] h-px bg-white/20" />
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-4">
+              {[
+                { icon: "🔬", label: "Basic Research", desc: "Fundamental discovery in cellular and molecular biology" },
+                { icon: "🧪", label: "Pre-Clinical", desc: "Validation in model systems; target identification & testing" },
+                { icon: "⚗️", label: "Translational", desc: "Engineering diagnostics & drug candidates for clinical use" },
+                { icon: "🏥", label: "Clinical Studies", desc: "Patient trials and real-world clinical validation" },
+                { icon: "🌍", label: "Global Impact", desc: "Diagnostics & therapies reaching patients worldwide" },
+              ].map((step) => (
+                <div key={step.label} className="flex flex-col items-center text-center">
+                  <div className="relative z-10 w-14 h-14 rounded-full flex items-center justify-center text-2xl mb-5" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
+                    {step.icon}
+                  </div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-white/90 mb-2">{step.label}</div>
+                  <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PhD Opportunities */}
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <div>
-              <h2 className="section-heading">PhD Opportunities</h2>
-              <p className="section-subheading">
-                Join our postgraduate research community.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-gray-100 p-8 flex flex-col justify-between" style={{ backgroundColor: "#F8F9FC" }}>
+          <div className="mb-8">
+            <h2 className="section-heading">PhD Opportunities</h2>
+            <p className="section-subheading">Join our postgraduate research community.</p>
+          </div>
+          <div className="rounded-2xl border border-gray-100 p-8 flex flex-col" style={{ backgroundColor: "#F8F9FC" }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div>
                 <span className="tag mb-4 inline-block">Postgraduate Research</span>
                 <h3 className="text-xl font-bold text-navy mb-4">Postgraduate Research Opportunities</h3>
-                <p className="text-base leading-relaxed mb-6" style={{ color: "#6B7A99" }}>
+                <p className="text-base leading-relaxed" style={{ color: "#6B7A99" }}>
                   Join a vibrant research community at the cutting edge of biomedical science. Browse PhD
                   opportunities in Biomedical Sciences at Brunel University London and train alongside
                   internationally outstanding researchers.
                 </p>
-                <ul className="space-y-3 mb-8">
-                  {[
-                    "World-class supervisory teams",
-                    "State-of-the-art laboratory facilities",
-                    "Strong links with clinical and industry partners",
-                    "Regular seminar and training programme",
-                  ].map((point) => (
-                    <li key={point} className="flex items-start gap-3 text-sm" style={{ color: "#6B7A99" }}>
-                      <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-teal/10 text-teal flex items-center justify-center text-xs font-bold">✓</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
               </div>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/contact" className="btn-primary">Enquire about a PhD</Link>
-                <Link href="/education" className="btn-outline">Education &amp; Training</Link>
-              </div>
+              <ul className="space-y-3">
+                {[
+                  "World-class supervisory teams",
+                  "State-of-the-art laboratory facilities",
+                  "Strong links with clinical and industry partners",
+                  "Regular seminar and training programme",
+                ].map((point) => (
+                  <li key={point} className="flex items-start gap-3 text-sm" style={{ color: "#6B7A99" }}>
+                    <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-teal/10 text-teal flex items-center justify-center text-xs font-bold">✓</span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/contact" className="btn-primary">Enquire about a PhD</Link>
+              <Link href="/education" className="btn-outline">Education &amp; Training</Link>
             </div>
           </div>
         </div>
