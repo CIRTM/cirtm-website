@@ -406,7 +406,6 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap gap-4">
               <Link href="/contact" className="btn-primary">Enquire about a PhD</Link>
-              <Link href="/education" className="btn-outline">Education &amp; Training</Link>
             </div>
           </div>
         </div>
