@@ -45,8 +45,6 @@ export type Person = {
   order?: number;
 };
 
-const BRUNEL = "https://www.brunel.ac.uk";
-
 export const people: Person[] = [
   {
     slug: "felicity-gavins",
@@ -69,7 +67,7 @@ export const people: Person[] = [
       { label: "Web of Science ResearcherID", url: "https://publons.com/researcher/3795569/felicity-n-e-gavins/" },
       { label: "Lab website", url: "http://www.gavins-lab.com/" },
     ],
-    photoUrl: `${BRUNEL}/people/people-images/felicity-gavins/photo.jpg?v=20191019224835`,
+    photoUrl: "/images/people/felicity-gavins.jpg",
     researchAreaSlugs: ["inflammation", "cardiovascular-diseases", "drug-repurposing", "cancer"],
     publications: felicityGavinsPublications,
     bio: `## Summary
@@ -284,7 +282,7 @@ I have supervised a number of basic and clincal Ph.D. Students and post-doctoral
     division: "Biosciences",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/claire-turner/photo.jpg?v=20221115115308`,
+    photoUrl: "/images/people/claire-turner.jpg",
     bio: `## Summary
 
 Claire Turner is an interdisciplinary scientist with a BSc in Chemistry and Biochemistry from the University of Natal and a PhD in Biochemical Engineering from UCL.
@@ -319,7 +317,7 @@ Her aim is to enable all students to have an excellent education and student exp
     division: "Biosciences",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/su-ling-li/photo.jpg?v=20170929102847`,
+    photoUrl: "/images/people/su-ling-li.jpg",
     researchAreaSlugs: ["cancer", "inflammation"],
     bio: `## Summary
 
@@ -461,7 +459,7 @@ Nima Taefehshokr (currently under my supervising ) – Regulation of Egr2/3 gene
     division: "Biosciences",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/ronan-mccarthy/photo.jpg?v=20240320154003`,
+    photoUrl: "/images/people/ronan-mccarthy.jpg",
     researchAreaSlugs: ["microbiome-and-health"],
     bio: `## Summary
 
@@ -537,7 +535,7 @@ Supermarket sweeteners may be key in fight against antibiotic-resistant bacteria
     division: "Biosciences",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/raha-pazoki/photo.jpg?v=20200127135914`,
+    photoUrl: "/images/people/raha-pazoki.jpg",
     researchAreaSlugs: ["cardiovascular-diseases"],
     bio: `## Summary
 
@@ -794,7 +792,7 @@ Jiang, X., Gao, H., Elliott, P., & Pazoki, R. (2022). Percentage of explained va
     division: "Biosciences",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/jacqeline-cliff/photo.jpg?v=20221024121143`,
+    photoUrl: "/images/people/jacqueline-cliff.jpg",
     researchAreaSlugs: ["infections-and-immunity"],
     bio: `## Summary
 
@@ -883,7 +881,7 @@ Reactivation of herpesviruses in Myalgic Encephalomyelitis`,
     division: "Biosciences",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/anthony-tsolaki/photo.jpg?v=20170929102739`,
+    photoUrl: "/images/people/anthony-tsolaki.jpg",
     researchAreaSlugs: ["microbiome-and-health", "infections-and-immunity"],
     bio: `## Qualifications
 
@@ -940,7 +938,7 @@ Innate immunity in bovine tuberculosis`,
     division: "Biosciences",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/steven-smith/photo.jpg?v=20230919142645`,
+    photoUrl: "/images/people/steven-smith.jpg",
     researchAreaSlugs: ["infections-and-immunity"],
     bio: `## Summary
 
@@ -1003,7 +1001,7 @@ Metabolic reprogramming for improved BCG vaccine efficacy`,
     division: "Biosciences",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/auturo-sala/photo.png?v=20171005110002`,
+    photoUrl: "/images/people/arturo-sala.png",
     researchAreaSlugs: ["cancer", "drug-repurposing"],
     bio: `## Summary
 
@@ -1075,7 +1073,7 @@ gene and cell therapy
     division: "Biosciences",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/ashley-houlden/photo.jpg?v=20180626080736`,
+    photoUrl: "/images/people/ashley-houlden.jpg",
     researchAreaSlugs: ["microbiome-and-health"],
     bio: `## Summary
 
@@ -1133,7 +1131,7 @@ BB2716 Medical Microbiology (Second Year)`,
     division: "Biosciences",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/keith-redpath/photo.jpg?v=20230605113953`,
+    photoUrl: "/images/people/keith-redpath.jpg",
     researchAreaSlugs: ["cardiovascular-diseases"],
     bio: `## Summary
 
@@ -1223,7 +1221,7 @@ Dr Keith Allen-Redpath’s research focuses on the molecular mechanisms that dri
     division: "Biosciences",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/sam-willcocks/photo.jpg?v=20230207121246`,
+    photoUrl: "/images/people/sam-willcocks.jpg",
     researchAreaSlugs: ["drug-repurposing"],
     bio: `## Summary
 
@@ -1394,7 +1392,7 @@ Dr Cerutti has a strong commitment to science outreach, particularly to young pe
     division: "Biosciences",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/aihuidoreen-lau/photo.jpg?v=20240318162906`,
+    photoUrl: "/images/people/doreen-lau.jpg",
     researchAreaSlugs: ["cancer"],
     bio: `## Summary
 
@@ -1500,7 +1498,7 @@ Please contact Dr Lau well in advance of the relevant deadlines to discuss poten
     division: "Psychology",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
-    photoUrl: `${BRUNEL}/people/people-images/veena-kumari/photo.jpg?v=20180522170945`,
+    photoUrl: "/images/people/veena-kumari.jpg",
     bio: `## Summary
 
 Professor Veena Kumari obtained a PhD in Psychology from Banaras Hindu University, India in 1993 before joining the Institute of Psychiatry, London for postdoctoral research. She became a Beit Memorial Research Fellow in 1999, a Wellcome Senior Fellow in Basic Biomedical Science in 2002, and was appointed Full Professor in 2006 at the Institute of Psychiatry, Psychology and Neuroscience, King’s College London. She joined Brunel University London in January 2018 as Professor of Psychology and Director of the Centre for Cognitive and Clinical Neuroscience (CCN).
