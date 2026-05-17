@@ -125,7 +125,7 @@ export default function Home() {
             </div>
             <div className="rounded-2xl border border-white/10 overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.05)" }}>
               <div className="flex items-start gap-5 p-8 pb-4 sm:pb-8">
-                <div className="relative flex-shrink-0 w-28 rounded-xl overflow-hidden aspect-[3/4] sm:aspect-auto sm:self-stretch sm:min-h-[160px]">
+                <div className="relative flex-shrink-0 w-28 sm:w-44 rounded-xl overflow-hidden aspect-[3/4] sm:aspect-auto sm:self-stretch sm:min-h-[220px]">
                   <Image
                     src="/images/people/felicity-gavins.jpg"
                     alt="Prof. Felicity N. E. Gavins"
