@@ -124,8 +124,8 @@ export default function Home() {
               </div>
             </div>
             <div className="rounded-2xl border border-white/10 overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.05)" }}>
-              <div className="flex items-start gap-5 p-8">
-                <div className="relative flex-shrink-0 self-stretch w-28 rounded-xl overflow-hidden min-h-[160px]">
+              <div className="flex items-start gap-5 p-8 pb-4 sm:pb-8">
+                <div className="relative flex-shrink-0 w-28 rounded-xl overflow-hidden aspect-[3/4] sm:aspect-auto sm:self-stretch sm:min-h-[160px]">
                   <Image
                     src="/images/people/felicity-gavins.jpg"
                     alt="Prof. Felicity N. E. Gavins"
@@ -137,13 +137,18 @@ export default function Home() {
                   <div className="text-sm font-semibold uppercase tracking-wide mb-2 text-teal">Centre Director</div>
                   <h3 className="text-white font-bold text-xl mb-1">Prof. Felicity N. E. Gavins</h3>
                   <p className="text-gray-400 text-sm mb-4">Professor of Pharmacology and Royal Society Wolfson Fellow</p>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <p className="hidden sm:block text-gray-300 text-sm leading-relaxed">
                     Prof. Gavins leads CIRTM&apos;s mission to unite outstanding basic and clinical researchers in
                     confronting today&apos;s most pressing global health challenges through internationally recognised,
                     cutting-edge science.
                   </p>
                 </div>
               </div>
+              <p className="sm:hidden text-gray-300 text-sm leading-relaxed px-8 pb-6">
+                Prof. Gavins leads CIRTM&apos;s mission to unite outstanding basic and clinical researchers in
+                confronting today&apos;s most pressing global health challenges through internationally recognised,
+                cutting-edge science.
+              </p>
               <div className="px-8 pb-6 pt-0 border-t border-white/10 text-sm text-gray-400 mt-0 pt-4">
                 <div className="pt-4">All enquiries: Prof. Felicity Gavins</div>
               </div>
