@@ -68,7 +68,7 @@ export const people: Person[] = [
       { label: "Lab website", url: "http://www.gavins-lab.com/" },
     ],
     photoUrl: "/images/people/felicity-gavins.jpg",
-    researchAreaSlugs: ["inflammation", "cardiovascular-diseases", "drug-repurposing", "cancer"],
+    researchAreaSlugs: ["inflammation-immunity-infection", "vascular-cardiovascular-sciences", "translational-medicine-novel-therapeutics", "cancer-biology"],
     publications: felicityGavinsPublications,
     bio: `## Summary
 
@@ -318,7 +318,7 @@ Her aim is to enable all students to have an excellent education and student exp
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/su-ling-li.jpg",
-    researchAreaSlugs: ["cancer", "inflammation"],
+    researchAreaSlugs: ["cancer-biology", "inflammation-immunity-infection"],
     bio: `## Summary
 
 1983 MD, Suzhou Medical University, China.
@@ -460,7 +460,7 @@ Nima Taefehshokr (currently under my supervising ) – Regulation of Egr2/3 gene
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/ronan-mccarthy.jpg",
-    researchAreaSlugs: ["microbiome-and-health"],
+    researchAreaSlugs: ["translational-medicine-novel-therapeutics"],
     bio: `## Summary
 
 Ronan gained his Bachelor of Science in Genetics with first class honours from University College Cork, Ireland in 2010 and was awarded the title of College Scholar. In autumn 2010, he was awarded an Irish Research Council PhD Scholarship to study novel biofilm inhibition strategies against the opportunistic pathogen *Pseudomonas aeruginosa* in the laboratory of Professor Fergal O’Gara.
@@ -536,7 +536,7 @@ Supermarket sweeteners may be key in fight against antibiotic-resistant bacteria
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/raha-pazoki.jpg",
-    researchAreaSlugs: ["cardiovascular-diseases"],
+    researchAreaSlugs: ["vascular-cardiovascular-sciences"],
     bio: `## Summary
 
 Dr Raha Pazoki MD PhD FHEA is a medical doctor and epidemiologist specialising in health data science and the epidemiology of cardiometabolic diseases. She studied Epidemiology at the Netherlands Institute for Health Sciences (NIHES) and the University of Amsterdam, working with major cohort studies including the Arrhythmia Genetics in the Netherlands (AGNES), the Rotterdam Study, the Airwave Health Monitoring Study, and the UK Biobank.
@@ -793,7 +793,7 @@ Jiang, X., Gao, H., Elliott, P., & Pazoki, R. (2022). Percentage of explained va
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/jacqueline-cliff.jpg",
-    researchAreaSlugs: ["infections-and-immunity"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     bio: `## Summary
 
 Jackie read Physiological Sciences at the University of Oxford, followed by an MSc in the Immunology of Infectious Diseases at the London School of Hygiene & Tropical Medicine.
@@ -882,7 +882,7 @@ Reactivation of herpesviruses in Myalgic Encephalomyelitis`,
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/anthony-tsolaki.jpg",
-    researchAreaSlugs: ["microbiome-and-health", "infections-and-immunity"],
+    researchAreaSlugs: ["translational-medicine-novel-therapeutics", "inflammation-immunity-infection"],
     bio: `## Qualifications
 
 - BSc (Hons) Biochemistry — University of North London (1993)
@@ -939,7 +939,7 @@ Innate immunity in bovine tuberculosis`,
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/steven-smith.jpg",
-    researchAreaSlugs: ["infections-and-immunity"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     bio: `## Summary
 
 Steven obtained a BSc in Medical Sciences from the University of Leeds and received a PhD at the Cancer Medicine Research Unit, St. James's University Hospital, Leeds, investigating the CD8 T-cell stimulating properties of a DNA vaccine encoding multiple melanoma-associated epitopes.
@@ -1002,7 +1002,7 @@ Metabolic reprogramming for improved BCG vaccine efficacy`,
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/arturo-sala.png",
-    researchAreaSlugs: ["cancer", "drug-repurposing"],
+    researchAreaSlugs: ["cancer-biology", "translational-medicine-novel-therapeutics"],
     bio: `## Summary
 
 Trained in Biochemistry and Cellular Biology at the University of Rome and the Italian National Institute of Health, I completed a PhD in Biochemistry at the University of Rome “La Sapienza” on the topic of DNA and RNA methylation in relation to muscle cell differentiation.
@@ -1074,7 +1074,7 @@ gene and cell therapy
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/ashley-houlden.jpg",
-    researchAreaSlugs: ["microbiome-and-health"],
+    researchAreaSlugs: ["translational-medicine-novel-therapeutics"],
     bio: `## Summary
 
 I am a Microbial Ecologist in the Division of Biosciences at Brunel University London.
@@ -1132,7 +1132,7 @@ BB2716 Medical Microbiology (Second Year)`,
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/keith-redpath.jpg",
-    researchAreaSlugs: ["cardiovascular-diseases"],
+    researchAreaSlugs: ["vascular-cardiovascular-sciences"],
     bio: `## Summary
 
 Dr Keith Allen-Redpath graduated with a BSc (Hons) in Biomedical Sciences (Physiology) from the University of Aberdeen in 2009. He undertook a PhD in the laboratory of Professor Graeme Nixon at Aberdeen, part-funded by the National Research Foundation of Korea, investigating how zinc deficiency affects vascular smooth muscle cell signalling in the aorta and carotid arteries, graduating in 2013.
@@ -1222,7 +1222,7 @@ Dr Keith Allen-Redpath’s research focuses on the molecular mechanisms that dri
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/sam-willcocks.jpg",
-    researchAreaSlugs: ["drug-repurposing"],
+    researchAreaSlugs: ["translational-medicine-novel-therapeutics"],
     bio: `## Summary
 
 Sam joined Brunel University London as a Lecturer in Biosciences in 2022 from the London School of Hygiene and Tropical Medicine (LSHTM), where he worked as Assistant Professor in the Department of Infection Biology and was previously Head of Biological and Pharmacological Sciences.
@@ -1272,7 +1272,7 @@ My research interests are focussed on:
       { label: "ResearchGate", url: "https://www.researchgate.net/profile/Camilla-Cerutti" },
     ],
     photoUrl: "/images/people/camilla-cerutti.jpg",
-    researchAreaSlugs: ["cancer"],
+    researchAreaSlugs: ["cancer-biology"],
     bio: `## Summary
 
 Dr Camilla Cerutti is a Lecturer in Inflammation, Ageing and Cancer Biology at Brunel University London and visiting researcher at the European Institute of Oncology since 2023.
@@ -1393,7 +1393,7 @@ Dr Cerutti has a strong commitment to science outreach, particularly to young pe
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/doreen-lau.jpg",
-    researchAreaSlugs: ["cancer"],
+    researchAreaSlugs: ["cancer-biology"],
     bio: `## Summary
 
 Dr Doreen Lau is a Lecturer at Brunel University London and a Visiting Researcher at the University of Cambridge. She began her scientific career at the Agency for Science, Technology and Research (A*STAR) in Singapore, focusing on functional genomics and imaging in developmental biology. She later earned her PhD at the University of Cambridge as a Cancer Research UK and Cambridge Trust Scholar, specialising in cancer immunology and the clinical translation of molecular imaging biomarkers for cancer immunotherapy in patients and preclinical models.
@@ -1872,7 +1872,7 @@ PhD (City University, London, and Institute of Psychiatry, London) - awarded 200
     name: "Dr Cristiano Scottà",
     memberType: "associate-member",
     photoUrl: "/images/placeholdersilhouette.webp",
-    researchAreaSlugs: ["infections-and-immunity"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     order: 51,
   },
   {
@@ -1880,7 +1880,7 @@ PhD (City University, London, and Institute of Psychiatry, London) - awarded 200
     name: "Dr Enrique Castro-Sanchez",
     memberType: "associate-member",
     photoUrl: "/images/placeholdersilhouette.webp",
-    researchAreaSlugs: ["infections-and-immunity"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     order: 52,
   },
   {
@@ -1888,7 +1888,7 @@ PhD (City University, London, and Institute of Psychiatry, London) - awarded 200
     name: "Dr Ansar Pathan",
     memberType: "associate-member",
     photoUrl: "/images/placeholdersilhouette.webp",
-    researchAreaSlugs: ["microbiome-and-health"],
+    researchAreaSlugs: ["translational-medicine-novel-therapeutics"],
     order: 53,
   },
   // Doctoral Researchers and Fellows

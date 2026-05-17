@@ -32,7 +32,7 @@ export const projects: Project[] = [
   {
     slug: "investigating-innate-immune-signalling-in-gulf-war-illness-and-blast-related-tbi",
     title: "Investigating innate immune signalling in Gulf War Illness and blast-related TBI",
-    researchAreaSlugs: ["infections-and-immunity"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     investigators: [
       { role: "PI", name: "Dr Jacqueline Cliff", personSlug: "jacqueline-cliff" },
     ],
@@ -117,7 +117,7 @@ The research aims to identify measurable biological differences associated with 
   {
     slug: "investigating-thrombo-inflammation-in-disease",
     title: "Investigating thrombo-inflammation associated with cardiovascular diseases",
-    researchAreaSlugs: ["cardiovascular-diseases"],
+    researchAreaSlugs: ["vascular-cardiovascular-sciences"],
     investigators: [
       { role: "PI", name: "Professor Felicity Gavins", personSlug: "felicity-gavins" },
     ],
@@ -141,7 +141,7 @@ This project focuses on further understanding and characterising thrombo-inflamm
   {
     slug: "promoting-inflammation-resolution-in-sickle-cell-disease",
     title: "Promoting inflammation resolution in sickle cell disease",
-    researchAreaSlugs: ["inflammation"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     investigators: [
       { role: "PI", name: "Professor Felicity Gavins", personSlug: "felicity-gavins" },
     ],
@@ -154,7 +154,7 @@ This project focuses on further understanding and characterising thrombo-inflamm
     ],
     description: `**Targeting Formyl Peptide Receptors to Promote Resolution Following Cerebral Ischaemia/Reperfusion Injury in Sickle Cell Disease **
 
-Ischaemic stroke is a leading cause of death and disability, with inflammation crucially involved in AIS pathophysiology. During ischaemic stroke, blood supply to parts of the brain becomes limited causing cell death. This complex response involves blood vessels, chemical mediators and immune cells (termed "inflammation"). Ongoing or worsening inflammation further damages the brain. Reducing, and ideally eliminating inflammation is critical to recovery from stroke – a process termed 'resolution'. The ideal outcome of inflammation is its resolution, which is a tightly orchestrated process. We are particularly interested in one key player of resolution, the formyl peptide receptor 2 (Fpr2/ALX), which is found on certain immune cells. In mice, targeting Fpr2/ALX limits brain damage during stroke.
+Ischaemic stroke is a leading cause of death and disability, with inflammation crucially involved in AIS pathophysiology. During ischaemic stroke, blood supply to parts of the brain becomes limited causing cell death. This complex response involves blood vessels, chemical mediators and immune cells (termed "inflammation-immunity-infection"). Ongoing or worsening inflammation further damages the brain. Reducing, and ideally eliminating inflammation is critical to recovery from stroke – a process termed 'resolution'. The ideal outcome of inflammation is its resolution, which is a tightly orchestrated process. We are particularly interested in one key player of resolution, the formyl peptide receptor 2 (Fpr2/ALX), which is found on certain immune cells. In mice, targeting Fpr2/ALX limits brain damage during stroke.
 
 This project focuses on an in vivo model of stroke that is coupled to a chronic inflammatory condition: Sickle Cell Disease (SCD), a disorder affecting red blood cells. People with SCD have chronic inflammation throughout their bodies and are at high-risk of ischaemic stroke. We are investigating whether targeting the Fpr2/ALX, which resolves inflammation, can limit brain damage during SCD-associated stroke. To test this hypothesis, we are initiating stroke in SCD mice to study its extent in the presence of drugs affecting Fpr2/ALX.
 
@@ -163,7 +163,7 @@ The potential impact of this research project is far reaching. It will provide i
   {
     slug: "pharmacological-strategies-for-resolution-of-inflammation",
     title: "Pharmacological strategies for resolution of inflammation",
-    researchAreaSlugs: ["inflammation"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     investigators: [
       { role: "PI", name: "Professor Felicity Gavins", personSlug: "felicity-gavins" },
     ],
@@ -183,7 +183,7 @@ The overarching objective of this project is to generate novel data in an area o
   {
     slug: "manipulating-our-immune-system-to-protect-against-ageing",
     title: "Understanding and manipulating our immune system to protect against ageing",
-    researchAreaSlugs: ["inflammation"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     investigators: [
       { role: "PI", name: "Professor Felicity Gavins", personSlug: "felicity-gavins" },
     ],
@@ -243,7 +243,7 @@ The Xcell project is part of Brunel University of London's B-STAR research netwo
   {
     slug: "improving-immunotherapy-efficacy-for-neuroblastoma",
     title: "Improving the efficacy of immunotherapies for the childhood cancer neuroblastoma",
-    researchAreaSlugs: ["cancer", "drug-repurposing"],
+    researchAreaSlugs: ["cancer-biology", "translational-medicine-novel-therapeutics"],
     investigators: [
       { role: "PI", name: "Professor Arturo Sala", personSlug: "arturo-sala" },
       { role: "Co-investigator", name: "Professor Felicity Gavins", personSlug: "felicity-gavins" },
@@ -263,7 +263,7 @@ Developing new molecules designed to inactivate immunosuppressive cells may requ
   {
     slug: "a-new-cell-and-gene-therapy-approach-for-friedreichs-ataxia",
     title: "A new cell and gene therapy approach for Friedreich's ataxia",
-    researchAreaSlugs: ["cancer"],
+    researchAreaSlugs: ["cancer-biology"],
     investigators: [
       { role: "PI", name: "Professor Arturo Sala", personSlug: "arturo-sala" },
       { role: "Co-investigator", name: "Prof Adrian Thrasher, UCL" },
@@ -289,7 +289,7 @@ We will conduct a clinical trial in mice using appropriately modified FXN genes 
   {
     slug: "host-pathogen-interactions-in-tuberculosis",
     title: "Host-pathogen interactions in tuberculosis",
-    researchAreaSlugs: ["infections-and-immunity"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     investigators: [
       { role: "PI", name: "Dr Anthony Tsolaki", personSlug: "anthony-tsolaki" },
     ],
@@ -309,7 +309,7 @@ The objectives of this proposal are to investigate the key initial interactions 
   {
     slug: "human-endogenous-factors-in-the-control-of-mycobacterial-infection",
     title: "Human endogenous factors in the control of mycobacterial infection",
-    researchAreaSlugs: ["infections-and-immunity"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     investigators: [
       { role: "PI", name: "Dr Ansar Pathan" },
     ],
@@ -329,7 +329,7 @@ If these endogenous factors showed inhibitory effect on Mtb growth, then, these 
   {
     slug: "metabolic-reprogramming-for-improved-bcg-vaccine-efficacy",
     title: "Metabolic reprogramming for improved BCG vaccine efficacy",
-    researchAreaSlugs: ["infections-and-immunity"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     investigators: [
       { role: "External PI", name: "Prof F. Javier Sanchez-Garcia" },
       { role: "Co-investigator", name: "Dr Steven Smith", personSlug: "steven-smith" },
@@ -378,7 +378,7 @@ bcg | Biomedical Sciences | College of Health, Medicine and Life Sciences | Depa
   {
     slug: "early-growth-protein-molecules-and-preventing-autoimmune-disease-and-cancer",
     title: "Early growth protein molecules and preventing autoimmune disease and cancer",
-    researchAreaSlugs: ["inflammation", "cancer"],
+    researchAreaSlugs: ["inflammation-immunity-infection", "cancer-biology"],
     investigators: [
       { role: "PI", name: "Dr Su-ling Li", personSlug: "su-ling-li" },
     ],
@@ -416,7 +416,7 @@ The aim of the project is to understand the mechanisms of Egr2 and 3 mediated T 
   {
     slug: "modelling-infant-leukaemia-using-gene-editing-technology",
     title: "Modelling infant leukaemia using gene editing technology",
-    researchAreaSlugs: ["cancer"],
+    researchAreaSlugs: ["cancer-biology"],
     investigators: [
       { role: "PI", name: "Dr Sabrina Tosi" },
       { role: "Co-investigator", name: "Professor Arturo Sala", personSlug: "arturo-sala" },
@@ -440,7 +440,7 @@ The potential impact of this research project is far reaching. The generation of
   {
     slug: "reactivation-of-herpesviruses-in-chronic-fatigue-syndrome",
     title: "Reactivation of herpesviruses in Myalgic Encephalomyelitis",
-    researchAreaSlugs: ["infections-and-immunity"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     investigators: [
       { role: "PI", name: "Dr Jacqueline Cliff", personSlug: "jacqueline-cliff" },
       { role: "External PI", name: "Dr Eliana Lacerda" },
@@ -481,7 +481,7 @@ Publications
   {
     slug: "modelling-adenoid-cystic-carcinoma-in-a-mouse",
     title: "Modelling adenoid cystic carcinoma in a mouse",
-    researchAreaSlugs: ["cancer"],
+    researchAreaSlugs: ["cancer-biology"],
     investigators: [
       { role: "PI", name: "Professor Arturo Sala", personSlug: "arturo-sala" },
     ],
@@ -504,7 +504,7 @@ Given the great similarity of the mouse and human systems the in vitro and in vi
   {
     slug: "oncoprotein-myb-in-the-head-and-neck-cancer-adenoid-cystic-carcinoma",
     title: "Oncoprotein MYB in the head and neck cancer adenoid cystic carcinoma",
-    researchAreaSlugs: ["cancer"],
+    researchAreaSlugs: ["cancer-biology"],
     investigators: [
       { role: "PI", name: "Professor Arturo Sala", personSlug: "arturo-sala" },
     ],
@@ -522,7 +522,7 @@ The central hypothesis that will be investigated is whether MYB gene rearrangeme
   {
     slug: "dysfunction-of-the-cerebral-microvasculature-in-sickle-cell-disease",
     title: "Investigating cerebral microvasculature dysfunction in stroke",
-    researchAreaSlugs: ["cardiovascular-diseases"],
+    researchAreaSlugs: ["vascular-cardiovascular-sciences"],
     investigators: [
       { role: "PI", name: "Professor Felicity Gavins", personSlug: "felicity-gavins" },
     ],
@@ -540,7 +540,7 @@ Our findings will have far-reaching implications, as they will increase our know
   {
     slug: "innate-immunity-in-bovine-tuberculosis",
     title: "Innate immunity in bovine tuberculosis",
-    researchAreaSlugs: ["infections-and-immunity"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     investigators: [
       { role: "PI", name: "Dr Anthony Tsolaki", personSlug: "anthony-tsolaki" },
       { role: "Co-investigator", name: "Dr Uday Kishore" },
