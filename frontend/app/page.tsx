@@ -279,89 +279,99 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Research Areas + PhD Opportunities */}
+      {/* Core Research Areas */}
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-
-            {/* Research Areas column */}
+          <div className="flex items-end justify-between gap-4 mb-12">
             <div>
-              <div className="flex items-end justify-between gap-4 mb-8">
-                <div>
-                  <h2 className="section-heading">Research Areas</h2>
-                  <p className="section-subheading">
-                    Multidisciplinary research tackling global health challenges.
-                  </p>
-                </div>
-                <Link href="/research" className="btn-outline flex-shrink-0 text-sm">View all →</Link>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="block w-6 h-px" style={{ backgroundColor: "#B91C1C" }} />
+                <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#B91C1C" }}>Research</span>
               </div>
-              <div className="grid grid-cols-2 gap-4 auto-rows-fr">
-                {researchAreas.slice(0, 6).map((area) => (
-                  <Link
-                    key={area.slug}
-                    href={`/research/${area.slug}`}
-                    className={`card border ${area.color} hover:shadow-lg group overflow-hidden flex flex-col h-full`}
-                  >
-                    {area.image?.url && (
-                      <div className="relative w-full aspect-[16/10] bg-gray-100 overflow-hidden flex-shrink-0">
-                        <Image
-                          src={area.image.url}
-                          alt={area.title}
-                          fill
-                          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                          unoptimized
-                        />
-                      </div>
-                    )}
-                    <div className="p-4 flex-1 flex items-center">
-                      <h3 className="font-semibold text-navy text-sm group-hover:text-teal transition-colors leading-snug">
-                        {area.title}
-                      </h3>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+              <h2 className="text-4xl sm:text-5xl font-bold text-navy leading-tight mb-4">
+                Core{" "}
+                <em style={{ fontFamily: "Georgia, serif" }}>research areas</em>
+              </h2>
+              <p className="text-gray-500 leading-relaxed max-w-lg">
+                Our research drives forward scientific innovation and discovery, with a collective aim to enhance understanding of health and disease across four key domains.
+              </p>
             </div>
-
-            {/* PhD Opportunities column */}
-            <div className="flex flex-col">
-              <div className="mb-8">
-                <h2 className="section-heading">PhD Opportunities</h2>
-                <p className="section-subheading">
-                  Join our postgraduate research community.
+            <Link href="/research" className="btn-outline flex-shrink-0 text-sm hidden sm:block">View all →</Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {researchAreas.slice(0, 4).map((area) => (
+              <Link
+                key={area.slug}
+                href={`/research/${area.slug}`}
+                className="group"
+              >
+                {area.image?.url && (
+                  <div className="relative w-full aspect-[4/3] overflow-hidden mb-5">
+                    <Image
+                      src={area.image.url}
+                      alt={area.title}
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
+                <h3 className="font-bold text-navy text-lg mb-2 leading-snug group-hover:text-teal transition-colors">
+                  {area.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-4">
+                  {area.description}
                 </p>
+                <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: "#B91C1C" }}>
+                  Explore Research →
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8 sm:hidden">
+            <Link href="/research" className="btn-outline text-sm">View all →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PhD Opportunities */}
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div>
+              <h2 className="section-heading">PhD Opportunities</h2>
+              <p className="section-subheading">
+                Join our postgraduate research community.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-gray-100 p-8 flex flex-col justify-between" style={{ backgroundColor: "#F8F9FC" }}>
+              <div>
+                <span className="tag mb-4 inline-block">Postgraduate Research</span>
+                <h3 className="text-xl font-bold text-navy mb-4">Postgraduate Research Opportunities</h3>
+                <p className="text-base leading-relaxed mb-6" style={{ color: "#6B7A99" }}>
+                  Join a vibrant research community at the cutting edge of biomedical science. Browse PhD
+                  opportunities in Biomedical Sciences at Brunel University London and train alongside
+                  internationally outstanding researchers.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {[
+                    "World-class supervisory teams",
+                    "State-of-the-art laboratory facilities",
+                    "Strong links with clinical and industry partners",
+                    "Regular seminar and training programme",
+                  ].map((point) => (
+                    <li key={point} className="flex items-start gap-3 text-sm" style={{ color: "#6B7A99" }}>
+                      <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-teal/10 text-teal flex items-center justify-center text-xs font-bold">✓</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="flex-1 rounded-2xl border border-gray-100 p-8 flex flex-col justify-between" style={{ backgroundColor: "#F8F9FC" }}>
-                <div>
-                  <span className="tag mb-4 inline-block">Postgraduate Research</span>
-                  <h3 className="text-xl font-bold text-navy mb-4">Postgraduate Research Opportunities</h3>
-                  <p className="text-base leading-relaxed mb-6" style={{ color: "#6B7A99" }}>
-                    Join a vibrant research community at the cutting edge of biomedical science. Browse PhD
-                    opportunities in Biomedical Sciences at Brunel University London and train alongside
-                    internationally outstanding researchers.
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    {[
-                      "World-class supervisory teams",
-                      "State-of-the-art laboratory facilities",
-                      "Strong links with clinical and industry partners",
-                      "Regular seminar and training programme",
-                    ].map((point) => (
-                      <li key={point} className="flex items-start gap-3 text-sm" style={{ color: "#6B7A99" }}>
-                        <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-teal/10 text-teal flex items-center justify-center text-xs font-bold">✓</span>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-wrap gap-4">
-                  <Link href="/contact" className="btn-primary">Enquire about a PhD</Link>
-                  <Link href="/education" className="btn-outline">Education &amp; Training</Link>
-                </div>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="btn-primary">Enquire about a PhD</Link>
+                <Link href="/education" className="btn-outline">Education &amp; Training</Link>
               </div>
             </div>
-
           </div>
         </div>
       </section>
