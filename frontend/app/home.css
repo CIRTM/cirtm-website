@@ -1,0 +1,14 @@
+/* Slow drift and zoom on the Join us background image */
+.join-image {
+  transform-origin: 75% 50%;
+  animation: join-drift 30s ease-in-out infinite alternate;
+}
+@keyframes join-drift {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.04) translate(-1%, -0.5%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .join-image {
+    animation: none;
+  }
+}

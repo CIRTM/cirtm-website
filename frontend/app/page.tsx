@@ -3,8 +3,10 @@ import Image from "next/image";
 import { researchAreas } from "@/lib/content/research-areas";
 import { projects } from "@/lib/content/projects";
 import { funders } from "@/lib/content/funders";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon, EnvelopeIcon, GlobeAltIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import ImmuneCells from "@/components/ImmuneCells";
+import JoinParticles from "@/components/JoinParticles";
+import "./home.css";
 
 // Timeline pulses: three evenly spaced, each taking this long to cross
 const PULSE_SECONDS = 12;
@@ -559,29 +561,134 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-24 text-center" style={{ background: "linear-gradient(to right, #C0392B 0%, #922B21 60%, #7B1111 100%)" }}>
+      {/* Visit CIRTM */}
+      <section className="py-20 bg-white">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6" style={{ fontFamily: "Georgia, serif" }}>
-            Join us in changing lives
-          </h2>
-          <p className="text-red-100 text-lg leading-relaxed max-w-xl mx-auto mb-10">
-            Whether you&apos;re a researcher, clinician, industry partner or funder, there&apos;s a
-            place for you in the CIRTM community. Let&apos;s build the future of medicine together.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="px-8 py-3 rounded-lg font-semibold text-sm bg-white text-red-700 hover:bg-red-50 transition-colors"
-            >
-              Get in Touch
-            </Link>
-            <Link
-              href="/innovation/industry"
-              className="px-8 py-3 rounded-lg font-semibold text-sm border border-white/60 text-white hover:bg-white/10 transition-colors"
-            >
-              Partner with Us
-            </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div>
+              <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest" style={{ color: "#B91C1C" }}>
+                <span className="inline-block w-8 h-px" style={{ backgroundColor: "#B91C1C" }} />
+                Our Location
+              </p>
+              <h2 className="flex items-center gap-4 text-4xl sm:text-5xl mb-6" style={{ fontFamily: "Georgia, serif", color: "#0B1B3A" }}>
+                Visit
+                <Image src="/CIRTM-alt.png" alt="CIRTM" width={100} height={80} className="h-[1.3em] w-auto" />
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-10 max-w-xl">
+                CIRTM is based at Brunel University of London within the College of Health, Medicine and Life
+                Sciences. Our location places us within a vibrant research environment with strong links across
+                discovery science, translational medicine and clinical partnership.
+              </p>
+              <ul className="space-y-5 text-sm" style={{ color: "#0B1B3A" }}>
+                <li className="flex gap-4">
+                  <MapPinIcon className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: "#B91C1C" }} aria-hidden="true" />
+                  <address className="not-italic leading-relaxed">
+                    <span className="font-semibold">Centre for Inflammation Research &amp; Translational Medicine</span>
+                    <br />
+                    Brunel University of London
+                    <br />
+                    Kingston Lane, Uxbridge
+                    <br />
+                    London UB8 3PH, United Kingdom
+                  </address>
+                </li>
+                <li className="flex gap-4 items-center">
+                  <EnvelopeIcon className="w-5 h-5 flex-shrink-0" style={{ color: "#B91C1C" }} aria-hidden="true" />
+                  <a href="mailto:felicity.gavins@brunel.ac.uk" className="hover:underline">felicity.gavins@brunel.ac.uk</a>
+                </li>
+                <li className="flex gap-4 items-center">
+                  <PhoneIcon className="w-5 h-5 flex-shrink-0" style={{ color: "#B91C1C" }} aria-hidden="true" />
+                  <a href="tel:+441895267000" className="hover:underline">+44 (0)1895 267000</a>
+                </li>
+                <li className="flex gap-4 items-center">
+                  <GlobeAltIcon className="w-5 h-5 flex-shrink-0" style={{ color: "#B91C1C" }} aria-hidden="true" />
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Brunel+University+of+London+Kingston+Lane+Uxbridge+UB8+3PH"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 hover:underline"
+                  >
+                    View on Google Maps
+                    <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
+                <Image
+                  src="/images/about/heinz-wolff-building.jpg"
+                  alt="Heinz Wolff Building at Brunel University of London"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute top-0 right-0 m-4 max-w-[13rem] bg-white/90 backdrop-blur-sm p-5 rounded-lg">
+                  <p className="text-lg leading-snug" style={{ fontFamily: "Georgia, serif", color: "#0B1B3A" }}>
+                    Brunel University of London
+                  </p>
+                  <span className="block w-8 h-px my-3" style={{ backgroundColor: "#B91C1C" }} />
+                  <p className="text-sm text-gray-600" style={{ fontFamily: "Georgia, serif" }}>
+                    A connected place for bold ideas
+                  </p>
+                </div>
+              </div>
+              <div className="relative aspect-[16/9] rounded-xl overflow-hidden border border-gray-200">
+                <iframe
+                  src="https://www.google.com/maps?q=Brunel+University+of+London,+Kingston+Lane,+Uxbridge+UB8+3PH&z=15&output=embed"
+                  title="Map showing Brunel University of London"
+                  className="absolute inset-0 w-full h-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Join us */}
+      <section className="relative overflow-hidden py-24" style={{ backgroundColor: "#7B0910" }}>
+        <div className="join-image absolute inset-y-0 right-0 w-full lg:w-[70%]" aria-hidden="true">
+          <Image src="/images/join-us.jpg" alt="" fill sizes="(min-width: 1024px) 70vw, 100vw" className="object-cover object-right" />
+        </div>
+        <JoinParticles className="absolute inset-0 pointer-events-none" />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: "linear-gradient(to right, #7B0910 0%, #7B0910 40%, rgba(123,9,16,0.85) 55%, rgba(123,9,16,0.45) 72%, rgba(123,9,16,0) 90%)" }}
+          aria-hidden="true"
+        />
+        <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-white/80">
+              <span className="inline-block w-8 h-px bg-white/60" />
+              Collaborate. Discover. Make a difference.
+            </p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6" style={{ fontFamily: "Georgia, serif" }}>
+              Join us in advancing discovery and impact
+            </h2>
+            <p className="text-red-50/90 text-lg leading-relaxed mb-10">
+              Whether you are a researcher, clinician, industry partner, funder or future student, CIRTM offers a
+              collaborative environment where discovery science, human-relevant models and clinical insight come
+              together to address major health challenges.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-xs font-semibold uppercase tracking-widest bg-white hover:bg-red-50 transition-colors"
+                style={{ color: "#A61E22" }}
+              >
+                Get in touch
+                <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
+              <Link
+                href="/innovation/industry"
+                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-xs font-semibold uppercase tracking-widest border border-white/60 text-white hover:bg-white/10 transition-colors"
+              >
+                Partner with us
+                <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
