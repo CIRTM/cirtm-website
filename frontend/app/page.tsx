@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-navy overflow-hidden">
+      <section className="relative overflow-hidden" style={{ backgroundColor: "#0B1B3A" }}>
         <Image
           src="/images/hero-images/hero-img.jpg"
           alt=""
@@ -22,41 +22,43 @@ export default function Home() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B3A]/95 via-[#0B1B3A]/80 to-[#0B1B3A]/45" />
         <div
           className="absolute inset-0 opacity-30 mix-blend-overlay"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 20% 50%, #00A99D 0%, transparent 50%), radial-gradient(circle at 80% 20%, #574F5A 0%, transparent 50%)",
+              "radial-gradient(circle at 20% 50%, #1D4ED8 0%, transparent 50%), radial-gradient(circle at 80% 20%, #6D28D9 0%, transparent 50%)",
           }}
         />
         <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-36">
           <div className="max-w-3xl">
-            <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-teal">
-              <span className="inline-block w-8 h-px bg-teal" />
+            <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-amber-400">
+              <span className="inline-block w-8 h-px bg-amber-400" />
               Internationally Recognised Centre of Excellence
             </p>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-wide drop-shadow-lg" style={{ fontFamily: "'Barlow', system-ui, sans-serif" }}>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl text-white leading-[1.08] drop-shadow-lg" style={{ fontFamily: "Georgia, serif" }}>
               Centre for<br />
               Inflammation<br />
               Research &amp;<br />
-              Translational<br />
-              Medicine
+              <em>Translational<br />
+              Medicine</em>
             </h1>
             <p className="mt-5 text-lg italic text-gray-400 font-serif drop-shadow-md">
               Innovation that heals. Science that changes lives.
             </p>
-            <hr className="mt-4 mb-6 border-teal w-24" />
+            <hr className="mt-4 mb-6 border-amber-400 w-24" />
             <p className="text-lg text-gray-200 leading-relaxed max-w-2xl drop-shadow-md">
               CIRTM brings together internationally outstanding basic and clinical researchers to tackle global
               health challenges shaped by inflammation and immune dysfunction, connecting fundamental biology,
               experimental medicine and translational innovation to improve health.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/projects" className="btn-primary text-base px-6 py-3">View Our Projects</Link>
+              <Link href="/projects" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-xs font-semibold uppercase tracking-widest text-white shadow-sm transition-opacity hover:opacity-90" style={{ backgroundColor: "#B91C1C" }}>
+                View Our Projects →
+              </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 border border-white/40 text-white px-6 py-3 rounded-lg font-medium text-base hover:bg-white/10 backdrop-blur-sm transition-colors"
+                className="inline-flex items-center gap-2 border border-white/40 text-white px-6 py-3 rounded-lg text-xs font-semibold uppercase tracking-widest hover:bg-white/10 backdrop-blur-sm transition-colors"
               >
                 About the Centre
               </Link>
@@ -86,39 +88,41 @@ export default function Home() {
       </div>
 
 {/* About with director */}
-      <section className="py-20 bg-navy">
+      <section className="py-20 bg-white">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">Welcome to CIRTM</h2>
-            <span className="block w-12 h-0.5 bg-teal mx-auto mt-4" />
+            <h2 className="text-4xl sm:text-5xl" style={{ fontFamily: "Georgia, serif", color: "#0B1B3A" }}>Welcome to CIRTM</h2>
+            <span className="block w-12 h-0.5 mx-auto mt-5" style={{ backgroundColor: "#B91C1C" }} />
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-amber-400">
-                <span className="inline-block w-8 h-px bg-amber-400" />
+              <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest" style={{ color: "#B91C1C" }}>
+                <span className="inline-block w-8 h-px" style={{ backgroundColor: "#B91C1C" }} />
                 Who We Are
               </p>
-              <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
+              <h2 className="text-4xl sm:text-5xl leading-tight mb-6" style={{ fontFamily: "Georgia, serif", color: "#0B1B3A" }}>
                 Bridging the gap<br />
                 <em>between discovery</em><br />
                 <em>and impact</em>
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-8">
+              <p className="text-gray-600 leading-relaxed mb-8">
                 CIRTM is an internationally recognised centre of excellence established in October 2019. We bring
                 together a critical mass of outstanding basic and clinical researchers to address global health
                 challenges shaped by inflammation, immunity and disease.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/about" className="btn-primary">About →</Link>
+                <Link href="/about" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-xs font-semibold uppercase tracking-widest text-white shadow-sm transition-opacity hover:opacity-90" style={{ backgroundColor: "#B91C1C" }}>
+                  About →
+                </Link>
                 <Link
                   href="/people"
-                  className="inline-flex items-center gap-2 border border-white/30 text-white px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-white/10 transition-colors"
+                  className="inline-flex items-center gap-2 border border-[#0B1B3A]/30 text-[#0B1B3A] px-6 py-3 rounded-lg text-xs font-semibold uppercase tracking-widest hover:bg-[#0B1B3A]/5 transition-colors"
                 >
                   Members
                 </Link>
               </div>
             </div>
-            <div className="rounded-2xl border border-white/10 overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.05)" }}>
+            <div className="rounded-2xl border border-gray-200 overflow-hidden shadow-sm" style={{ backgroundColor: "#F8F7F5" }}>
               <div className="flex items-start gap-5 p-8 pb-4 sm:pb-8">
                 <div className="relative flex-shrink-0 w-28 sm:w-44 rounded-xl overflow-hidden aspect-[3/4] sm:aspect-auto sm:self-stretch sm:min-h-[220px]">
                   <Image
@@ -129,23 +133,23 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex-1">
-                  <div className="text-sm font-semibold uppercase tracking-wide mb-2 text-teal">Centre Director</div>
-                  <h3 className="text-white font-bold text-xl mb-1">Prof. Felicity N. E. Gavins</h3>
-                  <p className="text-gray-400 text-sm mb-4">Professor of Pharmacology and Royal Society Wolfson Fellow</p>
-                  <p className="hidden sm:block text-gray-300 text-sm leading-relaxed">
+                  <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "#B91C1C" }}>Centre Director</div>
+                  <h3 className="text-2xl mb-1" style={{ fontFamily: "Georgia, serif", color: "#0B1B3A" }}>Prof. Felicity N. E. Gavins</h3>
+                  <p className="text-gray-500 text-sm mb-4">Professor of Pharmacology and Royal Society Wolfson Fellow</p>
+                  <p className="hidden sm:block text-gray-600 text-sm leading-relaxed">
                     Prof. Gavins leads CIRTM&apos;s mission to unite outstanding basic and clinical researchers, advancing
                     internationally recognised discovery science, translational innovation and interdisciplinary
                     collaboration.
                   </p>
                 </div>
               </div>
-              <p className="sm:hidden text-gray-300 text-sm leading-relaxed px-8 pb-6">
+              <p className="sm:hidden text-gray-600 text-sm leading-relaxed px-8 pb-6">
                 Prof. Gavins leads CIRTM&apos;s mission to unite outstanding basic and clinical researchers, advancing
                 internationally recognised discovery science, translational innovation and interdisciplinary
                 collaboration.
               </p>
-              <div className="px-8 pb-6 pt-0 border-t border-white/10 text-sm text-gray-400 mt-0 pt-4">
-                <div className="pt-4">All enquiries: <Link href="/people/felicity-gavins" className="text-teal hover:underline">Prof. Felicity Gavins</Link></div>
+              <div className="px-8 pb-6 pt-0 border-t border-gray-200 text-sm text-gray-500 mt-0 pt-4">
+                <div className="pt-4">All enquiries: <Link href="/people/felicity-gavins" className="font-medium hover:underline" style={{ color: "#B91C1C" }}>Prof. Felicity Gavins</Link></div>
               </div>
             </div>
           </div>
