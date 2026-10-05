@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { researchAreas } from "@/lib/content/research-areas";
 
 export default function Footer() {
   return (
@@ -33,18 +34,10 @@ export default function Footer() {
               Research
             </h3>
             <ul className="space-y-2.5">
-              {[
-                ["Cardiovascular Diseases", "/research/cardiovascular-diseases"],
-                ["Inflammation", "/research/inflammation"],
-                ["Infections & Immunity", "/research/infections-and-immunity"],
-                ["Microbiome & Health", "/research/microbiome-and-health"],
-                ["Cancer", "/research/cancer"],
-                ["Microbial Resistance", "/research/microbial-resistance"],
-                ["Drug Repurposing", "/research/drug-repurposing"],
-              ].map(([label, href]) => (
-                <li key={href}>
-                  <Link href={href} className="text-gray-400 text-sm hover:text-teal transition-colors">
-                    {label}
+              {researchAreas.map((area) => (
+                <li key={area.slug}>
+                  <Link href={`/research/${area.slug}`} className="text-gray-400 text-sm hover:text-teal transition-colors">
+                    {area.title}
                   </Link>
                 </li>
               ))}
@@ -59,9 +52,9 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {[
                 ["About Us", "/about"],
-                ["Our People", "/people"],
+                ["Our members", "/people"],
                 ["Projects", "/projects"],
-                ["Seminar Series", "/seminars"],
+                ["News & Events", "/seminars"],
                 ["Impact Case Studies", "/innovation/impact"],
                 ["Industry Partners", "/innovation/industry"],
                 ["Contact", "/contact"],
