@@ -3,6 +3,7 @@ import Image from "next/image";
 import { researchAreas } from "@/lib/content/research-areas";
 import { projects } from "@/lib/content/projects";
 import { funders } from "@/lib/content/funders";
+import ImmuneCells from "@/components/ImmuneCells";
 
 export default function Home() {
   const ongoingProjects = projects
@@ -148,6 +149,39 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section className="relative overflow-hidden py-28" style={{ backgroundColor: "#0B1B3A" }}>
+        <ImmuneCells className="absolute inset-0" />
+        <div className="mission-reveal relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="mb-8 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-widest text-amber-400">
+            <span className="inline-block w-8 h-px bg-amber-400" />
+            Our Mission
+            <span className="inline-block w-8 h-px bg-amber-400" />
+          </p>
+          <blockquote
+            className="text-2xl sm:text-3xl lg:text-4xl italic text-white leading-snug"
+            style={{ fontFamily: "Georgia, serif" }}
+          >
+            &ldquo;To address <span className="text-amber-400">major health challenges</span> affecting{" "}
+            <span className="text-amber-400">millions worldwide</span>, advancing discovery, innovation and
+            translational science across inflammation and immunity in health and disease.&rdquo;
+          </blockquote>
+          <span className="block w-px h-10 bg-white/30 mx-auto my-10" />
+          <p className="text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10">
+            We bring together outstanding researchers across science, engineering, medicine and clinical practice
+            to transform fundamental discoveries into new understanding, diagnostics and therapies, to improve
+            health.
+          </p>
+          <Link
+            href="/research"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-xs font-semibold uppercase tracking-widest text-white transition-opacity hover:opacity-90"
+            style={{ backgroundColor: "#B91C1C" }}
+          >
+            Discover our science →
+          </Link>
         </div>
       </section>
 
