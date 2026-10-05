@@ -76,7 +76,7 @@ In the CIRTM we aim to better understand, diagnose and treat heart and circulato
 
 Cancer is a leading cause of premature death in every country in the world ([Cancer Atlas](https://canceratlas.cancer.org/)) and it is estimated that one in three people will be affected by the disease in the UK.
 
-Cancer researchers at Brunel University London aim to increase our understanding on different hallmarks of cancer development and progression, in particular within CIRTM, we focus on cancer immunology and cancer metastasis.
+Cancer researchers at Brunel University of London aim to increase our understanding on different hallmarks of cancer development and progression, in particular within CIRTM, we focus on cancer immunology and cancer metastasis.
 
 We investigate cellular and molecular factors in childhood cancers like neuroblastoma, and adult cancers such as melanoma, gastrointestinal, breast and prostate cancers. The primary research themes at CIRTM include oncogenic transcription factors, immunity against cancers, cell-signalling, transcriptional deregulation, and targets for clinical intervention.
 
@@ -102,7 +102,7 @@ Breast and prostate cancers are the first and the fourth most diagnosed solid ca
 
 ## Development of Vasculature-on-a-Chip for Cancer Metastasis Studies
 
-CIRTM Organ on chip research is formed by an international and multi-interdisciplinary group of experts from Life Sciences and Engineering developing microfluidic devices to mimic human tissues in order to replicate organ-like functions. The research and development of the vasculature-on-a-chip is part of the [organ-on-a-chip (OOC) group's](https://www.brunel.ac.uk/research/Groups/Organ-on-a-Chip) at Brunel University London working on breast, vagina, ovary, and placenta-on-a-chip. Cerutti's lab aims to study early steps of metastasis within the vasculature-OoC to develop a human 3D representative system, allowing a better understanding of metastasis and to identify targets for better treatments.
+CIRTM Organ on chip research is formed by an international and multi-interdisciplinary group of experts from Life Sciences and Engineering developing microfluidic devices to mimic human tissues in order to replicate organ-like functions. The research and development of the vasculature-on-a-chip is part of the [organ-on-a-chip (OOC) group's](https://www.brunel.ac.uk/research/Groups/Organ-on-a-Chip) at Brunel University of London working on breast, vagina, ovary, and placenta-on-a-chip. Cerutti's lab aims to study early steps of metastasis within the vasculature-OoC to develop a human 3D representative system, allowing a better understanding of metastasis and to identify targets for better treatments.
 
 ![Microfluidic workflow diagram](/images/research-areas/cancer-page/Microfluidic-workflow-to-study-early-steps-of-cancer-metastasis-with-high-content-imaging.jpg)
 

@@ -16,7 +16,7 @@ export const seminars: Seminar[] = [
     title: "Immune biomarkers of vaccine-induced protection against tuberculosis",
     date: "2020-10-29",
     speaker: "Dr Steven Smith",
-    speakerAffiliation: "Brunel University London",
+    speakerAffiliation: "Brunel University of London",
     location: "Online – 13:00",
   },
   {
@@ -24,7 +24,7 @@ export const seminars: Seminar[] = [
     title: "Genetic Epidemiology Studies on over half million individuals to understand cardiovascular disease",
     date: "2020-11-19",
     speaker: "Dr Raha Pazoki",
-    speakerAffiliation: "Brunel University London",
+    speakerAffiliation: "Brunel University of London",
     location: "Online – 13:00",
   },
   {

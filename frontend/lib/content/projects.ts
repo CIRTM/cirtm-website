@@ -123,7 +123,7 @@ The research aims to identify measurable biological differences associated with 
     ],
     status: "Ongoing",
     lastModified: "2024-09-27",
-    funder: "Brunel University London",
+    funder: "Brunel University of London",
     imageUrl: "https://www.brunel.ac.uk/research/Projects/images/heart-organs1.x35fac4e4.jpg",
     sdgs: [
       { num: 3, label: "Good Health and Well-being" },
@@ -169,7 +169,7 @@ The potential impact of this research project is far reaching. It will provide i
     ],
     status: "Ongoing",
     lastModified: "2024-09-27",
-    funder: "Brunel University London",
+    funder: "Brunel University of London",
     imageUrl: "https://www.brunel.ac.uk/research/Projects/images/neutrophils-2.xefaff23f.jpg",
     sdgs: [
       { num: 3, label: "Good Health and Well-being" },
@@ -189,7 +189,7 @@ The overarching objective of this project is to generate novel data in an area o
     ],
     status: "Ongoing",
     lastModified: "2024-09-27",
-    funder: "Brunel University London",
+    funder: "Brunel University of London",
     imageUrl: "https://www.brunel.ac.uk/research/Projects/images/blood-cells-2.x8dc273b9.jpg",
     sdgs: [
       { num: 3, label: "Good Health and Well-being" },
@@ -222,7 +222,7 @@ In summary, we are particularly interested in the mode, dynamics and mechanisms 
     ],
     status: "Ongoing",
     lastModified: "2024-12-06",
-    funder: "Engineering and Physical Sciences Research Council (EPSRC); Brunel University London",
+    funder: "Engineering and Physical Sciences Research Council (EPSRC); Brunel University of London",
     imageUrl: "https://www.brunel.ac.uk/research/Projects/images/cell-culture-flasks-in-laboratory-incubator-thumbnail.xd9530bc4.jpg",
     sdgs: [
       { num: 3, label: "Good Health and Well-being" },
@@ -295,7 +295,7 @@ We will conduct a clinical trial in mice using appropriately modified FXN genes 
     ],
     status: "Ongoing",
     lastModified: "2024-09-27",
-    funder: "Brunel University London",
+    funder: "Brunel University of London",
     imageUrl: "https://www.brunel.ac.uk/research/Projects/images/upper-body-944557-Cropped-350x350.xc9ddbd8e.jpg",
     sdgs: [
       { num: 3, label: "Good Health and Well-being" },
@@ -315,7 +315,7 @@ The objectives of this proposal are to investigate the key initial interactions 
     ],
     status: "Ongoing",
     lastModified: "2024-09-27",
-    funder: "Brunel University London",
+    funder: "Brunel University of London",
     imageUrl: "https://www.brunel.ac.uk/research/Projects/images/cell-3089947-1920-Cropped-350x350.xeb20527d.jpg",
     sdgs: [
       { num: 3, label: "Good Health and Well-being" },
@@ -547,7 +547,7 @@ Our findings will have far-reaching implications, as they will increase our know
     ],
     status: "Completed",
     lastModified: "2021-07-08",
-    funder: "Brunel University London",
+    funder: "Brunel University of London",
     imageUrl: "https://www.brunel.ac.uk/research/Projects/images/cows-1086049-Cropped-350x350.x7d718e20.jpg",
     description: `Bovine tuberculosis remains the most costly agricultural problem in the UK, with this year an estimated &pound;40m spent on testing and compensation to farmers, as well as risks of transmission to wildlife and humans. Currently, there is no effective vaccine or prophylaxis in use to combat the transmission of the disease. New interventions are needed urgently.
 

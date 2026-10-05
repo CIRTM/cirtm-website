@@ -48,9 +48,9 @@ export default function Home() {
             </p>
             <hr className="mt-4 mb-6 border-teal w-24" />
             <p className="text-lg text-gray-200 leading-relaxed max-w-2xl drop-shadow-md">
-              The CIRTM brings together internationally outstanding basic and clinical researchers tackling
-              today&apos;s global health challenges, from cardiovascular disease and cancer to antimicrobial
-              resistance and beyond.
+              CIRTM brings together internationally outstanding basic and clinical researchers to tackle global
+              health challenges shaped by inflammation and immune dysfunction, connecting fundamental biology,
+              experimental medicine and translational innovation to improve health.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/projects" className="btn-primary text-base px-6 py-3">View Our Projects</Link>
@@ -386,7 +386,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-navy mb-4">Postgraduate Research Opportunities</h3>
                 <p className="text-base leading-relaxed" style={{ color: "#6B7A99" }}>
                   Join a vibrant research community at the cutting edge of biomedical science. Browse PhD
-                  opportunities in Biomedical Sciences at Brunel University London and train alongside
+                  opportunities in Biomedical Sciences at Brunel University of London and train alongside
                   internationally outstanding researchers.
                 </p>
               </div>

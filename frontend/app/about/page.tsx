@@ -208,7 +208,7 @@ export default function AboutPage() {
           <div>
             <h2 className="text-2xl font-bold text-navy mb-4">Location</h2>
             <p className="text-gray-600 mb-6">
-              The CIRTM resides within the Division of Biosciences at Brunel University London, with members taking
+              The CIRTM resides within the Division of Biosciences at Brunel University of London, with members taking
               full advantage of recent research infrastructure investments to support cutting edge research including:
             </p>
             <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600 mb-10">

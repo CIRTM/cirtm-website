@@ -76,7 +76,7 @@ Felicity read Pharmacology at the University of Sunderland, where she also embar
 
 In 2007 Felicity joined Imperial College London to take up a Lectureship position in the Centre for Integrative Mammalian Physiology and Pharmacology (CIMPP). This was shortly followed by a senior lectureship and the appointment to Deputy Head of The Centre of Neurodegeneration & Neuroinflammation. In 2013 she accepted an academic position in the USA at Louisiana State University Health Sciences Center-Shreveport (LSUHSC-S) and was appointed Director of The Small Animal Imaging Facility.
 
-Felicity is a Fellow of the British Pharmacological Society and of the Royal Society of Biology. She joined Brunel University London in August 2019 as Professor of Pharmacology and Royal Society Wolfson Fellow, and is the Director of The Centre for Inflammation Research and Translational Medicine (CIRTM).
+Felicity is a Fellow of the British Pharmacological Society and of the Royal Society of Biology. She joined Brunel University of London in August 2019 as Professor of Pharmacology and Royal Society Wolfson Fellow, and is the Director of The Centre for Inflammation Research and Translational Medicine (CIRTM).
 
 Throughout her academic career, Felicity has worked with and served on numerous national and international research councils, medical charities and learned societies. She has published widely in her field and received a number of awards and honours for her work. She has received funding for her research from a range of funders including: the Royal Society and the Wolfson Foundation (RSWF), the British Heart Foundation (BHF), the Medical Research Council (MRC), the Biotechnology and Biological Sciences Research Council (BBSRC), the American Heart Association (AHA), and the National Institutes of Health/National Heart, Lung, and Blood Institute (NIH/NHLBI).
 
@@ -298,7 +298,7 @@ Her aim is to enable all students to have an excellent education and student exp
 
 ## Responsibilities
 
-- Pro Vice Chancellor — Education, Brunel University London`,
+- Pro Vice Chancellor — Education, Brunel University of London`,
     order: 13,
   },
   {
@@ -329,9 +329,9 @@ Her aim is to enable all students to have an excellent education and student exp
 
 - 1995–1996: Post-Doctoral Researcher, Department of Clinical Virology, Karolinska Institute
 - 1996–2000: Assistant Professor, then Associate Professor (from 2000), Institute of Cell and Molecular Biology, Lund University, Sweden
-- 2001–2005: Lecturer, Division of Biosciences, Brunel University London
-- 2005–present: Reader in Immunology, Division of Biosciences, Brunel University London
-- 2009–2014: Division Director of Biosciences, Brunel University London
+- 2001–2005: Lecturer, Division of Biosciences, Brunel University of London
+- 2005–present: Reader in Immunology, Division of Biosciences, Brunel University of London
+- 2009–2014: Division Director of Biosciences, Brunel University of London
 
 ## Qualifications
 
@@ -467,7 +467,7 @@ Ronan gained his Bachelor of Science in Genetics with first class honours from U
 
 In 2014, Ronan joined the research group of Professor Alain Filloux at the MRC Centre for Bacteriology and Infection at Imperial College London as a Postdoctoral Research Associate, interrogating the second messenger signalling cascades that govern biofilm growth in *P. aeruginosa* and *Agrobacterium tumefaciens*. He subsequently joined the Microbiology Department at the Animal and Plant Health Agency, using host transcriptomics and pathway analysis to profile the host response to infection.
 
-Ronan joined the Biosciences Division at Brunel University London to continue his analysis of the regulatory networks governing pathogenicity, antimicrobial resistance and biofilm formation in Gram-negative opportunistic pathogens. In 2021, he was awarded a BBSRC New Investigator Award to study desiccation tolerance and biofilm formation in *Acinetobacter baumannii*. He has also expanded into biofilm engineering, using synthetic biology approaches to tackle environmental challenges such as plastic waste.
+Ronan joined the Biosciences Division at Brunel University of London to continue his analysis of the regulatory networks governing pathogenicity, antimicrobial resistance and biofilm formation in Gram-negative opportunistic pathogens. In 2021, he was awarded a BBSRC New Investigator Award to study desiccation tolerance and biofilm formation in *Acinetobacter baumannii*. He has also expanded into biofilm engineering, using synthetic biology approaches to tackle environmental challenges such as plastic waste.
 
 As a PI he has secured funding from the BBSRC, NC3Rs, Academy of Medical Sciences, Horizon 2020, British Society for Antimicrobial Chemotherapy, Innovate UK, NERC and the Medical Research Council.
 
@@ -541,7 +541,7 @@ Supermarket sweeteners may be key in fight against antibiotic-resistant bacteria
 
 Dr Raha Pazoki MD PhD FHEA is a medical doctor and epidemiologist specialising in health data science and the epidemiology of cardiometabolic diseases. She studied Epidemiology at the Netherlands Institute for Health Sciences (NIHES) and the University of Amsterdam, working with major cohort studies including the Arrhythmia Genetics in the Netherlands (AGNES), the Rotterdam Study, the Airwave Health Monitoring Study, and the UK Biobank.
 
-In 2016 she joined the Department of Epidemiology and Biostatistics at Imperial College London as a Research Associate, before taking up a Teaching & Research position at Brunel University London in 2020.
+In 2016 she joined the Department of Epidemiology and Biostatistics at Imperial College London as a Research Associate, before taking up a Teaching & Research position at Brunel University of London in 2020.
 
 Her research explores causal inference and precision medicine by leveraging genomics and large-scale health datasets of over 500,000 individuals. She was the first to identify 517 novel genetic loci associated with liver enzymes and to demonstrate the causal effect of liver dysfunction on cardiovascular disease. She has a particular interest in the interplay between genetic factors, circulating biomarkers, nutrition, lifestyle, and health outcomes.
 
@@ -553,7 +553,7 @@ Her research explores causal inference and precision medicine by leveraging geno
 
 ## Responsibilities
 
-- Director, Cardiovascular and Metabolic Research Group, Brunel University London
+- Director, Cardiovascular and Metabolic Research Group, Brunel University of London
 - Honorary Senior Lecturer, Imperial College London`,
     sections: {
       research: `## Research area(s)
@@ -566,7 +566,7 @@ Dr Paozki is a founder and director of the Cardiovascular and Metabolic Research
 
 If you are a MSc graduates (with upper second class degree or higher) in the relevant field to the above research area, please contact Dr Raha Pazoki ( raha.pazoki@brunel.ac.uk ).
 
-Postgraduate fees and funding | Brunel University London or Scholarships and Bursaries | Brunel University London and Other funding | Brunel University London
+Postgraduate fees and funding | Brunel University of London or Scholarships and Bursaries | Brunel University of London and Other funding | Brunel University of London
 
 Selected list of publications by Dr Raha Pazoki
 
@@ -802,7 +802,7 @@ She then moved to the National Institute for Medical Research for her PhD, where
 
 Jackie worked with Professor Hazel Dockrell at the London School of Hygiene & Tropical Medicine from 1999–2022, mainly studying immune responses in tuberculosis and how these could be utilised to assess responses to antibiotic treatment. More recently, her research has also encompassed comorbidities such as diabetes in tuberculosis, and expanded to include the role of infection and immunity in Myalgic Encephalomyelitis.
 
-Jackie joined Brunel University London in March 2022, combining her research in the Biosciences Division with her teaching within the Medical School.
+Jackie joined Brunel University of London in March 2022, combining her research in the Biosciences Division with her teaching within the Medical School.
 
 ## Qualifications
 
@@ -812,8 +812,8 @@ Jackie joined Brunel University London in March 2022, combining her research in 
 
 ## Responsibilities
 
-- Researcher in the Biosciences Division at Brunel University London
-- Teaching within the Medical School at Brunel University London`,
+- Researcher in the Biosciences Division at Brunel University of London
+- Teaching within the Medical School at Brunel University of London`,
     sections: {
       research: `## Research area(s)
 
@@ -946,7 +946,7 @@ Steven obtained a BSc in Medical Sciences from the University of Leeds and recei
 
 Following a postdoctoral position at the Edward Jenner Institute for Vaccine Research — examining the role of auto-reactive CD8 T-cells and T-cell regulation in joint inflammation — he joined the group of Professor Hazel Dockrell at the London School of Hygiene and Tropical Medicine. There he investigated the cellular immune response to BCG vaccination and immune mechanisms that might provide protection against tuberculosis infection and disease.
 
-Steven joined the Division of Biosciences at Brunel University London in January 2020.
+Steven joined the Division of Biosciences at Brunel University of London in January 2020.
 
 ## Qualifications
 
@@ -1077,7 +1077,7 @@ gene and cell therapy
     researchAreaSlugs: ["translational-medicine-novel-therapeutics"],
     bio: `## Summary
 
-I am a Microbial Ecologist in the Division of Biosciences at Brunel University London.
+I am a Microbial Ecologist in the Division of Biosciences at Brunel University of London.
 
 My research interests lie in the assessment of microbial community structure and function using high throughput sequencing and molecular microbiological techniques. Focusing on the host microbiome, their interaction with one another in this community and changes as a result of disease or injury, this characterisation of the communities allows the identification of functionally important changes in microbial assemblages and detection of Antimicrobial Resistance. My research has included work on the impact of stroke, brain injury, parasitic intestinal infections, and dementia on the interactions with the host and its microbiome.
 
@@ -1091,12 +1091,12 @@ My doctoral training was in soil microbial ecology carrying out risk assessments
 
 - BSc (Hons) Biological Sciences (Genetics) — University of Birmingham (2000)
 - PhD — Cardiff University / CEH-Oxford (2005)
-- Postgraduate Certificate in Academic Practice, FHEA — Brunel University London (2019)
-- Mental Health First Aider — Brunel University London (2020)
+- Postgraduate Certificate in Academic Practice, FHEA — Brunel University of London (2019)
+- Mental Health First Aider — Brunel University of London (2020)
 
 ## Responsibilities
 
-- Programme Lead, Biomedical Science Degree, Brunel University London
+- Programme Lead, Biomedical Science Degree, Brunel University of London
 - Division Outreach Champion, Biosciences
 - Lead, FHEQ5 Biomedical Sciences Examinations
 - Lead, FHEQ5 Medical Microbiology Study Block`,
@@ -1139,7 +1139,7 @@ Dr Keith Allen-Redpath graduated with a BSc (Hons) in Biomedical Sciences (Physi
 
 Following his PhD, Keith took up a five-year British Heart Foundation Research Associate position in the laboratory of Professor Valerie O'Donnell at Cardiff University, focusing on how oxidised phospholipids contribute to the development of abdominal aortic aneurysms. In 2018 he joined the University of Reading as a Senior Research Fellow with Professor Parveen Yaqoob, developing a strong interest in extracellular vesicles and their roles in vascular disease including ischaemic heart disease.
 
-In January 2023, Keith was appointed Lecturer in Vascular Biology at Brunel University London, where his research continues to focus on the role of extracellular vesicles in vascular pathology, with the aim of identifying novel therapeutic targets in cardiovascular disease.
+In January 2023, Keith was appointed Lecturer in Vascular Biology at Brunel University of London, where his research continues to focus on the role of extracellular vesicles in vascular pathology, with the aim of identifying novel therapeutic targets in cardiovascular disease.
 
 ## Qualifications
 
@@ -1225,7 +1225,7 @@ Dr Keith Allen-Redpath’s research focuses on the molecular mechanisms that dri
     researchAreaSlugs: ["translational-medicine-novel-therapeutics"],
     bio: `## Summary
 
-Sam joined Brunel University London as a Lecturer in Biosciences in 2022 from the London School of Hygiene and Tropical Medicine (LSHTM), where he worked as Assistant Professor in the Department of Infection Biology and was previously Head of Biological and Pharmacological Sciences.
+Sam joined Brunel University of London as a Lecturer in Biosciences in 2022 from the London School of Hygiene and Tropical Medicine (LSHTM), where he worked as Assistant Professor in the Department of Infection Biology and was previously Head of Biological and Pharmacological Sciences.
 
 He received his PhD in Innate Immunology at the Royal Veterinary College, London in 2008. In 2018, Sam received an MRC Confidence in Concept Award for the development of a novel class of antimicrobials against *Mycobacterium tuberculosis*, and in 2020 was awarded the Wellcome Translational Accelerator Award to determine their mechanism of action.
 
@@ -1275,7 +1275,7 @@ My research interests are focussed on:
     researchAreaSlugs: ["cancer-biology"],
     bio: `## Summary
 
-Dr Camilla Cerutti is a Lecturer in Inflammation, Ageing and Cancer Biology at Brunel University London and visiting researcher at the European Institute of Oncology since 2023.
+Dr Camilla Cerutti is a Lecturer in Inflammation, Ageing and Cancer Biology at Brunel University of London and visiting researcher at the European Institute of Oncology since 2023.
 
 Her research focuses on vascular and cancer cell biology, in particular on cell–cell interaction and cancer metastasis.
 
@@ -1293,7 +1293,7 @@ In 2018 she won a Global Research Development Fund from King’s College London 
 
 In 2020 Camilla was awarded the iCARE-2 MSCA H2020 fellowship as principal investigator of the project "Single-cell epigenetic and molecular signatures in human breast cancer metastasis formation", a reintegration fellowship in the host lab of Professor Pier Giuseppe Pelicci at the European Institute of Oncology.
 
-Currently, Dr Cerutti’s lab at Brunel University London investigates cancer metastasis mechanisms with 2D and 3D vascular models to study cell-cell interactions by high-content live-cell imaging.
+Currently, Dr Cerutti’s lab at Brunel University of London investigates cancer metastasis mechanisms with 2D and 3D vascular models to study cell-cell interactions by high-content live-cell imaging.
 
 ## Qualifications
 
@@ -1303,7 +1303,7 @@ Currently, Dr Cerutti’s lab at Brunel University London investigates cancer me
 
 ## Responsibilities
 
-- Lecturer in Inflammation, Ageing and Cancer Biology at Brunel University London`,
+- Lecturer in Inflammation, Ageing and Cancer Biology at Brunel University of London`,
     sections: {
       research: `## Research Interests
 
@@ -1326,7 +1326,7 @@ We are interested in unravelling the molecular mechanisms of cell–cell interac
 
 - 2025 — Diabetes UK Early Career Small Grant *(co-PI)*
 - 2025 — Royal Society International Exchanges 2024 Global Round 3 *(PI)*
-- 2024 — BRIEF Award, Brunel University London *(PI)*
+- 2024 — BRIEF Award, Brunel University of London *(PI)*
 - 2024 — BHF Non-Clinical PhD Fellowship, British Heart Foundation *(co-PI)*
 
 ### Previous
@@ -1352,7 +1352,7 @@ Dr Cerutti contributes to teaching across the Life Sciences undergraduate and po
 
 Dr Cerutti has a strong commitment to science outreach, particularly to young people from underrepresented and disadvantaged backgrounds.
 
-- **2024** — *In2Science UK*, Brunel University London. Hosted four young people from disadvantaged backgrounds for a week of lab-based and hands-on STEM activities in Biosciences.
+- **2024** — *In2Science UK*, Brunel University of London. Hosted four young people from disadvantaged backgrounds for a week of lab-based and hands-on STEM activities in Biosciences.
 - **2021–2022** — *AIRC@school* (scuola.airc.it). Outreach with high school students in Cremona and Seregno, Italy, presenting cancer research and the life of a scientist.
 - **2019** — *Soapbox Science*, Bristol. Public outreach promoting women scientists.
 - **2019** — *The Big Bang @ Weston*. Science outreach with young adults at the University of Bristol.
@@ -1396,7 +1396,7 @@ Dr Cerutti has a strong commitment to science outreach, particularly to young pe
     researchAreaSlugs: ["cancer-biology"],
     bio: `## Summary
 
-Dr Doreen Lau is a Lecturer at Brunel University London and a Visiting Researcher at the University of Cambridge. She began her scientific career at the Agency for Science, Technology and Research (A*STAR) in Singapore, focusing on functional genomics and imaging in developmental biology. She later earned her PhD at the University of Cambridge as a Cancer Research UK and Cambridge Trust Scholar, specialising in cancer immunology and the clinical translation of molecular imaging biomarkers for cancer immunotherapy in patients and preclinical models.
+Dr Doreen Lau is a Lecturer at Brunel University of London and a Visiting Researcher at the University of Cambridge. She began her scientific career at the Agency for Science, Technology and Research (A*STAR) in Singapore, focusing on functional genomics and imaging in developmental biology. She later earned her PhD at the University of Cambridge as a Cancer Research UK and Cambridge Trust Scholar, specialising in cancer immunology and the clinical translation of molecular imaging biomarkers for cancer immunotherapy in patients and preclinical models.
 
 Dr Lau has a broad interdisciplinary background spanning cancer immunology, pharmacology, and biomedical imaging. She trained at Imperial College London with Professor Eric Aboagye, worked at the University of Oxford on antigen presentation in cancer with Professor Tim Elliott, and served as a Visiting Scientist at AstraZeneca developing tissue-based imaging biomarkers in immuno-oncology.
 
@@ -1412,7 +1412,7 @@ Her contributions to cancer immunology and imaging have been recognised with mul
 
 ## Responsibilities
 
-- Principal Investigator, Centre for Inflammation Research and Translational Medicine, Brunel University London
+- Principal Investigator, Centre for Inflammation Research and Translational Medicine, Brunel University of London
 - Visiting Researcher, University of Cambridge
 - Junior Research Fellow in Sciences, Wolfson College, University of Oxford (elected 2022)
 - Co-opted Member, Wellcome Trust Immune System in Health & Disease Discovery Research Advisory Group
@@ -1501,7 +1501,7 @@ Please contact Dr Lau well in advance of the relevant deadlines to discuss poten
     photoUrl: "/images/people/veena-kumari.jpg",
     bio: `## Summary
 
-Professor Veena Kumari obtained a PhD in Psychology from Banaras Hindu University, India in 1993 before joining the Institute of Psychiatry, London for postdoctoral research. She became a Beit Memorial Research Fellow in 1999, a Wellcome Senior Fellow in Basic Biomedical Science in 2002, and was appointed Full Professor in 2006 at the Institute of Psychiatry, Psychology and Neuroscience, King’s College London. She joined Brunel University London in January 2018 as Professor of Psychology and Director of the Centre for Cognitive and Clinical Neuroscience (CCN).
+Professor Veena Kumari obtained a PhD in Psychology from Banaras Hindu University, India in 1993 before joining the Institute of Psychiatry, London for postdoctoral research. She became a Beit Memorial Research Fellow in 1999, a Wellcome Senior Fellow in Basic Biomedical Science in 2002, and was appointed Full Professor in 2006 at the Institute of Psychiatry, Psychology and Neuroscience, King’s College London. She joined Brunel University of London in January 2018 as Professor of Psychology and Director of the Centre for Cognitive and Clinical Neuroscience (CCN).
 
 Her research focuses on the neurobiological effects of pharmacological and psychological treatments in psychosis, the neurobiology of violence in mental illness, psychobiology of addiction, and personality and brain functioning. She has over 300 publications in leading psychology, psychiatry and neuroscience journals.
 
@@ -1513,7 +1513,7 @@ Professor Kumari has received numerous national and international awards includi
 
 ## Responsibilities
 
-- Professor of Psychology, Brunel University London
+- Professor of Psychology, Brunel University of London
 - Director, Centre for Cognitive and Clinical Neuroscience (CCN)
 - Editor or editorial board member for multiple psychology, psychiatry and neuroscience journals`,
     sections: {
@@ -1752,7 +1752,7 @@ Member of the Program Committee - 8th Annual International Conference on Cogniti
 
 Topic: Neuropsychology of COVID-19
 
-PhD: Centre for Cognitive Neuroscience, Brunel University London
+PhD: Centre for Cognitive Neuroscience, Brunel University of London
 
 Start Date: 01 Oct 2020 (FT)
 

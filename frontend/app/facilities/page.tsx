@@ -77,7 +77,7 @@ export default function FacilitiesPage() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-gray-600 text-lg leading-relaxed mb-10">
-            CIRTM operates state-of-the-art research infrastructure at Brunel University London,
+            CIRTM operates state-of-the-art research infrastructure at Brunel University of London,
             purpose-built to support translational science, from molecular discovery through to
             clinical-grade validation.
           </p>

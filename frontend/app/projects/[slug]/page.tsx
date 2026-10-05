@@ -9,7 +9,7 @@ import { getPublicationsForProject } from "@/lib/content/relationships";
 import { PublicationEntry } from "@/components/PublicationEntry";
 
 const FUNDER_LOGOS: { match: string; logo: string; alt: string }[] = [
-  { match: "Brunel University London", logo: "/images/research-projects/funding-bodies/Brunel-UoL.webp", alt: "Brunel University London" },
+  { match: "Brunel University of London", logo: "/images/research-projects/funding-bodies/Brunel-UoL.webp", alt: "Brunel University of London" },
   { match: "The Royal Society", logo: "/images/research-projects/funding-bodies/1588-royal-society.jpg", alt: "The Royal Society" },
   { match: "Wolfson Foundation", logo: "/images/research-projects/funding-bodies/WolfsonFoundation…logo—wide—EN—rgb.webp", alt: "The Wolfson Foundation" },
   { match: "Engineering and Physical Sciences Research Council", logo: "/images/research-projects/funding-bodies/EPSRC.jpg", alt: "EPSRC" },

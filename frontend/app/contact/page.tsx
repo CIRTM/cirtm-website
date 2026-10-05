@@ -45,7 +45,7 @@ export default function ContactPage() {
             <p className="text-gray-600 whitespace-pre-line">
               {`Centre for Inflammation Research and Translational Medicine
 Division of Biosciences
-Heinz Wolff Building, Brunel University London
+Heinz Wolff Building, Brunel University of London
 Uxbridge, UB8 3PH
 United Kingdom`}
             </p>

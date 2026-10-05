@@ -12,7 +12,7 @@ export default function Footer() {
               <Image src="/CIRTM.png" alt="CIRTM logo" width={36} height={36} className="flex-shrink-0 brightness-0 invert" />
               <div>
                 <div className="font-bold text-white text-sm">CIRTM</div>
-                <div className="text-[11px] text-gray-400">Brunel University London</div>
+                <div className="text-[11px] text-gray-400">Brunel University of London</div>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
@@ -22,7 +22,7 @@ export default function Footer() {
             </p>
             <div className="mt-5 text-sm text-gray-400">
               <p>Division of Biosciences</p>
-              <p>Heinz Wolff Building, Brunel University London</p>
+              <p>Heinz Wolff Building, Brunel University of London</p>
               <p>Uxbridge, UB8 3PH</p>
             </div>
           </div>
@@ -80,11 +80,11 @@ export default function Footer() {
       <div className="bg-white">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-black text-sm">
-            &copy; 2026 Centre for Inflammation Research and Translational Medicine, Brunel University London
+            &copy; 2026 Centre for Inflammation Research and Translational Medicine, Brunel University of London
           </p>
           <Image
             src="/images/brunel-univeristy.png"
-            alt="Brunel University London"
+            alt="Brunel University of London"
             width={120}
             height={40}
             className="object-contain"

@@ -12,7 +12,7 @@ const microgramma = localFont({
 export const metadata: Metadata = {
   title: "CIRTM | Centre for Inflammation Research and Translational Medicine",
   description:
-    "An internationally acknowledged centre of excellence at Brunel University London driving forward scientific innovation to transform diagnosis, treatment, and management of cardiovascular diseases, inflammation, infection, microbial resistance, and cancer.",
+    "An internationally acknowledged centre of excellence at Brunel University of London driving forward scientific innovation to transform diagnosis, treatment, and management of cardiovascular diseases, inflammation, infection, microbial resistance, and cancer.",
 };
 
 export default function RootLayout({
