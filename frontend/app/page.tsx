@@ -3,7 +3,11 @@ import Image from "next/image";
 import { researchAreas } from "@/lib/content/research-areas";
 import { projects } from "@/lib/content/projects";
 import { funders } from "@/lib/content/funders";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import ImmuneCells from "@/components/ImmuneCells";
+
+// Timeline pulses: three evenly spaced, each taking this long to cross
+const PULSE_SECONDS = 12;
 
 export default function Home() {
   const ongoingProjects = projects
@@ -283,6 +287,120 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Our Approach */}
+      <section className="relative overflow-hidden py-24" style={{ backgroundColor: "#0B1B3A" }}>
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[72%] opacity-50 lg:opacity-100 pointer-events-none" aria-hidden="true">
+          <Image src="/images/our-approach/main-header.jpg" alt="" fill sizes="(min-width: 1024px) 72vw, 100vw" className="object-cover object-right-top" />
+          <div className="absolute inset-0" style={{
+              background: [
+                "radial-gradient(ellipse 110% 120% at 100% 100%, #0B1B3A 0%, #0B1B3A 45%, rgba(11,27,58,0.9) 60%, rgba(11,27,58,0) 85%)",
+                "linear-gradient(to left, #0B1B3A 0%, rgba(11,27,58,0.85) 12%, rgba(11,27,58,0) 30%)",
+                "linear-gradient(to right, #0B1B3A 0%, rgba(11,27,58,0) 30%)",
+                "linear-gradient(to top, #0B1B3A 0%, rgba(11,27,58,0) 45%)",
+              ].join(", "),
+            }} />
+        </div>
+        <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 mb-16">
+            <div className="max-w-2xl">
+              <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-amber-400">
+                <span className="inline-block w-8 h-px bg-amber-400" />
+                Our Approach
+              </p>
+              <h2 className="text-4xl sm:text-5xl text-white leading-tight mb-6" style={{ fontFamily: "Georgia, serif" }}>
+                From discovery to impact,<br />
+                <em>and back again</em>
+              </h2>
+              <p className="text-gray-300 leading-relaxed">
+                CIRTM connects fundamental biology, human-relevant models, experimental medicine and clinical
+                partnership to accelerate new understanding of inflammation and immune dysfunction.
+              </p>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-px bg-white/15" aria-hidden="true">
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  className="timeline-pulse motion-reduce:hidden"
+                  style={{ animationDuration: `${PULSE_SECONDS}s`, animationDelay: `-${(i * PULSE_SECONDS) / 3}s` }}
+                />
+              ))}
+            </div>
+            <div className="hidden motion-reduce:lg:flex absolute top-12 left-[10%] right-[10%] justify-around -translate-y-1/2" aria-hidden="true">
+              {[0, 1, 2, 3].map((i) => (
+                <span key={i} className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+              ))}
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6">
+              {[
+                {
+                  image: "discovery-science",
+                  label: "Discovery science",
+                  desc: "Investigating the cellular, molecular and physiological processes that maintain health and drive disease.",
+                },
+                {
+                  image: "human-relevant-models",
+                  label: "Human-relevant models",
+                  desc: "Developing advanced experimental systems, including human cell-based platforms and disease-relevant models.",
+                },
+                {
+                  image: "translational-biology",
+                  label: "Translational biology",
+                  desc: "Connecting mechanistic discovery with biomarkers, therapeutic targets and intervention strategies.",
+                },
+                {
+                  image: "clinical-partnership",
+                  label: "Clinical partnership",
+                  desc: "Working with clinicians and patient-centred cohorts to test relevance in human disease.",
+                },
+                {
+                  image: "global-impact",
+                  label: "Global impact",
+                  desc: "Advancing research, innovation and training that improves health and informs future therapies.",
+                },
+              ].map(({ image, label, desc }) => (
+                <div key={label} className="flex flex-col items-center text-center">
+                  <div
+                    className="group relative z-10 w-24 h-24 rounded-full overflow-hidden mb-5 border border-white/20"
+                    style={{ backgroundColor: "#102347", boxShadow: "0 0 24px rgba(10, 229, 245, 0.15)" }}
+                  >
+                    <Image
+                      src={`/images/our-approach/${image}.jpg`}
+                      alt=""
+                      fill
+                      sizes="96px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <h3 className="text-lg text-white mb-2" style={{ fontFamily: "Georgia, serif" }}>{label}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed max-w-[15rem]">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+            <Link
+              href="/research"
+              className="group inline-flex flex-col text-xs font-semibold uppercase tracking-widest text-white hover:text-amber-400 transition-colors"
+            >
+              <span className="inline-flex items-center gap-2">
+                Our research areas
+                <ArrowRightIcon className="w-4 h-4 text-amber-400 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </span>
+              <span className="block w-8 h-px bg-amber-400 mt-2" />
+            </Link>
+            <div className="sm:w-56 lg:translate-x-[clamp(1.5rem,calc((100vw_-_1536px)/2),9rem)] text-xs uppercase tracking-[0.3em] text-white/60 leading-loose">
+              <p>Discovery</p>
+              <p>People</p>
+              <p>Better health</p>
+              <p>A brighter tomorrow</p>
+              <span className="block w-8 h-px bg-amber-400 mt-3" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Research Projects */}
       <section className="py-20" style={{ backgroundColor: "#F8F9FC" }}>
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -386,44 +504,6 @@ export default function Home() {
           </div>
           <div className="mt-8 sm:hidden">
             <Link href="/research" className="btn-outline text-sm">View all →</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Approach */}
-      <section className="py-20" style={{ backgroundColor: "#0B1F3A" }}>
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="block w-6 h-px bg-white/40" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-white/60">Our Approach</span>
-            </div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
-              From <em style={{ fontFamily: "Georgia, serif" }}>bench to bedside</em>
-            </h2>
-            <p className="text-white/60 leading-relaxed max-w-md">
-              Everything we do is designed to compress the time between scientific discovery and real clinical impact — because patients cannot wait.
-            </p>
-          </div>
-          <div className="relative">
-            <div className="hidden lg:block absolute top-7 left-[10%] right-[10%] h-px bg-white/20" />
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-4">
-              {[
-                { icon: "🔬", label: "Basic Research", desc: "Fundamental discovery in cellular and molecular biology" },
-                { icon: "🧪", label: "Pre-Clinical", desc: "Validation in model systems; target identification & testing" },
-                { icon: "⚗️", label: "Translational", desc: "Engineering diagnostics & drug candidates for clinical use" },
-                { icon: "🏥", label: "Clinical Studies", desc: "Patient trials and real-world clinical validation" },
-                { icon: "🌍", label: "Global Impact", desc: "Diagnostics & therapies reaching patients worldwide" },
-              ].map((step) => (
-                <div key={step.label} className="flex flex-col items-center text-center">
-                  <div className="relative z-10 w-14 h-14 rounded-full flex items-center justify-center text-2xl mb-5" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
-                    {step.icon}
-                  </div>
-                  <div className="text-xs font-semibold uppercase tracking-wider text-white/90 mb-2">{step.label}</div>
-                  <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
