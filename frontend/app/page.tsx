@@ -87,6 +87,10 @@ export default function Home() {
 {/* About with director */}
       <section className="py-20 bg-navy">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">Welcome to CIRTM</h2>
+            <span className="block w-12 h-0.5 bg-teal mx-auto mt-4" />
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-amber-400">
@@ -96,29 +100,20 @@ export default function Home() {
               <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
                 Bridging the gap<br />
                 <em>between discovery</em><br />
-                <em>and care</em>
+                <em>and impact</em>
               </h2>
-              <p className="text-gray-300 leading-relaxed mb-6">
+              <p className="text-gray-300 leading-relaxed mb-8">
                 CIRTM is an internationally recognised centre of excellence established in October 2019. We bring
-                together a critical mass of outstanding basic and clinical researchers to confront today&apos;s most
-                pressing global health challenges.
+                together a critical mass of outstanding basic and clinical researchers to address global health
+                challenges shaped by inflammation, immunity and disease.
               </p>
-              <blockquote className="border-l-2 border-teal pl-5 mb-8">
-                <p className="text-gray-300 text-sm leading-relaxed italic mb-2">
-                  &ldquo;To improve patient outcomes through cutting-edge science and to foster interdisciplinary
-                  research, while providing an outstanding environment for research training.&rdquo;
-                </p>
-                <cite className="text-xs font-semibold uppercase tracking-widest text-teal not-italic">
-                  CIRTM Mission Statement
-                </cite>
-              </blockquote>
               <div className="flex flex-wrap gap-4">
-                <Link href="/about" className="btn-primary">Our Story →</Link>
+                <Link href="/about" className="btn-primary">About →</Link>
                 <Link
                   href="/people"
                   className="inline-flex items-center gap-2 border border-white/30 text-white px-5 py-2.5 rounded-lg font-medium text-sm hover:bg-white/10 transition-colors"
                 >
-                  Meet the Team
+                  Members
                 </Link>
               </div>
             </div>
@@ -137,19 +132,19 @@ export default function Home() {
                   <h3 className="text-white font-bold text-xl mb-1">Prof. Felicity N. E. Gavins</h3>
                   <p className="text-gray-400 text-sm mb-4">Professor of Pharmacology and Royal Society Wolfson Fellow</p>
                   <p className="hidden sm:block text-gray-300 text-sm leading-relaxed">
-                    Prof. Gavins leads CIRTM&apos;s mission to unite outstanding basic and clinical researchers in
-                    confronting today&apos;s most pressing global health challenges through internationally recognised,
-                    cutting-edge science.
+                    Prof. Gavins leads CIRTM&apos;s mission to unite outstanding basic and clinical researchers, advancing
+                    internationally recognised discovery science, translational innovation and interdisciplinary
+                    collaboration.
                   </p>
                 </div>
               </div>
               <p className="sm:hidden text-gray-300 text-sm leading-relaxed px-8 pb-6">
-                Prof. Gavins leads CIRTM&apos;s mission to unite outstanding basic and clinical researchers in
-                confronting today&apos;s most pressing global health challenges through internationally recognised,
-                cutting-edge science.
+                Prof. Gavins leads CIRTM&apos;s mission to unite outstanding basic and clinical researchers, advancing
+                internationally recognised discovery science, translational innovation and interdisciplinary
+                collaboration.
               </p>
               <div className="px-8 pb-6 pt-0 border-t border-white/10 text-sm text-gray-400 mt-0 pt-4">
-                <div className="pt-4">All enquiries: Prof. Felicity Gavins</div>
+                <div className="pt-4">All enquiries: <Link href="/people/felicity-gavins" className="text-teal hover:underline">Prof. Felicity Gavins</Link></div>
               </div>
             </div>
           </div>
