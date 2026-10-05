@@ -7,31 +7,22 @@ type NavChild = { label: string; href: string };
 type NavLink = { label: string; href?: string; children?: NavChild[] };
 
 const navLinks: NavLink[] = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "People", href: "/people" },
+  { label: "Our members", href: "/people" },
   {
     label: "Research",
     children: [
       { label: "Research Areas", href: "/research" },
       { label: "Projects", href: "/projects" },
       { label: "Expertise", href: "/expertise" },
-      { label: "Facilities", href: "/facilities" },
-    ],
-  },
-  {
-    label: "Innovation",
-    children: [
       { label: "Impact Case Studies", href: "/innovation/impact" },
       { label: "Industry Partners", href: "/innovation/industry" },
     ],
   },
-  {
-    label: "Education",
-    children: [
-      { label: "Training & Education", href: "/education" },
-      { label: "Seminar Series", href: "/seminars" },
-    ],
-  },
+  { label: "Education & Training", href: "/education" },
+  { label: "News & Events", href: "/seminars" },
+  { label: "Facilities", href: "/facilities" },
   { label: "Contact", href: "/contact" },
 ];
 
