@@ -36,7 +36,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" aria-label="CIRTM home" className="flex items-center gap-3">
-            <Image src="/CIRTM.png" alt="CIRTM logo" width={80} height={80} />
+            <Image src="/CIRTM-alt.png" alt="CIRTM logo" width={80} height={64} priority />
             {/* Text logo — swap in by hiding Image above and removing hidden below */}
             <span
               className="hidden text-2xl font-bold text-navy"
