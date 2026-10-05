@@ -186,7 +186,7 @@ export default function Home() {
       </section>
 
       {/* Strategic Objectives */}
-      <section className="py-20 bg-white border-t border-gray-100">
+      <section className="py-20" style={{ backgroundColor: "#F8F7F5" }}>
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
@@ -198,9 +198,10 @@ export default function Home() {
                   Strategic Objectives
                 </span>
               </div>
-              <h2 className="text-4xl sm:text-5xl font-bold text-navy leading-tight mb-6">
-                What we{" "}
-                <em style={{ fontFamily: "Georgia, serif" }}>set out<br />to achieve</em>
+              <h2 className="text-5xl sm:text-6xl text-navy leading-tight mb-6" style={{ fontFamily: "Georgia, serif" }}>
+                What we<br />
+                <em>set out</em><br />
+                <em>to achieve</em>
               </h2>
               <p className="text-gray-500 leading-relaxed mb-8 max-w-sm">
                 Four strategic objectives guide every research programme, partnership, and initiative we
@@ -208,7 +209,7 @@ export default function Home() {
               </p>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium text-sm text-white transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-widest text-white shadow-sm transition-opacity hover:opacity-90"
                 style={{ backgroundColor: "#B91C1C" }}
               >
                 Partner with CIRTM
@@ -216,7 +217,7 @@ export default function Home() {
             </div>
 
             {/* Right — numbered objectives */}
-            <div className="divide-y divide-gray-100">
+            <div className="divide-y divide-gray-200 border-y border-gray-200">
               {[
                 {
                   n: "01",
@@ -240,7 +241,7 @@ export default function Home() {
                 },
               ].map((obj) => (
                 <div key={obj.n} className="py-7 flex gap-8 items-start">
-                  <span className="text-3xl font-bold flex-shrink-0 w-10" style={{ color: "#B91C1C" }}>
+                  <span className="text-4xl flex-shrink-0 w-12 leading-none" style={{ color: "#B91C1C", fontFamily: "Georgia, serif" }}>
                     {obj.n}
                   </span>
                   <div>
@@ -251,6 +252,29 @@ export default function Home() {
               ))}
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Funders */}
+      <section className="py-16 bg-white">
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-sm font-semibold uppercase tracking-widest mb-10" style={{ color: "#6B7A99" }}>
+            Funding Partners
+          </h2>
+          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6">
+            {funders.map((funder) => (
+              <Image
+                key={funder.slug}
+                src={funder.logoUrl}
+                alt={funder.name}
+                width={120}
+                height={50}
+                className="object-contain opacity-60 hover:opacity-100 transition-opacity"
+                style={{ maxHeight: "50px", width: "auto" }}
+                unoptimized
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -479,29 +503,6 @@ export default function Home() {
                 Professor Arturo Sala explains his research with the Oracle Cancer Trust.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Funders */}
-      <section className="py-16 border-t border-gray-100" style={{ backgroundColor: "#F8F9FC" }}>
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-sm font-semibold uppercase tracking-widest mb-10" style={{ color: "#6B7A99" }}>
-            Funding Partners
-          </h2>
-          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6">
-            {funders.map((funder) => (
-              <Image
-                key={funder.slug}
-                src={funder.logoUrl}
-                alt={funder.name}
-                width={120}
-                height={50}
-                className="object-contain opacity-60 hover:opacity-100 transition-opacity"
-                style={{ maxHeight: "50px", width: "auto" }}
-                unoptimized
-              />
-            ))}
           </div>
         </div>
       </section>
