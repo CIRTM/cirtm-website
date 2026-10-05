@@ -559,45 +559,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PhD Opportunities */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h2 className="section-heading">PhD Opportunities</h2>
-            <p className="section-subheading">Join our postgraduate research community.</p>
-          </div>
-          <div className="rounded-2xl border border-gray-100 p-8 flex flex-col" style={{ backgroundColor: "#F8F9FC" }}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <span className="tag mb-4 inline-block">Postgraduate Research</span>
-                <h3 className="text-xl font-bold text-navy mb-4">Postgraduate Research Opportunities</h3>
-                <p className="text-base leading-relaxed" style={{ color: "#6B7A99" }}>
-                  Join a vibrant research community at the cutting edge of biomedical science. Browse PhD
-                  opportunities in Biomedical Sciences at Brunel University of London and train alongside
-                  internationally outstanding researchers.
-                </p>
-              </div>
-              <ul className="space-y-3">
-                {[
-                  "World-class supervisory teams",
-                  "State-of-the-art laboratory facilities",
-                  "Strong links with clinical and industry partners",
-                  "Regular seminar and training programme",
-                ].map((point) => (
-                  <li key={point} className="flex items-start gap-3 text-sm" style={{ color: "#6B7A99" }}>
-                    <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-teal/10 text-teal flex items-center justify-center text-xs font-bold">✓</span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-primary">Enquire about a PhD</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Contact CTA */}
       <section className="py-24 text-center" style={{ background: "linear-gradient(to right, #C0392B 0%, #922B21 60%, #7B1111 100%)" }}>
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
