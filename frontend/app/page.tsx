@@ -401,58 +401,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Research Projects */}
-      <section className="py-20" style={{ backgroundColor: "#F8F9FC" }}>
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between gap-4 mb-10">
-            <div>
-              <h2 className="section-heading">Research Projects</h2>
-              <p className="section-subheading">
-                Investigator-led projects at the frontiers of biomedical science.
-              </p>
-            </div>
-            <Link href="/projects" className="btn-outline flex-shrink-0 text-sm">Browse all →</Link>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr">
-            {ongoingProjects.map((project) => {
-              const areas = researchAreas.filter((a) => project.researchAreaSlugs.includes(a.slug));
-              return (
-                <Link
-                  key={project.slug}
-                  href={`/projects/${project.slug}`}
-                  className="card border border-gray-100 group hover:border-teal/30 hover:shadow-lg overflow-hidden flex flex-col h-full"
-                >
-                  <div className="relative w-full aspect-[16/10] bg-gray-100 overflow-hidden flex-shrink-0">
-                    {project.imageUrl && (
-                      <Image
-                        src={project.imageUrl}
-                        alt={project.title}
-                        fill
-                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        unoptimized
-                      />
-                    )}
-                  </div>
-                  <div className="p-4 flex-1 flex flex-col gap-2">
-                    <div className="flex flex-wrap gap-1">
-                      {areas.map((a) => (
-                        <span key={a.slug} className="text-[10px] font-medium rounded-full px-2 py-0.5 bg-teal/10 text-teal">
-                          {a.tag}
-                        </span>
-                      ))}
-                    </div>
-                    <h3 className="font-semibold text-navy text-sm leading-snug group-hover:text-teal transition-colors">
-                      {project.title}
-                    </h3>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Core Research Areas */}
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -508,6 +456,109 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Research Projects */}
+      <section className="py-20" style={{ backgroundColor: "#F8F7F5" }}>
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between gap-4 mb-10">
+            <div>
+              <h2 className="section-heading">Research Projects</h2>
+              <p className="section-subheading">
+                Investigator-led projects at the frontiers of biomedical science.
+              </p>
+            </div>
+            <Link href="/projects" className="btn-outline flex-shrink-0 text-sm">Browse all →</Link>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr">
+            {ongoingProjects.map((project) => {
+              const areas = researchAreas.filter((a) => project.researchAreaSlugs.includes(a.slug));
+              return (
+                <Link
+                  key={project.slug}
+                  href={`/projects/${project.slug}`}
+                  className="card border border-gray-100 group hover:border-teal/30 hover:shadow-lg overflow-hidden flex flex-col h-full"
+                >
+                  <div className="relative w-full aspect-[16/10] bg-gray-100 overflow-hidden flex-shrink-0">
+                    {project.imageUrl && (
+                      <Image
+                        src={project.imageUrl}
+                        alt={project.title}
+                        fill
+                        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        unoptimized
+                      />
+                    )}
+                  </div>
+                  <div className="p-4 flex-1 flex flex-col gap-2">
+                    <div className="flex flex-wrap gap-1">
+                      {areas.map((a) => (
+                        <span key={a.slug} className="text-[10px] font-medium rounded-full px-2 py-0.5 bg-teal/10 text-teal">
+                          {a.tag}
+                        </span>
+                      ))}
+                    </div>
+                    <h3 className="font-semibold text-navy text-sm leading-snug group-hover:text-teal transition-colors">
+                      {project.title}
+                    </h3>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Research videos */}
+      <section className="py-20" style={{ backgroundColor: "#0B1B3A" }}>
+        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="mb-6 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-widest text-amber-400">
+              <span className="inline-block w-8 h-px bg-amber-400" />
+              Research in focus
+              <span className="inline-block w-8 h-px bg-amber-400" />
+            </p>
+            <h2 className="text-4xl sm:text-5xl text-white mb-4" style={{ fontFamily: "Georgia, serif" }}>
+              Watch our <em>research videos</em>
+            </h2>
+            <p className="text-gray-300 leading-relaxed max-w-2xl mx-auto">
+              Highlights from CIRTM members explaining their work to wider audiences.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 shadow-lg">
+                <iframe
+                  src="https://www.youtube.com/embed/_EAKsY-bgBE"
+                  title="Reducing inflammation in the brain after stroke"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <p className="mt-4 text-lg text-white" style={{ fontFamily: "Georgia, serif" }}>Reducing inflammation in the brain after stroke</p>
+              <p className="mt-1 text-sm text-gray-400">
+                Professor Felicity Gavins explains her stroke research in The Royal Society video.
+              </p>
+            </div>
+            <div>
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 shadow-lg">
+                <iframe
+                  src="https://www.youtube.com/embed/_YlAZX7pCrg"
+                  title="Understanding adenoid cystic carcinoma"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <p className="mt-4 text-lg text-white" style={{ fontFamily: "Georgia, serif" }}>Understanding adenoid cystic carcinoma</p>
+              <p className="mt-1 text-sm text-gray-400">
+                Professor Arturo Sala explains his research with the Oracle Cancer Trust.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PhD Opportunities */}
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -542,50 +593,6 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap gap-4">
               <Link href="/contact" className="btn-primary">Enquire about a PhD</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Research videos */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="section-heading">Watch our research videos</h2>
-            <p className="section-subheading max-w-2xl mx-auto">
-              Highlights from CIRTM members explaining their work to wider audiences.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-100">
-                <iframe
-                  src="https://www.youtube.com/embed/_EAKsY-bgBE"
-                  title="Reducing inflammation in the brain after stroke"
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-              <p className="mt-3 text-sm font-semibold text-navy">Reducing inflammation in the brain after stroke</p>
-              <p className="text-xs text-gray-500">
-                Professor Felicity Gavins explains her stroke research in The Royal Society video.
-              </p>
-            </div>
-            <div>
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-100">
-                <iframe
-                  src="https://www.youtube.com/embed/_YlAZX7pCrg"
-                  title="Understanding adenoid cystic carcinoma"
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-              <p className="mt-3 text-sm font-semibold text-navy">Understanding adenoid cystic carcinoma</p>
-              <p className="text-xs text-gray-500">
-                Professor Arturo Sala explains his research with the Oracle Cancer Trust.
-              </p>
             </div>
           </div>
         </div>
