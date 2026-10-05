@@ -3,7 +3,6 @@ import Image from "next/image";
 import { researchAreas } from "@/lib/content/research-areas";
 import { projects } from "@/lib/content/projects";
 import { funders } from "@/lib/content/funders";
-import { people } from "@/lib/content/people";
 
 export default function Home() {
   const ongoingProjects = projects
@@ -72,7 +71,7 @@ export default function Home() {
             {[
               { value: "16", label: "Research Projects" },
               { value: "15", label: "Principal Investigators" },
-              { value: String(people.reduce((n, p) => n + (p.publications?.length ?? 0), 0)) + "+", label: "Publications" },
+              { value: "1000+", label: "Peer-reviewed Publications" },
               { value: "4", label: "Core Research Areas" },
               { value: "2019", label: "Year Established" },
             ].map((stat) => (
