@@ -76,12 +76,11 @@ export default function Home() {
       {/* Stats bar */}
       <div className="relative bg-teal">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { value: "16", label: "Research Projects" },
               { value: "15", label: "Principal Investigators" },
               { value: "1000+", label: "Peer-reviewed Publications" },
-              { value: "4", label: "Core Research Areas" },
               { value: "2019", label: "Year Established" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
