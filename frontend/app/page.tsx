@@ -585,6 +585,8 @@ export default function Home() {
                   <address className="not-italic leading-relaxed">
                     <span className="font-semibold">Centre for Inflammation Research &amp; Translational Medicine</span>
                     <br />
+                    Division of Biosciences, Heinz Wolff Building
+                    <br />
                     Brunel University of London
                     <br />
                     Kingston Lane, Uxbridge
