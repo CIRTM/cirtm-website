@@ -12,7 +12,7 @@ export default function ImpactCaseStudiesPage() {
 
   return (
     <>
-      <section className="bg-navy py-20">
+      <section className="py-20" style={{ backgroundColor: "#0B1B3A" }}>
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="tag mb-4 inline-block" style={{ backgroundColor: "rgba(0,169,157,0.2)", color: "#1AC9BF" }}>
             Innovation

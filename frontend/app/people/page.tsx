@@ -3,9 +3,10 @@ import Link from "next/link";
 import { people, type Person } from "@/lib/content/people";
 import { partners } from "@/lib/content/partners";
 import { getResearchArea } from "@/lib/content/research-areas";
+import { FadeBanner } from "@/components/FadeBanner";
 
 export default function PeoplePage() {
-  const sorted = [...people].sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999));
+  const sorted = people.filter((p) => !p.hidden).sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999));
   const pis = sorted.filter((p) => p.memberType === "pi");
   const doctoral = sorted.filter((p) => p.memberType === "doctoral-researcher");
   const associateMembers = sorted.filter((p) => p.memberType === "associate-member");
@@ -13,17 +14,7 @@ export default function PeoplePage() {
 
   return (
     <>
-      <section className="relative bg-navy py-20 overflow-hidden">
-        <Image
-          src="/images/about/heinz-wolff-building.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-bottom"
-          unoptimized
-        />
-        <div className="absolute inset-0 bg-navy/85" />
+      <FadeBanner image="/images/about/heinz-wolff-building.jpg" objectPosition="center bottom">
         <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="tag mb-4 inline-block" style={{ backgroundColor: "rgba(0,169,157,0.2)", color: "#1AC9BF" }}>
             Team
@@ -34,7 +25,7 @@ export default function PeoplePage() {
             Collaborative Partners, and Professional Services Staff.
           </p>
         </div>
-      </section>
+      </FadeBanner>
 
       {pis.length > 0 && (
         <section className="py-16 bg-white">

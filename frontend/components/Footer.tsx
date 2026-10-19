@@ -4,13 +4,13 @@ import { researchAreas } from "@/lib/content/research-areas";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white">
+    <footer className="text-white" style={{ backgroundColor: "#0B1B3A" }}>
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <Image src="/CIRTM.png" alt="CIRTM logo" width={36} height={36} className="flex-shrink-0 brightness-0 invert" />
+              <Image src="/CIRTM-blue.png" alt="CIRTM logo" width={36} height={36} className="flex-shrink-0 brightness-0 invert" />
               <div>
                 <div className="font-bold text-white text-sm">CIRTM</div>
                 <div className="text-[11px] text-gray-400">Brunel University of London</div>

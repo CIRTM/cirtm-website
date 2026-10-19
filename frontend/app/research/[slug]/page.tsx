@@ -6,6 +6,7 @@ import { researchAreas, getResearchArea } from "@/lib/content/research-areas";
 import { projects } from "@/lib/content/projects";
 import { getPeopleForArea, getPublicationsForArea } from "@/lib/content/relationships";
 import { PublicationEntry } from "@/components/PublicationEntry";
+import { FadeBanner } from "@/components/FadeBanner";
 
 export function generateStaticParams() {
   return researchAreas.map((a) => ({ slug: a.slug }));
@@ -29,17 +30,7 @@ export default async function ResearchAreaPage({ params }: { params: Promise<{ s
 
   return (
     <>
-      <section className="relative bg-navy py-20 overflow-hidden">
-        <Image
-          src={area.heroImage ?? "/images/research-areas/research-area-hero.png"}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-          unoptimized
-        />
-        <div className="absolute inset-0 bg-navy/85" />
+      <FadeBanner image={area.heroImage ?? "/images/research-areas/research-area-hero.png"}>
         <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/research" className="text-teal text-sm hover:underline mb-6 block">← All Research Areas</Link>
           <span className="tag mb-4 inline-block" style={{ backgroundColor: "rgba(0,169,157,0.2)", color: "#1AC9BF" }}>
@@ -48,7 +39,7 @@ export default async function ResearchAreaPage({ params }: { params: Promise<{ s
           <h1 className="text-4xl font-bold text-white mb-4">{area.title}</h1>
           <p className="text-gray-300 text-lg max-w-2xl">{area.description}</p>
         </div>
-      </section>
+      </FadeBanner>
 
       <section className="py-16 bg-white">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">

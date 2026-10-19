@@ -43,6 +43,7 @@ export type Person = {
   publications?: PersonPublication[];
   researchAreaSlugs?: string[];
   order?: number;
+  hidden?: boolean;
 };
 
 export const people: Person[] = [
@@ -299,12 +300,13 @@ Her aim is to enable all students to have an excellent education and student exp
 ## Responsibilities
 
 - Pro Vice Chancellor — Education, Brunel University of London`,
-    order: 13,
+    order: 10,
   },
   {
     slug: "su-ling-li",
     name: "Dr Su-ling Li",
     memberType: "pi",
+    hidden: true,
     role: "Honorary Reader",
     externalLinks: [
       { label: "LinkedIn", url: "https://www.linkedin.com/in/suling-li-73258728/" },
@@ -438,13 +440,14 @@ PhD Students supervised or currently Supervising
 
 Nima Taefehshokr (currently under my supervising ) – Regulation of Egr2/3 gene expression and its role in tumor environment (1st supervision)`,
     },
-    order: 6,
+    order: 16,
     publications: suLingLiPublications,
   },
   {
     slug: "ronan-mccarthy",
     name: "Prof. Ronan McCarthy",
     memberType: "pi",
+    hidden: true,
     role: "Honorary Professor",
     externalLinks: [
       { label: "ORCID iD", url: "https://orcid.org/0000-0002-7480-6352" },
@@ -517,7 +520,7 @@ Supermarket sweeteners may be key in fight against antibiotic-resistant bacteria
 
 - PhD in Engineering Bacteria for Enhanced Degradation of Food-Associated Plastic Waste - BBSRC FoodBio DTP`,
     },
-    order: 7,
+    order: 17,
     publications: ronanMccarthyPublications,
   },
   {
@@ -773,7 +776,7 @@ Jiang, X., Anasanti, M., Drenos, F., Blakemore, A., & Pazoki, R. (2022). Urinary
 
 Jiang, X., Gao, H., Elliott, P., & Pazoki, R. (2022). Percentage of explained variance in alcohol consumption by genetic risk score in the UK Biobank. In EUROPEAN JOURNAL OF HUMAN GENETICS Vol. 30 (pp. 528-529). Online. doi:10.1038/s41431-021-01026-1`,
     },
-    order: 8,
+    order: 11,
     publications: rahaPazokiPublications,
   },
   {
@@ -920,7 +923,7 @@ Innate immunity in bovine tuberculosis`,
 
 - The role of PE/PPE proteins in tuberculosis`,
     },
-    order: 12,
+    order: 14,
     publications: anthonyTsolakiPublications,
   },
   {
@@ -982,7 +985,7 @@ Metabolic reprogramming for improved BCG vaccine efficacy`,
 
 - Medical Immunology (BB3720) Level: Third year Date: February 2020`,
     },
-    order: 11,
+    order: 5,
     publications: stevenSmithPublications,
   },
   {
@@ -1052,7 +1055,7 @@ gene and cell therapy
 
 - Executive Dean’s PhD Studentship in the Development of a cellular model of rob(15;21) translocation for acute lymphoblastic leukaemia`,
     },
-    order: 10,
+    order: 2,
     publications: arturoSalaPublications,
   },
   {
@@ -1111,7 +1114,7 @@ BB2716 Medical Microbiology (Second Year)`,
 
 - PhD in Antimicrobial Resistant Genes (ARG) and Pollutants – from Seabed to Seafood Platter - BBSRC FoodBio DTP`,
     },
-    order: 4,
+    order: 15,
     publications: ashleyHouldenPublications,
   },
   {
@@ -1202,13 +1205,14 @@ Dr Keith Allen-Redpath’s research focuses on the molecular mechanisms that dri
 
 - Fellow of the Higher Education Academy, ( Advance HE )`,
     },
-    order: 9,
+    order: 12,
     publications: keithRedpathPublications,
   },
   {
     slug: "sam-willcocks",
     name: "Dr Sam Willcocks",
     memberType: "pi",
+    hidden: true,
     role: "Lecturer in Biosciences (Microbiology & Infectious Diseases)",
     externalLinks: [
       { label: "ORCID iD", url: "https://orcid.org/0000-0002-0756-4859" },
@@ -1250,7 +1254,7 @@ My research interests are focussed on:
 
 - Modelling the role of the host immune system on drug-target interactions in vivo`,
     },
-    order: 14,
+    order: 18,
     publications: samWillcocksPublications,
   },
   {
@@ -1371,7 +1375,7 @@ Dr Cerutti has a strong commitment to science outreach, particularly to young pe
 - British Heart Foundation (BHF)-funded non-clinical PhD Studentship in cardiovascular and vascular biology
 - MSCA Postdoctoral Fellowships — prospective applicants are welcome to contact Dr Cerutti directly`,
     },
-    order: 2,
+    order: 8,
     publications: camillaCeruttiPublications,
   },
   {
@@ -1479,13 +1483,14 @@ We welcome qualified applicants to explore the following funding schemes to join
 
 Please contact Dr Lau well in advance of the relevant deadlines to discuss potential projects and develop a competitive proposal. For all enquiries, please include a brief CV and short statement of research interests.`,
     },
-    order: 5,
+    order: 6,
     publications: doreenLauPublications,
   },
   {
     slug: "veena-kumari",
     name: "Prof. Veena Kumari",
     memberType: "pi",
+    hidden: true,
     role: "Professor of Psychology",
     externalLinks: [
       { label: "ORCID iD", url: "https://orcid.org/0000-0002-9635-5505" },
@@ -1864,16 +1869,37 @@ Topic: An Experimental and Neuroimaging Study into the Effects of Nicotine on Pr
 
 PhD (City University, London, and Institute of Psychiatry, London) - awarded 2002.`,
     },
-    order: 15,
+    order: 19,
     publications: veenaKumariPublications,
   },
   {
     slug: "cristiano-scotta",
     name: "Dr Cristiano Scottà",
-    memberType: "associate-member",
-    photoUrl: "/images/placeholdersilhouette.webp",
+    memberType: "pi",
+    photoUrl: "/images/people/cristiano-scotta.jpg",
     researchAreaSlugs: ["inflammation-immunity-infection"],
-    order: 51,
+    order: 4,
+  },
+  {
+    slug: "sook-lee",
+    name: "Dr Sook Lee",
+    memberType: "pi",
+    photoUrl: "/images/people/sook-lee.jpg",
+    order: 7,
+  },
+  {
+    slug: "ayca-sayi-yazgan",
+    name: "Dr Ayca Sayi Yazgan",
+    memberType: "pi",
+    photoUrl: "/images/people/ayca-sayi-yazgan.jpg",
+    order: 9,
+  },
+  {
+    slug: "paul-hellewell",
+    name: "Prof. Paul Hellewell",
+    memberType: "pi",
+    photoUrl: "/images/people/paul-hellewell.jpg",
+    order: 13,
   },
   {
     slug: "enrique-castro-sanchez",
@@ -1892,49 +1918,24 @@ PhD (City University, London, and Institute of Psychiatry, London) - awarded 200
     order: 53,
   },
   // Doctoral Researchers and Fellows
-  { slug: "nazar-beirag", name: "Nazar Beirag",
+  { slug: "thomas-williams", name: "Thomas Williams",
     photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 100 },
-  {
-    slug: "zabreen-busharat",
-    name: "Zabreen Busharat",
-    memberType: "doctoral-researcher",
-    photoUrl: "/images/placeholdersilhouette.webp",
-    order: 101,
-  },
-  { slug: "ylenia-ciciro", name: "Ylenia Cicirò",
+  { slug: "amina-ali", name: "Amina Ali",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 101 },
+  { slug: "magda-malliari", name: "Magda Malliari",
     photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 102 },
-  {
-    slug: "christopher-dsouza",
-    name: "Christopher D'Souza",
-    memberType: "doctoral-researcher",
-    photoUrl: "/images/placeholdersilhouette.webp",
-    order: 103,
-  },
-  { slug: "karanjit-das", name: "Karanjit Das",
+  { slug: "emma-cwilinski", name: "Emma Cwilinski",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 103 },
+  { slug: "sajika-sritharan", name: "Sajika Sritharan",
     photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 104 },
-  { slug: "christiana-doulami", name: "Christiana Doulami",
+  { slug: "angelle-dodd", name: "Angelle Dodd",
     photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 105 },
-  { slug: "fred-jonathan-edzeamey", name: "Fred Jonathan Edzeamey",
+  { slug: "margot-rame", name: "Margot Rame",
     photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 106 },
-  {
-    slug: "kavita-gadar",
-    name: "Kavita Gadar",
-    memberType: "doctoral-researcher",
-    photoUrl: "/images/placeholdersilhouette.webp",
-    order: 107,
-  },
-  { slug: "angila-gurung", name: "Angila Gurung",
+  { slug: "savannah-thompson", name: "Savannah Thompson",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 107 },
+  { slug: "ekuwa-adade", name: "Ekuwa Adade",
     photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 108 },
-  { slug: "luxshieha-hareymaaran", name: "Luxshieha Hareymaaran",
-    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 109 },
-  { slug: "periklis-katopodis", name: "Periklis Katopodis",
-    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 110 },
-  { slug: "gideon-maccarthy", name: "Gideon MacCarthy",
-    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 111 },
-  { slug: "ruchira-mann", name: "Ruchira Mann",
-    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 112 },
-  { slug: "denise-ragusa", name: "Denise Ragusa",
-    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 113 },
 
 ];
 

@@ -26,7 +26,7 @@ export const researchAreas: ResearchArea[] = [
     image: { url: `${AREA_IMG}/inflammation.jpg` },
     heroImage: `${AREA_IMG}/inflammation-hero.png`,
     description:
-      "Investigating the cellular and molecular mechanisms behind inflammatory and immune responses — uncovering how infections initiate, sustain, and resolve disease.",
+      "Investigating the cellular and molecular mechanisms behind inflammatory and immune responses, uncovering how infections initiate, sustain and resolve disease.",
     body: `## Inflammation
 
 Inflammation is the body's natural biological immune response that can be triggered by a variety of factors, including pathogens, damaged cells and toxic compounds. These factors can induce acute or chronic immune responses in organ systems throughout the body such as the heart, liver, brain and intestinal tracts, leading to tissue damage or disease.
@@ -45,7 +45,7 @@ Researchers at CIRTM study these processes to understand how to boost our immune
   },
   {
     slug: "vascular-cardiovascular-sciences",
-    title: "Vascular and Cardiovascular Sciences",
+    title: "Vascular & Cardiovascular Sciences",
     tag: "Cardiovascular",
     icon: "❤️",
     color: "border-red-100",
@@ -54,7 +54,7 @@ Researchers at CIRTM study these processes to understand how to boost our immune
     heroImage: `${AREA_IMG}/cardiovascular-diseases-hero.jpg`,
     description:
       "Studying the biology of blood vessels and the heart to develop novel diagnostic tools and therapeutic strategies for one of the world's leading causes of death.",
-    body: `## Vascular and Cardiovascular Sciences
+    body: `## Vascular & Cardiovascular Sciences
 
 Cardiovascular disease is a general term for conditions affecting the heart or blood vessels. This includes conditions that are inherited from birth or those that develop throughout the lifetime of an adult, such as coronary heart disease, angina, heart attack, hypertension, stroke and vascular dementia. In the UK alone, there are around 7.6 million people living with heart and circulatory diseases and cardiovascular diseases are responsible for 25% of all UK deaths.
 
@@ -71,7 +71,7 @@ In the CIRTM we aim to better understand, diagnose and treat heart and circulato
     heroImage: `${AREA_IMG}/cancer-hero.png`,
     academicSlugs: ["arturo-sala", "camilla-cerutti", "doreen-lau", "felicity-gavins", "su-ling-li"],
     description:
-      "Advancing the understanding of tumour biology, immunotherapy, and precision oncology — with the shared goal of improving outcomes for cancer patients worldwide.",
+      "Advancing the understanding of tumour biology, immunotherapy and precision oncology, with the shared goal of improving outcomes for cancer patients worldwide.",
     body: `## Cancer Biology
 
 Cancer is a leading cause of premature death in every country in the world ([Cancer Atlas](https://canceratlas.cancer.org/)) and it is estimated that one in three people will be affected by the disease in the UK.
@@ -136,7 +136,7 @@ Cancer immunology is the study of how the immune system interacts with cancer. N
     image: { url: `${AREA_IMG}/drug-repurposing.jpg` },
     heroImage: `${AREA_IMG}/drug-repurposing-hero.png`,
     description:
-      "Bridging basic science and clinical application — designing, validating, and delivering next-generation therapies and diagnostics that reach patients faster.",
+      "Bridging basic science and clinical application, designing, validating and delivering next-generation therapies and diagnostics.",
     body: `## Overview
 
 Translational medicine at CIRTM bridges the gap between fundamental scientific discovery and clinical impact. Through drug repurposing, antimicrobial resistance research, and microbiome science, we accelerate the delivery of novel therapeutics and diagnostics to patients.

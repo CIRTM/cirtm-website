@@ -8,9 +8,28 @@ export type Seminar = {
   registrationLink?: string;
   recordingLink?: string;
   cancelled?: boolean;
+  type?: "Seminar" | "Conference" | "Workshop";
+  sample?: boolean;
 };
 
 export const seminars: Seminar[] = [
+  {
+    slug: "sample-seminar-2026-11",
+    title: "Resolving inflammation: pro-resolving mediators as therapeutic targets",
+    date: "2026-11-19",
+    speaker: "Speaker to be confirmed",
+    location: "Heinz Wolff Building, Brunel University of London, 13:00",
+    type: "Seminar",
+    sample: true,
+  },
+  {
+    slug: "sample-symposium-2027-01",
+    title: "CIRTM Annual Symposium 2027",
+    date: "2027-01-28",
+    location: "Brunel University of London",
+    type: "Conference",
+    sample: true,
+  },
   {
     slug: "immune-biomarkers-tb-2020",
     title: "Immune biomarkers of vaccine-induced protection against tuberculosis",

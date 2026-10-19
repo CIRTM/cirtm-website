@@ -4,7 +4,7 @@ import { publications, type Publication } from "./publications";
 import { researchAreas, type ResearchArea } from "./research-areas";
 
 export function getPeopleForArea(areaSlug: string): Person[] {
-  return people.filter((p) => p.researchAreaSlugs?.includes(areaSlug));
+  return people.filter((p) => !p.hidden && p.researchAreaSlugs?.includes(areaSlug));
 }
 
 export function getProjectsForArea(areaSlug: string): Project[] {

@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
+
+// Hidden at the client's request (slide 28). Set to false to bring the page back.
+const HIDDEN = true;
 
 export default function ExpertisePage() {
+  if (HIDDEN) notFound();
   const expertiseAreas = [
     "Thrombo-inflammation and its resolution following ischaemic reperfusion injury in cardiovascular and cerebrovascular diseases",
     "Pharmacology and drug safety studies (e.g. non-steroidal anti-inflammatory drugs) in zebrafish; adverse outcome pathway development to predict in vivo drug toxicity",

@@ -55,7 +55,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   return (
     <>
-      <section className="bg-navy py-16">
+      <section className="py-16" style={{ backgroundColor: "#0B1B3A" }}>
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/projects" className="text-teal text-sm hover:underline mb-6 inline-block">← All Research Projects</Link>
           <div className="flex flex-wrap items-center gap-3 mb-4">

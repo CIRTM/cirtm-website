@@ -1,65 +1,59 @@
 import Link from "next/link";
 import Image from "next/image";
 import { researchAreas } from "@/lib/content/research-areas";
+import { FadeBanner } from "@/components/FadeBanner";
+
+const NAVY = "#0B1B3A";
+const RED = "#B91C1C";
+const SERIF = { fontFamily: "Georgia, serif" };
 
 export default function ResearchPage() {
   return (
     <>
-      <section className="relative bg-navy py-20 overflow-hidden">
-        <Image
-          src="/images/research-areas/research-area-hero.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-          unoptimized
-        />
-        <div className="absolute inset-0 bg-navy/85" />
+      <FadeBanner image="/images/our-approach/main-header.jpg" className="py-24" objectPosition="right">
         <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="tag mb-4 inline-block" style={{ backgroundColor: "rgba(0,169,157,0.2)", color: "#1AC9BF" }}>
+          <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-amber-400">
+            <span className="inline-block w-8 h-px bg-amber-400" />
             Research
-          </span>
-          <h1 className="text-4xl font-bold text-white mb-4">Research Areas</h1>
+          </p>
+          <h1 className="text-5xl sm:text-6xl text-white mb-6" style={SERIF}>Research Areas</h1>
           <p className="text-gray-300 text-lg max-w-2xl">
-            Multidisciplinary research tackling the global health challenges that affect billions of people worldwide.
+            Multidisciplinary research tackling the global health challenges that affect millions worldwide.
           </p>
         </div>
-      </section>
+      </FadeBanner>
 
-
-      <section className="py-20" style={{ backgroundColor: "#F8F9FC" }}>
+      <section className="py-20 bg-white">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mb-12">
-            Research forms the core of the CIRTM, around which all our other activities (e.g. training,
-            teaching, clinical care and outreach) occur. Multidisciplinary research within the CIRTM is
-            investigator led and focuses on one or more of the following research areas:
+          <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mb-14">
+            Research is the core of CIRTM, around which all our other activities, training, teaching and outreach,
+            are built. Our work is investigator-led and interdisciplinary, spanning four connected research areas
+            united by a shared focus on inflammation and immunity in health and disease.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-12">
             {researchAreas.map((area) => (
-              <Link
-                key={area.slug}
-                href={`/research/${area.slug}`}
-                className={`card border ${area.color} hover:shadow-lg group overflow-hidden`}
-              >
+              <Link key={area.slug} href={`/research/${area.slug}`} className="group flex flex-col">
                 {area.image?.url && (
-                  <div className="relative w-full aspect-[16/10] bg-gray-100 overflow-hidden">
+                  <div className="relative w-full aspect-[16/10] rounded-lg bg-gray-100 overflow-hidden mb-5">
                     <Image
                       src={area.image.url}
                       alt={area.title}
                       fill
                       unoptimized
-                      sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 )}
-                <div className="p-6">
-                  <h2 className="font-semibold text-navy text-base mb-2 group-hover:text-teal transition-colors">
-                    {area.title}
-                  </h2>
-                  <p className="text-sm leading-relaxed" style={{ color: "#6B7A99" }}>{area.description}</p>
-                </div>
+                <h2 className="text-xl mb-3" style={{ ...SERIF, color: NAVY }}>{area.title}</h2>
+                <p className="text-sm leading-relaxed text-gray-600 mb-5">{area.description}</p>
+                <span
+                  className="mt-auto inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest"
+                  style={{ color: RED }}
+                >
+                  Explore research
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                </span>
               </Link>
             ))}
           </div>

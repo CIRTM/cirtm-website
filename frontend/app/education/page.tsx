@@ -1,211 +1,230 @@
+import Image from "next/image";
 import Link from "next/link";
+import { School, Users } from "lucide-react";
 import TrainingPathway from "@/components/TrainingPathway";
+import { FadeBanner } from "@/components/FadeBanner";
+
+const NAVY = "#0B1B3A";
+const RED = "#B91C1C";
+const IVORY = "#F8F7F5";
+const SERIF = { fontFamily: "Georgia, serif" };
+const PG_COURSES = "https://www.brunel.ac.uk/biomedical-sciences/postgraduate-courses";
 
 const pathway = [
   {
     level: "UG",
     label: "Undergraduate",
-    color: "bg-orange-500",
-    hex: "#F97316",
-    title: "Research Placements & Lab Experience",
+    hex: "#0F9F8F",
+    title: "Research placements & lab experience",
     description:
-      "Students from the Brunel Biosciences degree programmes carry out supervised research placements within CIRTM laboratories, gaining hands-on exposure to translational science, state-of-the-art equipment including flow cytometry, and cutting-edge advanced imaging, before they graduate.",
-    link: { label: "Placement Opportunities", href: "/contact" },
+      "Students from Biomedical Sciences, Bioengineering and related programmes carry out supervised research placements within CIRTM laboratories, gaining hands-on exposure to translational science, state-of-the-art equipment and advanced imaging, before they graduate.",
+    link: { label: "Undergraduate courses", href: "https://www.brunel.ac.uk/biomedical-sciences/undergraduate-courses" },
   },
   {
-    level: "MSC",
-    label: "Masters",
-    color: "bg-teal",
-    hex: "#00A99D",
-    title: "MSc Research Projects in Translational Medicine",
+    level: "MSc",
+    label: "Postgraduate taught",
+    hex: "#2563EB",
+    title: "MSc & MRes research projects",
     description:
-      "CIRTM researchers supervise MSc students on the Disease Mechanisms & Therapeutics and Molecular Medicine programmes, directing independent projects alongside world-class PIs and preparing graduates for doctoral research or specialist careers in the life sciences.",
-    link: { label: "MSc Programmes", href: "/contact" },
+      "CIRTM researchers supervise MSc and MRes students across Brunel's master's programmes, directing independent research projects alongside world-class PIs and preparing graduates for doctoral research or specialist roles in the life sciences.",
+    link: { label: "Postgraduate courses", href: PG_COURSES },
   },
   {
-    level: "BMS",
+    level: "MED",
     label: "Brunel Medical School",
-    color: "bg-blue-500",
-    hex: "#3B82F6",
-    title: "Translational Science at the Heart of Clinical Training",
+    hex: "#D97706",
+    title: "Translational science at the heart of clinical training",
     description:
-      "CIRTM researchers are embedded in the Brunel Medical School clinical curriculum, providing specialist teaching in inflammation, cardiovascular biology, oncology, and therapeutics. Medical students gain direct access to live translational research, connecting clinical training directly to the science that will shape tomorrow's medicine.",
-    link: { label: "Brunel Medical School", href: "https://www.brunel.ac.uk/study/medicine" },
+      "CIRTM researchers are embedded in the Brunel Medical School clinical curriculum, providing specialist training in immunology, pharmacology, therapeutics and oncology. Medical students gain access to live translational research, connecting clinical training to the science shaping tomorrow's medicine.",
+    link: { label: "Brunel Medical School", href: "https://www.brunel.ac.uk/brunel-medical-school" },
   },
   {
-    level: "PHD",
-    label: "Doctoral Research",
-    color: "bg-purple-500",
-    hex: "#A855F7",
-    title: "PhD Programme & Industry Studentships",
+    level: "PhD",
+    label: "Doctoral research",
+    hex: "#9333EA",
+    title: "PhD research & industry studentships",
     description:
-      "Our doctoral programme offers rigorous, co-supervised research within a vibrant multidisciplinary environment. Industry-funded studentships, supported by major funders including Wellcome Trust, BHF, Cancer Research UK and NIHR, deliver world-level measurement capability.",
-    link: { label: "PhD Opportunities", href: "/contact" },
+      "CIRTM researchers supervise doctoral students through Brunel's doctoral programmes, offering co-supervised research in a vibrant multidisciplinary environment. Projects are supported by funders including the BHF, Royal Society, BBSRC and industry partners.",
+    link: { label: "PhD opportunities", href: "https://www.brunel.ac.uk/biomedical-sciences/research-and-phd-programmes" },
   },
   {
     level: "PD",
-    label: "Post-Doctoral & Fellowship",
-    color: "bg-rose-500",
-    hex: "#F43F5E",
-    title: "Fellowships & Early Career Development",
+    label: "Post-doctoral & fellowship",
+    hex: RED,
+    title: "Fellowships & early career development",
     description:
-      "CIRTM supports early-career researchers through industry-backed fellowships and mentored transitional programmes, providing the environment, training and network needed to become independent research leaders.",
-    link: { label: "Fellowship Schemes", href: "/contact" },
+      "CIRTM supports early-career researchers pursuing independent fellowships, providing the mentorship, facilities and collaborative environment they need to establish themselves as research leaders.",
+    link: { label: "Fellowship schemes", href: "/contact" },
   },
 ];
 
-const modules = [
+const programmes = [
   { level: "BSc", title: "Applied Molecular & Cell Biology" },
-  { level: "BSc / PGT", title: "Pharmacology & Immunology" },
+  { level: "BSc / PhD", title: "Human Pathology & Immunology" },
   { level: "BSc", title: "Microbial Pathogenesis" },
-  { level: "PGT", title: "Paediatric Immunology" },
-  { level: "BSc / PGT", title: "Molecular Pharmacology & Toxicology" },
-  { level: "BSc", title: "Pharmacology & Medicine" },
+  { level: "MSc", title: "Medical Immunology" },
+  { level: "BSc / PhD", title: "Molecular Pharmacology & Toxicology" },
+  { level: "MSc", title: "Molecular Medicine" },
 ];
+
+function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+  const color = light ? "#FBBF24" : RED;
+  return (
+    <div className="flex items-center gap-3 mb-5">
+      <span className="block w-8 h-px" style={{ backgroundColor: color }} />
+      <span className="text-xs font-semibold uppercase tracking-widest" style={{ color }}>{children}</span>
+    </div>
+  );
+}
 
 export default function EducationPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-navy py-20">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="tag mb-4 inline-block" style={{ backgroundColor: "rgba(0,169,157,0.2)", color: "#1AC9BF" }}>
-            Education
-          </span>
-          <h1 className="text-4xl font-bold text-white mb-4">Education &amp; Training</h1>
-          <p className="text-gray-300 text-lg max-w-2xl">
+      <FadeBanner image="/images/facilities/bioscience-lab.jpg" className="py-24">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Eyebrow light>Education</Eyebrow>
+          <h1 className="text-5xl sm:text-6xl text-white mb-6" style={SERIF}>Education &amp; Training</h1>
+          <p className="text-gray-300 text-lg leading-relaxed max-w-2xl">
             CIRTM is committed to training the next generation of biomedical researchers through postgraduate
-            programmes, seminars, and collaborative learning opportunities.
+            programmes, seminars and collaborative learning opportunities.
           </p>
         </div>
-      </section>
+      </FadeBanner>
 
-      {/* Intro + Training Pathway */}
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-
-            {/* Left — intro */}
+      {/* Training the next generation */}
+      <section className="py-20 bg-white">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-teal mb-5">
-                Education &amp; Training
-              </p>
-              <h2 className="text-4xl sm:text-5xl font-bold text-navy leading-tight mb-6">
-                Training the next{" "}
-                <em style={{ fontFamily: "Georgia, serif" }}>
-                  generation of translational scientists
-                </em>
+              <Eyebrow>Education &amp; training</Eyebrow>
+              <h2 className="text-4xl sm:text-5xl leading-tight mb-6" style={{ ...SERIF, color: NAVY }}>
+                Training the next <em>generation of translational scientists</em>
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-10">
-                CIRTM is built on a research-led teaching philosophy. Our scientists don&apos;t just make
-                discoveries. They bring them into the lecture theatre, the laboratory and the
-                clinic, inspiring the next generation at every level.
+              <p className="text-gray-600 text-lg leading-relaxed">
+                CIRTM is built on a research-led teaching philosophy. Our scientists do not just make discoveries, they
+                bring them into the lecture theatre, the laboratory and the clinic, inspiring the next generation at
+                every level.
               </p>
-
-              <div className="space-y-4">
-                {[
-                  {
-                    name: "Brunel Medical School",
-                    description:
-                      "CIRTM researchers are embedded in the Medical School's clinical curriculum, providing specialist teaching, laboratory immersion and live research access that connects medical training to the science that improves patient outcomes.",
-                  },
-                  {
-                    name: "British Pharmacological Society",
-                    description:
-                      "CIRTM maintains close links with the BPS, including Deputy Chair of the Meetings Committee and Honorary Fellowship, bringing pharmacological expertise directly into our undergraduate and postgraduate teaching programmes.",
-                  },
-                ].map((partner) => (
-                  <div key={partner.name} className="rounded-xl border border-gray-200 p-5" style={{ backgroundColor: "#F8F9FC" }}>
-                    <p className="font-semibold text-navy mb-1">{partner.name}</p>
-                    <p className="text-sm text-gray-500 leading-relaxed">{partner.description}</p>
-                  </div>
-                ))}
-              </div>
             </div>
-
-            {/* Right — training pathway */}
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-8">
-                The CIRTM Training Pathway
-              </p>
-              <TrainingPathway pathway={pathway} />
+            <div className="space-y-5">
+              {[
+                {
+                  name: "Brunel Medical School",
+                  logo: { src: "/images/education/brunel-medical-school.svg", width: 597, height: 295 },
+                  text: "CIRTM researchers are embedded in the Medical School's clinical curriculum, providing specialist teaching, laboratory immersion and live research access that connects clinical training to the science behind better patient care.",
+                },
+                {
+                  name: "British Pharmacological Society",
+                  logo: { src: "/images/education/BPS-new-w.png", width: 503, height: 196 },
+                  text: "CIRTM researchers are active members of the British Pharmacological Society (BPS), and our Director, Prof. Felicity Gavins, serves as Deputy Vice-President (Meetings) and is an Honorary Fellow of the Society, bringing pharmacological leadership directly into our undergraduate and postgraduate teaching.",
+                },
+              ].map((card) => (
+                <div key={card.name} className="rounded-xl border border-gray-200 p-7 shadow-sm">
+                  <Image
+                    src={card.logo.src}
+                    alt={card.name}
+                    width={card.logo.width}
+                    height={card.logo.height}
+                    unoptimized
+                    className="h-16 w-auto mb-5"
+                  />
+                  <h3 className="sr-only">{card.name}</h3>
+                  <p className="text-gray-600 leading-relaxed">{card.text}</p>
+                </div>
+              ))}
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* Research-Led Teaching Excellence */}
-      <section className="py-20" style={{ backgroundColor: "#F8F9FC" }}>
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
-            Research-Led Teaching Excellence
-          </p>
-          <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mb-10">
-            CIRTM members lead and contribute to undergraduate and postgraduate modules across Brunel&apos;s
-            College of Health, Medicine and Life Sciences, embedding active research directly into the
-            curriculum at every level of study.
+      {/* Training pathway */}
+      <section className="py-20" style={{ backgroundColor: NAVY }}>
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Eyebrow light>The CIRTM training pathway</Eyebrow>
+          <h2 className="text-4xl sm:text-5xl text-white mb-12" style={SERIF}>
+            From first placement <em>to research leader</em>
+          </h2>
+          <TrainingPathway pathway={pathway} />
+        </div>
+      </section>
+
+      {/* Research-led teaching */}
+      <section className="py-20" style={{ backgroundColor: IVORY }}>
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Eyebrow>Research-led teaching excellence</Eyebrow>
+          <h2 className="text-4xl sm:text-5xl leading-tight mb-6 max-w-3xl" style={{ ...SERIF, color: NAVY }}>
+            Cutting-edge research informs <em>every stage of the curriculum</em>
+          </h2>
+          <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mb-12">
+            CIRTM members lead and contribute to undergraduate and postgraduate modules across Brunel&apos;s College of
+            Health, Medicine and Life Sciences, embedding active research directly into the curriculum.
           </p>
 
-          <div className="rounded-xl border-l-4 border-teal bg-white p-6 mb-10 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-widest text-teal mb-2">Featured Group</p>
-            <h3 className="text-xl font-bold text-navy mb-3">Biosciences Immunology Group</h3>
-            <p className="text-gray-500 text-sm leading-relaxed mb-4 max-w-2xl">
-              The Biosciences Immunology Group is one of CIRTM&apos;s most active teaching collectives, with members
-              leading modules from cell signalling to clinical immunology and running a dedicated seminar series for
-              postgraduate students. The group welcomes undergraduate project students and offers a structured
-              pathway into doctoral research.
+          <div className="max-w-3xl rounded-xl bg-white border border-gray-200 border-l-4 p-8 mb-8 shadow-sm" style={{ borderLeftColor: RED }}>
+            <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: RED }}>Featured group</p>
+            <h3 className="text-2xl mb-3" style={{ ...SERIF, color: NAVY }}>Biosciences Immunology Group</h3>
+            <p className="text-gray-600 leading-relaxed mb-5">
+              A cross-disciplinary group of CIRTM-affiliated researchers and educators coordinating immunology teaching,
+              often disease-linked, and helping run a dedicated seminar series for postgraduate students. The group
+              welcomes undergraduate project students and offers a structured pathway into doctoral research.
             </p>
             <Link
               href="/research"
-              className="text-xs font-semibold uppercase tracking-widest text-teal hover:text-teal-700 transition-colors"
+              className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest"
+              style={{ color: RED }}
             >
-              Visit the Biosciences Immunology Group →
+              Visit the Biosciences Immunology Group
+              <span className="transition-transform group-hover:translate-x-1">→</span>
             </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {modules.map((mod) => (
-              <div key={mod.title} className="bg-white rounded-xl border border-gray-200 p-5">
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-teal mb-1">{mod.level}</p>
-                <p className="font-semibold text-navy text-sm">{mod.title}</p>
+            {programmes.map((p) => (
+              <div key={p.title} className="bg-white rounded-xl border border-gray-200 px-6 py-5">
+                <p className="text-[11px] font-semibold uppercase tracking-widest text-gray-400 mb-1">{p.level}</p>
+                <p className="text-lg" style={{ ...SERIF, color: NAVY }}>{p.title}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Public Engagement & Outreach */}
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
-            Public Engagement &amp; Outreach
+      {/* Public engagement */}
+      <section className="py-20 bg-white">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Eyebrow>Public engagement &amp; outreach</Eyebrow>
+          <h2 className="text-4xl sm:text-5xl leading-tight mb-6 max-w-3xl" style={{ ...SERIF, color: NAVY }}>
+            Making translational science <em>visible and meaningful</em>
+          </h2>
+          <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mb-12">
+            CIRTM researchers actively engage with the public, schools and patient communities, communicating the value
+            of biomedical science and ensuring our research is informed by the people it seeks to benefit. Supported by
+            funding from the Society of Biology and the Royal Society.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mb-10">
-            CIRTM researchers actively engage with the public, schools, and patient communities, communicating
-            the value of biomedical science and ensuring our research is informed by the people it seeks to
-            benefit. Supported by funding from the Society of Biology and the Royal Society.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
-                icon: "🏫",
-                title: "Schools & Young People",
-                description:
-                  "CIRTM researchers visit local schools and host sixth-form students in the laboratory, inspiring the next generation of scientists through hands-on research experiences and careers talks.",
+                Icon: School,
+                title: "Schools & young people",
+                text: "Hands-on science demonstrations and lab visits inspire school-age students, introducing the next generation to biomedical science.",
               },
               {
-                icon: "👥",
-                title: "Patient & Public Involvement",
-                description:
-                  "Patients and members of the public contribute to shaping our research priorities and dissemination. Dedicated PPI events ensure the voices of those affected are heard at the heart of our science.",
+                Icon: Users,
+                title: "Patient & public involvement",
+                text: "Patients and members of the public help shape our research priorities and dissemination, keeping the voice of those affected at the heart of what we do.",
               },
-            ].map((card) => (
-              <div key={card.title} className="rounded-xl border border-gray-200 p-6" style={{ backgroundColor: "#F8F9FC" }}>
-                <div className="text-3xl mb-4">{card.icon}</div>
-                <h3 className="font-bold text-navy mb-2">{card.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{card.description}</p>
+            ].map(({ Icon, title, text }) => (
+              <div key={title} className="flex items-start gap-5 rounded-xl border border-gray-200 p-7 shadow-sm">
+                <span
+                  className="flex items-center justify-center w-12 h-12 rounded-full flex-shrink-0"
+                  style={{ backgroundColor: "rgba(185,28,28,0.08)", color: RED }}
+                >
+                  <Icon className="w-5 h-5" strokeWidth={1.75} aria-hidden />
+                </span>
+                <div>
+                  <h3 className="text-xl mb-2" style={{ ...SERIF, color: NAVY }}>{title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{text}</p>
+                </div>
               </div>
             ))}
           </div>

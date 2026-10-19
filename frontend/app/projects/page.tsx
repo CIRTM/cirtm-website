@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "@/lib/content/projects";
 import { researchAreas } from "@/lib/content/research-areas";
+import { FadeBanner } from "@/components/FadeBanner";
 
 const ongoing = projects.filter((p) => p.status === "Ongoing");
 const completed = projects.filter((p) => p.status === "Completed");
@@ -17,19 +18,23 @@ export default function ProjectsPage() {
     projects.some((p) => p.researchAreaSlugs.includes(a.slug))
   );
 
-  const memberOptions = useMemo(() => {
-    const seen = new Map<string, string>();
-    projects.forEach((p) => {
-      p.investigators.forEach((inv) => {
-        if (inv.personSlug && !seen.has(inv.personSlug)) {
-          seen.set(inv.personSlug, inv.name);
-        }
-      });
-    });
-    return Array.from(seen.entries())
-      .map(([slug, name]) => ({ slug, name }))
-      .sort((a, b) => a.name.localeCompare(b.name));
-  }, []);
+  const memberOptions = [
+    { slug: "felicity-gavins", name: "Prof. Felicity Gavins" },
+    { slug: "arturo-sala", name: "Prof. Arturo Sala" },
+    { slug: "jacqueline-cliff", name: "Dr Jacqueline Cliff" },
+    { slug: "cristiano-scotta", name: "Dr Cristiano Scottà" },
+    { slug: "steven-smith", name: "Dr Steven Smith" },
+    { slug: "doreen-lau", name: "Dr Doreen Lau" },
+    { slug: "sook-lee", name: "Dr Sook Lee" },
+    { slug: "camilla-cerutti", name: "Dr Camilla Cerutti" },
+    { slug: "ayca-sayi-yazgan", name: "Dr Ayca Sayi Yazgan" },
+    { slug: "claire-turner", name: "Prof. Claire Turner" },
+    { slug: "raha-pazoki", name: "Dr Raha Pazoki" },
+    { slug: "keith-redpath", name: "Dr Keith Redpath" },
+    { slug: "paul-hellewell", name: "Prof. Paul Hellewell" },
+    { slug: "anthony-tsolaki", name: "Dr Anthony Tsolaki" },
+    { slug: "ashley-houlden", name: "Dr Ashley Houlden" },
+  ];
 
   const filtered = projects.filter((p) => {
     if (selectedArea && !p.researchAreaSlugs.includes(selectedArea)) return false;
@@ -49,17 +54,7 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <section className="relative bg-navy py-20 overflow-hidden">
-        <Image
-          src="/images/research-projects/research-projects-hero.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-          unoptimized
-        />
-        <div className="absolute inset-0 bg-navy/85" />
+      <FadeBanner image="/images/research-projects/research-projects-hero.png">
         <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="tag mb-4 inline-block" style={{ backgroundColor: "rgba(0,169,157,0.2)", color: "#1AC9BF" }}>
             Research
@@ -77,7 +72,7 @@ export default function ProjectsPage() {
             </span>
           </div>
         </div>
-      </section>
+      </FadeBanner>
 
       <section className="py-16 bg-white">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">

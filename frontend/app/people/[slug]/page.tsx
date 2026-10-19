@@ -107,7 +107,7 @@ export default async function PersonPage({ params }: { params: Promise<{ slug: s
 
   return (
     <>
-      <section className="bg-navy py-20">
+      <section className="py-20" style={{ backgroundColor: "#0B1B3A" }}>
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/people" className="text-teal text-sm hover:underline mb-6 block">← Centre Members</Link>
           {person.memberType === "pi" && (

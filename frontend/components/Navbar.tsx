@@ -15,14 +15,15 @@ const navLinks: NavLink[] = [
     children: [
       { label: "Research Areas", href: "/research" },
       { label: "Projects", href: "/projects" },
-      { label: "Expertise", href: "/expertise" },
+      { label: "Publications", href: "/publications" },
+      { label: "Facilities", href: "/facilities" },
+      { label: "Research Culture", href: "/research-culture" },
       { label: "Impact Case Studies", href: "/innovation/impact" },
       { label: "Industry Partners", href: "/innovation/industry" },
     ],
   },
   { label: "Education & Training", href: "/education" },
   { label: "News & Events", href: "/seminars" },
-  { label: "Facilities", href: "/facilities" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -36,7 +37,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" aria-label="CIRTM home" className="flex items-center gap-3">
-            <Image src="/CIRTM-alt.png" alt="CIRTM logo" width={80} height={64} priority />
+            <Image src="/CIRTM-blue.png" alt="CIRTM logo" width={80} height={80} priority />
             {/* Text logo — swap in by hiding Image above and removing hidden below */}
             <span
               className="hidden text-2xl font-bold text-navy"
