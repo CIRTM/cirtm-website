@@ -15,7 +15,7 @@ export default function PublicationsPage() {
     .filter((p) => !p.hidden && publishing.has(p.slug))
     .map((p) => {
       const name = plainName(p.name);
-      return { slug: p.slug, name, short: name.split(" ").slice(-1)[0], area: p.researchAreaSlugs?.[0] ?? null };
+      return { slug: p.slug, name, short: name.split(" ").slice(-1)[0], area: p.researchAreaSlugs?.[0] ?? null, doctoral: p.memberType === "doctoral-researcher" };
     });
 
   return (

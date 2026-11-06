@@ -11,7 +11,7 @@ const IVORY = "#F8F7F5";
 const GOLD = "#FBBF24";
 const SERIF = { fontFamily: "Georgia, serif" };
 
-export type ExplorerMember = { slug: string; name: string; short: string; area: string | null };
+export type ExplorerMember = { slug: string; name: string; short: string; area: string | null; doctoral?: boolean };
 
 const AREAS: Record<string, { label: string; hex: string }> = {
   "inflammation-immunity-infection": { label: "Inflammation, Immunity & Infection", hex: "#2563EB" },
@@ -60,6 +60,8 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
 
 export default function PublicationsExplorer({ papers, members }: { papers: ExplorerPaper[]; members: ExplorerMember[] }) {
   const [fullCareers, setFullCareers] = useState(false);
+  const [showDoctoral, setShowDoctoral] = useState(false);
+  const networkMembers = useMemo(() => (showDoctoral ? members : members.filter((m) => !m.doctoral)), [members, showDoctoral]);
   const [filters, setFilters] = useState<Filters>(EMPTY);
   const [shown, setShown] = useState(20);
   const listRef = useRef<HTMLDivElement>(null);
@@ -95,7 +97,7 @@ export default function PublicationsExplorer({ papers, members }: { papers: Expl
 
   return (
     <>
-      <SharedGround papers={scoped} members={members} onShow={applyFilters} focusSlug={networkFocus} sectionRef={networkRef} scopeLabel={fullCareers ? "Full careers" : "At Brunel"} fullCareers={fullCareers} setFullCareers={(v) => { setFullCareers(v); setShown(20); }} />
+      <SharedGround papers={scoped} members={networkMembers} showDoctoral={showDoctoral} setShowDoctoral={setShowDoctoral} hasDoctoral={members.some((m) => m.doctoral)} onShow={applyFilters} focusSlug={networkFocus} sectionRef={networkRef} scopeLabel={fullCareers ? "Full careers" : "At Brunel"} fullCareers={fullCareers} setFullCareers={(v) => { setFullCareers(v); setShown(20); }} />
 
       <ModelFinder papers={scoped} members={members} onShow={applyFilters} />
 
@@ -205,6 +207,9 @@ function SharedGround({
   scopeLabel,
   fullCareers,
   setFullCareers,
+  showDoctoral,
+  setShowDoctoral,
+  hasDoctoral,
 }: {
   papers: ExplorerPaper[];
   members: ExplorerMember[];
@@ -214,6 +219,9 @@ function SharedGround({
   scopeLabel: string;
   fullCareers: boolean;
   setFullCareers: (v: boolean) => void;
+  showDoctoral: boolean;
+  setShowDoctoral: (v: boolean) => void;
+  hasDoctoral: boolean;
 }) {
   const [hover, setHover] = useState<string | null>(null);
   // undefined = untouched: fall back to the member passed in from a profile link (if they're on the network).
@@ -313,7 +321,29 @@ function SharedGround({
             Members on the outer ring, the biological models and approaches they publish with in the centre. Shared
             models are where collaborations start. Hover to trace connections, click to explore.
           </p>
-          <div className="inline-flex self-start lg:self-auto rounded-full border border-gray-200 p-1 bg-white flex-shrink-0">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 self-start lg:self-auto flex-shrink-0">
+          {hasDoctoral && (
+            <button
+              type="button"
+              role="switch"
+              aria-checked={showDoctoral}
+              onClick={() => setShowDoctoral(!showDoctoral)}
+              className="inline-flex items-center gap-2.5 text-sm font-medium"
+              style={{ color: NAVY }}
+            >
+              <span
+                className="relative inline-block w-9 h-5 rounded-full transition-colors"
+                style={{ backgroundColor: showDoctoral ? NAVY : "#D1D5DB" }}
+              >
+                <span
+                  className="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow transition-transform"
+                  style={{ transform: showDoctoral ? "translateX(16px)" : "none" }}
+                />
+              </span>
+              Doctoral researchers
+            </button>
+          )}
+          <div className="inline-flex rounded-full border border-gray-200 p-1 bg-white">
             {[
               { full: false, label: "At Brunel" },
               { full: true, label: "Full careers" },
@@ -327,6 +357,7 @@ function SharedGround({
                 {o.label}
               </button>
             ))}
+          </div>
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_20rem] gap-8 items-start">
