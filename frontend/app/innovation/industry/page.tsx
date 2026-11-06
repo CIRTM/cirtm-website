@@ -44,7 +44,7 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
 export default function IndustryPartnersPage() {
   return (
     <>
-      <FadeBanner image="/images/industry/vials-banner.jpg" imageWidth="md:w-1/2 2xl:w-[40%]" className="py-24">
+      <FadeBanner image="/images/facilities/microscope-objectives-banner.jpg" imageWidth="md:w-1/2 2xl:w-[40%]" className="py-24">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <Eyebrow light>Innovation &amp; partnerships</Eyebrow>
           <h1 className="text-4xl sm:text-6xl text-white mb-6 leading-tight" style={SERIF}>

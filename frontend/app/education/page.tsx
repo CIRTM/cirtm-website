@@ -80,7 +80,7 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
 export default function EducationPage() {
   return (
     <>
-      <FadeBanner image="/images/education/research-festival-2026-panel.jpg" objectPosition="center 40%" className="py-24">
+      <FadeBanner image="/images/education/research-festival-2026-hero.jpg" objectPosition="center 40%" imageWidth="md:w-1/2 2xl:w-[40%]" className="py-32">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <Eyebrow light>Education</Eyebrow>
           <h1 className="text-5xl sm:text-6xl text-white mb-6" style={SERIF}>Education &amp; Training</h1>
