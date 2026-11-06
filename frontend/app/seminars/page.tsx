@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowRightIcon, CalendarDaysIcon, MapPinIcon, UserIcon } from "@heroicons/react/24/outline";
-import { seminars, type Seminar } from "@/lib/content/seminars";
-import { news, linkedinPosts, LINKEDIN_URL } from "@/lib/content/news";
+import { seminars as allSeminars, type Seminar } from "@/lib/content/seminars";
+import { news as allNews, linkedinPosts as allLinkedinPosts, LINKEDIN_URL } from "@/lib/content/news";
 import { FadeBanner } from "@/components/FadeBanner";
 
 const NAVY = "#0B1B3A";
@@ -41,8 +41,15 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
+// Placeholder items (sample: true) stay in the content files for layout work; set true to show them.
+const SHOW_SAMPLES = false;
+const real = <T extends { sample?: boolean }>(items: T[]) => (SHOW_SAMPLES ? items : items.filter((i) => !i.sample));
+
 export default function NewsEventsPage() {
   const now = new Date();
+  const seminars = real(allSeminars);
+  const news = real(allNews);
+  const linkedinPosts = real(allLinkedinPosts);
   const upcoming = seminars
     .filter((s) => new Date(s.date) >= now)
     .sort((a, b) => a.date.localeCompare(b.date));
