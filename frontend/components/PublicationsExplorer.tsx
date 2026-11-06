@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Search, X } from "lucide-react";
 import type { ExplorerPaper } from "@/lib/content/publication-explorer";
@@ -21,7 +21,7 @@ const AREAS: Record<string, { label: string; hex: string }> = {
 };
 const NO_AREA = "#9CA3AF";
 
-const ORGANISMS: Record<string, string> = {
+export const ORGANISMS: Record<string, string> = {
   humans: "Humans",
   mice: "Mice",
   rats: "Rats",
@@ -30,7 +30,7 @@ const ORGANISMS: Record<string, string> = {
   microbes: "Microbes",
   "other-vertebrates": "Other vertebrates",
 };
-const SYSTEMS: Record<string, string> = {
+export const SYSTEMS: Record<string, string> = {
   "in-vivo": "In vivo",
   "cell-culture": "Cell culture",
   "organoid-3d": "Organoids & 3D",
@@ -38,7 +38,7 @@ const SYSTEMS: Record<string, string> = {
   "in-silico": "In silico",
   review: "Reviews",
 };
-const MODEL_KEYS = [...Object.keys(ORGANISMS), ...Object.keys(SYSTEMS).filter((k) => k !== "review")];
+export const MODEL_KEYS = [...Object.keys(ORGANISMS), ...Object.keys(SYSTEMS).filter((k) => k !== "review")];
 const modelLabel = (k: string) => ORGANISMS[k] ?? SYSTEMS[k] ?? k;
 const isOrganism = (k: string) => k in ORGANISMS;
 const tagsOf = (p: ExplorerPaper) => [...p.organisms, ...p.systems];
@@ -66,6 +66,16 @@ export default function PublicationsExplorer({ papers, members }: { papers: Expl
 
   const memberBySlug = useMemo(() => Object.fromEntries(members.map((m) => [m.slug, m])), [members]);
   const scoped = useMemo(() => (fullCareers ? papers : papers.filter((p) => p.cirtm)), [papers, fullCareers]);
+
+  // Links from other pages (e.g. a research area's model network) arrive as ?model=…&member=…
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const model = q.get("model") ?? "";
+    const member = q.get("member") ?? "";
+    if (!model && !member) return;
+    setFilters({ ...EMPTY, model: MODEL_KEYS.includes(model) ? model : "", member });
+    setTimeout(() => listRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 300);
+  }, []);
 
   const applyFilters = (next: Partial<Filters>) => {
     setFilters({ ...EMPTY, ...next });

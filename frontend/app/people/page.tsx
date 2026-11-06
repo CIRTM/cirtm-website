@@ -145,7 +145,7 @@ function PersonCard({ person }: { person: Person }) {
         {person.role && <p className="text-sm text-gray-500 mt-1">{person.role}</p>}
         {areas.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-1.5">
-            {areas.map((a) => <span key={a!.slug} className="tag text-xs">{a!.title}</span>)}
+            {areas.map((a) => <span key={a!.slug} title={a!.title} className="tag text-[9px] px-2 py-0.5 tracking-normal leading-tight whitespace-nowrap">{a!.tag}</span>)}
           </div>
         )}
       </div>

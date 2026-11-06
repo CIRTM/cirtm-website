@@ -7,6 +7,10 @@ import { projects } from "@/lib/content/projects";
 import { getPeopleForArea, getPublicationsForArea } from "@/lib/content/relationships";
 import { PublicationEntry } from "@/components/PublicationEntry";
 import { FadeBanner } from "@/components/FadeBanner";
+import AreaOutputsCard, { SidebarCard } from "@/components/AreaOutputsCard";
+import AreaModelNetwork from "@/components/AreaModelNetwork";
+import { people } from "@/lib/content/people";
+import { explorerPapers } from "@/lib/content/publication-explorer";
 
 export function generateStaticParams() {
   return researchAreas.map((a) => ({ slug: a.slug }));
@@ -26,7 +30,15 @@ export default async function ResearchAreaPage({ params }: { params: Promise<{ s
     : relatedPeopleUnsorted;
   const relatedPublications = getPublicationsForArea(area.slug).sort((a, b) => b.year - a.year);
 
-  const hasSidebar = relatedProjects.length > 0 || relatedPeople.length > 0;
+
+  // Papers have no area tag of their own, so an area's outputs are the at-Brunel papers of members working in it.
+  const areaMembers = new Set(
+    people.filter((p) => !p.hidden && p.researchAreaSlugs?.includes(area.slug)).map((p) => p.slug)
+  );
+  const areaPapers = explorerPapers.filter((p) => p.cirtm && p.people.some((s) => areaMembers.has(s)));
+  const memberNames = Object.fromEntries(
+    people.filter((p) => !p.hidden).map((p) => [p.slug, p.name.replace(/^(Prof\.|Dr)\s+/, "")])
+  );
 
   return (
     <>
@@ -43,10 +55,10 @@ export default async function ResearchAreaPage({ params }: { params: Promise<{ s
 
       <section className="py-16 bg-white">
         <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`grid grid-cols-1 gap-12 ${hasSidebar ? "lg:grid-cols-3" : ""}`}>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
 
             {/* Main content */}
-            <div className={hasSidebar ? "lg:col-span-2" : ""}>
+            <div className="lg:col-span-2">
               <div className="text-[#374151] text-base leading-relaxed space-y-4">
                 <ReactMarkdown
                   components={{
@@ -97,85 +109,88 @@ export default async function ResearchAreaPage({ params }: { params: Promise<{ s
             </div>
 
             {/* Sidebar */}
-            {hasSidebar && (
-              <div className="space-y-5">
+            <aside className="space-y-6">
+              {relatedPeople.length > 0 && (
+                <SidebarCard eyebrow="Research academics">
+                  <ul className="space-y-3.5">
+                    {relatedPeople.map((person) => {
+                      const isLinked = person.memberType !== "associate-member";
+                      const name = (
+                        <span className="block text-sm font-semibold leading-snug" style={{ color: "#0B1B3A" }}>{person.name}</span>
+                      );
+                      return (
+                        <li key={person.slug}>
+                          {isLinked ? (
+                            <Link href={`/people/${person.slug}`} className="group flex items-center gap-3">
+                              <div className="relative w-11 h-11 flex-shrink-0 rounded-full overflow-hidden bg-gray-100 ring-2 ring-transparent group-hover:ring-red-700 transition">
+                                <Image src={person.photoUrl || "/images/placeholdersilhouette.webp"} alt="" fill className="object-cover object-top" unoptimized />
+                              </div>
+                              <div className="min-w-0 group-hover:[&>span]:text-red-700">
+                                {name}
+                                {person.role && <p className="text-xs text-gray-500 mt-0.5 line-clamp-2">{person.role}</p>}
+                              </div>
+                            </Link>
+                          ) : (
+                            <div className="flex items-center gap-3">
+                              <div className="relative w-11 h-11 flex-shrink-0 rounded-full overflow-hidden bg-gray-100">
+                                <Image src={person.photoUrl || "/images/placeholdersilhouette.webp"} alt="" fill className="object-cover object-top" unoptimized />
+                              </div>
+                              <div className="min-w-0">
+                                {name}
+                                {person.role && <p className="text-xs text-gray-500 mt-0.5 line-clamp-2">{person.role}</p>}
+                              </div>
+                            </div>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </SidebarCard>
+              )}
 
-                {relatedPeople.length > 0 && (
-                  <div className="card border border-gray-100 p-5">
-                    <h2 className="text-sm font-bold text-[#29242b] mb-4">Research Academics</h2>
-                    <ul className="space-y-3">
-                      {relatedPeople.map((person) => {
-                        const isLinked = person.memberType !== "associate-member";
-                        return (
-                          <li key={person.slug} className="flex items-center gap-3">
-                            <div className="relative w-11 h-11 flex-shrink-0 rounded-full overflow-hidden bg-gray-100">
-                              <Image
-                                src={person.photoUrl || "/images/placeholdersilhouette.webp"}
-                                alt={person.name}
-                                fill
-                                className="object-cover object-top"
-                                unoptimized
-                              />
-                            </div>
-                            <div className="min-w-0">
-                              {isLinked ? (
-                                <Link href={`/people/${person.slug}`} className="text-teal hover:underline font-medium text-sm leading-snug block">
-                                  {person.name}
-                                </Link>
-                              ) : (
-                                <span className="font-medium text-sm text-navy leading-snug block">{person.name}</span>
-                              )}
-                              {person.role && <p className="text-[10px] text-gray-500 mt-0.5 line-clamp-2">{person.role}</p>}
-                            </div>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                )}
+              <AreaOutputsCard papers={areaPapers} memberNames={memberNames} />
 
-                {relatedProjects.length > 0 && (
-                  <div className="card border border-gray-100 p-5">
-                    <h2 className="text-sm font-bold text-[#29242b] mb-4">Related Projects</h2>
-                    <div className="space-y-2">
-                      {relatedProjects.map((project) => {
-                        const projectAreas = researchAreas.filter((a) => project.researchAreaSlugs.includes(a.slug));
-                        return (
-                          <Link
-                            key={project.slug}
-                            href={`/projects/${project.slug}`}
-                            className="block border border-gray-100 rounded-lg group hover:border-teal/30 hover:shadow-sm p-3 flex flex-col gap-1.5 transition-all"
-                          >
-                            <div className="flex flex-wrap gap-1">
-                              {projectAreas.map((a) => (
-                                <span key={a.slug} className="text-[10px] font-medium rounded-full px-2 py-0.5 bg-teal/10 text-teal">
-                                  {a.tag}
-                                </span>
-                              ))}
-                            </div>
-                            <h3 className="font-semibold text-navy text-xs leading-snug group-hover:text-teal transition-colors">
-                              {project.title}
-                            </h3>
-                            {project.status && (
-                              <span className={`self-start text-[10px] font-medium uppercase tracking-wide px-2 py-0.5 rounded-sm ${
-                                project.status === "Ongoing" ? "bg-purple-100 text-purple-700" : "bg-gray-100 text-gray-500"
-                              }`}>
-                                {project.status}
-                              </span>
+              {relatedProjects.length > 0 && (
+                <SidebarCard eyebrow="Related projects">
+                  <ul className="divide-y divide-gray-100 -my-3">
+                    {[...relatedProjects]
+                      .sort((a, b) => Number(b.status === "Ongoing") - Number(a.status === "Ongoing"))
+                      .map((project) => (
+                        <li key={project.slug}>
+                          <Link href={`/projects/${project.slug}`} className="group flex items-center gap-3 py-3">
+                            {project.imageUrl && (
+                              <div className="relative w-14 h-14 flex-shrink-0 rounded-lg overflow-hidden bg-gray-50">
+                                <Image src={project.imageUrl} alt="" fill className="object-cover" unoptimized />
+                              </div>
                             )}
+                            <div className="min-w-0">
+                              <p className="text-sm leading-snug group-hover:text-red-700 transition-colors" style={{ color: "#0B1B3A" }}>
+                                {project.title}
+                              </p>
+                              {project.status && (
+                                <span className={`inline-block mt-1 text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full ${
+                                  project.status === "Ongoing" ? "bg-purple-100 text-purple-700" : "bg-gray-100 text-gray-500"
+                                }`}>
+                                  {project.status}
+                                </span>
+                              )}
+                            </div>
                           </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-
-              </div>
-            )}
+                        </li>
+                      ))}
+                  </ul>
+                  <Link href="/projects" className="mt-5 inline-block text-xs font-semibold uppercase tracking-widest hover:opacity-80" style={{ color: "#B91C1C" }}>
+                    All projects →
+                  </Link>
+                </SidebarCard>
+              )}
+            </aside>
 
           </div>
         </div>
       </section>
+
+      <AreaModelNetwork papers={areaPapers} areaTitle={area.title} />
 
       {relatedPublications.length > 0 && (
         <section className="py-16" style={{ backgroundColor: "#F8F9FC" }}>
