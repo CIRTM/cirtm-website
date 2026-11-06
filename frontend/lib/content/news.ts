@@ -19,7 +19,7 @@ export const news: NewsItem[] = [
     category: "Research",
     summary:
       "A study led by Dr Anthony Tsolaki identified eight genetic variants of the TB protein PPE50, each tied to different world regions. It is the first evidence that the protein evolved alongside human populations, opening the door to region-specific vaccines and treatments.",
-    image: "/images/news/tb-global-evolution.webp",
+    image: "/images/news/tb-global-evolution.jpg",
     link: "https://www.brunel.ac.uk/news-and-events/news/articles/Scientists-map-TBs-global-evolution",
   },
   {
@@ -64,7 +64,7 @@ export const linkedinPosts: LinkedInPost[] = [
     date: "2025-08-15",
     text: "TB breakthrough! A study by Dr Anthony Tsolaki found 8 genetic variants of the TB protein PPE50, each tied to different world regions. First proof that the TB protein evolved alongside human populations.",
     url: LINKEDIN_URL,
-    image: "/images/news/tb-global-evolution.webp",
+    image: "/images/news/tb-global-evolution.jpg",
   },
   {
     date: "2025-06-03",
