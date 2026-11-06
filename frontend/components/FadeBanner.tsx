@@ -23,7 +23,8 @@ export function FadeBanner({
           alt=""
           fill
           priority
-          sizes="(min-width: 768px) 60vw, 100vw"
+          sizes="100vw"
+          quality={85}
           className="object-cover"
           style={{ objectPosition }}
         />
