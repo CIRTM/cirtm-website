@@ -38,6 +38,8 @@ export type Person = {
   college?: string;
   externalLinks?: ExternalLink[];
   photoUrl?: string;
+  /** CSS object-position for small square crops, e.g. "center 40%" to centre a face. Defaults to the top. */
+  photoPosition?: string;
   bio?: string;
   sections?: PersonSections;
   publications?: PersonPublication[];
@@ -2197,7 +2199,7 @@ Beveridge, NER., Price, DA., Casazza, JP., Pathan, AA., Sander, CR., Asher, TE.,
   },
   // Doctoral Researchers and Fellows
   { slug: "thomas-williams", name: "Thomas Williams",
-    photoUrl: "/images/people/thomas-williams.jpg", memberType: "doctoral-researcher", order: 100,
+    photoUrl: "/images/people/thomas-williams.jpg", photoPosition: "center 40%", memberType: "doctoral-researcher", order: 100,
     role: "PhD Student",
     email: "tom.williams@brunel.ac.uk",
     department: "Department of Life Sciences",

@@ -141,7 +141,7 @@ function CompactPersonCard({ person, label }: { person: Person; label?: string }
     >
       {hasPhoto ? (
         <div className="relative w-20 flex-shrink-0 bg-gray-100 min-h-[5rem]">
-          <Image src={person.photoUrl!} alt="" fill className="object-cover object-top" unoptimized />
+          <Image src={person.photoUrl!} alt="" fill className="object-cover object-top" style={person.photoPosition ? { objectPosition: person.photoPosition } : undefined} unoptimized />
         </div>
       ) : (
         <div
