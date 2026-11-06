@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Building2, FlaskConical, Handshake, MessagesSquare } from "lucide-react";
+import Image from "next/image";
 import { FadeBanner } from "@/components/FadeBanner";
+import { industryPartners } from "@/lib/content/industry-partners";
 
 const NAVY = "#0B1B3A";
 const RED = "#B91C1C";
@@ -109,6 +111,37 @@ export default function IndustryPartnersPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white border-t border-gray-100">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Eyebrow>Industry collaborators</Eyebrow>
+          <h2 className="text-4xl sm:text-5xl mb-4" style={{ ...SERIF, color: NAVY }}>
+            Companies <em>we work with</em>
+          </h2>
+          <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mb-10">
+            CIRTM researchers collaborate with pharmaceutical and biotechnology companies of every size, from global
+            leaders to specialist start-ups.
+          </p>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {industryPartners.map((p) => (
+              <li
+                key={p.slug}
+                className="group flex items-center justify-center h-28 rounded-2xl border border-gray-100 bg-white px-6 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className={`relative w-full ${p.compact ? "h-16" : "h-10"}`}>
+                  <Image
+                    src={`/images/industry-partners/${p.slug}.png`}
+                    alt={p.name}
+                    fill
+                    sizes="200px"
+                    className="object-contain grayscale opacity-60 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
