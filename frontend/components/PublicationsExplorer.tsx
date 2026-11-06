@@ -42,6 +42,8 @@ const MODEL_KEYS = [...Object.keys(ORGANISMS), ...Object.keys(SYSTEMS).filter((k
 const modelLabel = (k: string) => ORGANISMS[k] ?? SYSTEMS[k] ?? k;
 const isOrganism = (k: string) => k in ORGANISMS;
 const tagsOf = (p: ExplorerPaper) => [...p.organisms, ...p.systems];
+const DIRECTOR = "felicity-gavins";
+const directorFirst = (a: ExplorerMember, b: ExplorerMember) => Number(b.slug === DIRECTOR) - Number(a.slug === DIRECTOR);
 
 type Filters = { member: string; model: string; query: string; oa: boolean };
 const EMPTY: Filters = { member: "", model: "", query: "", oa: false };
@@ -177,7 +179,7 @@ function SharedGround({
     const areaOrder = [...Object.keys(AREAS), null];
     const ms = members
       .filter((m) => memberCount.has(m.slug))
-      .sort((a, b) => areaOrder.indexOf(a.area) - areaOrder.indexOf(b.area) || a.short.localeCompare(b.short));
+      .sort((a, b) => directorFirst(a, b) || areaOrder.indexOf(a.area) - areaOrder.indexOf(b.area) || a.short.localeCompare(b.short));
     const models = MODEL_KEYS.filter((k) => modelCount.has(k));
 
     const pos = new Map<string, { x: number; y: number; angle: number }>();
@@ -437,7 +439,7 @@ function ModelFinder({
       }
     const rows = members
       .filter((m) => MODEL_KEYS.some((k) => counts.get(m.slug)?.has(k)))
-      .sort((a, b) => a.short.localeCompare(b.short))
+      .sort((a, b) => directorFirst(a, b) || a.short.localeCompare(b.short))
       .map((m) => ({ m, row: counts.get(m.slug)! }));
     const max = Math.max(1, ...rows.flatMap((r) => MODEL_KEYS.map((k) => r.row.get(k) ?? 0)));
     return { rows, max };
@@ -578,7 +580,7 @@ function PaperList({
           </label>
           <select value={filters.member} onChange={(e) => setFilters({ ...filters, member: e.target.value })} className={select}>
             <option value="">All members</option>
-            {[...members].sort((a, b) => a.short.localeCompare(b.short)).map((m) => (
+            {[...members].sort((a, b) => directorFirst(a, b) || a.short.localeCompare(b.short)).map((m) => (
               <option key={m.slug} value={m.slug}>{m.name}</option>
             ))}
           </select>

@@ -36,6 +36,7 @@ export const projects: Project[] = [
     investigators: [
       { role: "PI", name: "Dr Jacqueline Cliff", personSlug: "jacqueline-cliff" },
     ],
+    status: "Ongoing",
     lastModified: "2026-05-05",
     funder: "Self-funded PhD",
     imageUrl: "https://www.brunel.ac.uk/research/Projects/images/soldiers-holding-guns-in-desert.x99d7d988.jpg",
@@ -145,7 +146,7 @@ This project focuses on further understanding and characterising thrombo-inflamm
     investigators: [
       { role: "PI", name: "Professor Felicity Gavins", personSlug: "felicity-gavins" },
     ],
-    status: "Completed",
+    status: "Ongoing",
     lastModified: "2024-09-27",
     funder: "The Royal Society; The Wolfson Foundation",
     imageUrl: "https://www.brunel.ac.uk/research/Projects/images/sickle-cell.x0d5dd7b6.jpg",

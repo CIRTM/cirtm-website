@@ -1,7 +1,12 @@
 import { publications, type Publication } from "@/lib/content/publications";
 import { PublicationEntry } from "@/components/PublicationEntry";
+import { notFound } from "next/navigation";
+
+// Hidden in favour of /publications. Set to false and restore the Navbar and Footer links to bring it back.
+const HIDDEN = true;
 
 export default function ImpactCaseStudiesPage() {
+  if (HIDDEN) notFound();
   const grouped = new Map<number, Publication[]>();
   for (const pub of publications) {
     const list = grouped.get(pub.year) ?? [];

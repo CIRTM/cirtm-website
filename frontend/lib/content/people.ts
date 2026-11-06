@@ -13,7 +13,7 @@ import { camillaCeruttiPublications } from "./publications-camilla-cerutti";
 import { doreenLauPublications } from "./publications-doreen-lau";
 import { veenaKumariPublications } from "./publications-veena-kumari";
 
-export type MemberType = "pi" | "doctoral-researcher" | "associate-member" | "professional-services";
+export type MemberType = "pi" | "doctoral-researcher" | "associate-member" | "professional-services" | "alumni";
 
 export type PersonSections = {
   research?: string;
@@ -1902,14 +1902,6 @@ PhD (City University, London, and Institute of Psychiatry, London) - awarded 200
     order: 13,
   },
   {
-    slug: "enrique-castro-sanchez",
-    name: "Dr Enrique Castro-Sanchez",
-    memberType: "associate-member",
-    photoUrl: "/images/placeholdersilhouette.webp",
-    researchAreaSlugs: ["inflammation-immunity-infection"],
-    order: 52,
-  },
-  {
     slug: "ansar-pathan",
     name: "Dr Ansar Pathan",
     memberType: "associate-member",
@@ -1937,6 +1929,50 @@ PhD (City University, London, and Institute of Psychiatry, London) - awarded 200
   { slug: "ekuwa-adade", name: "Ekuwa Adade",
     photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 108 },
 
+  // Alumni (former doctoral researchers and fellows)
+  { slug: "nazar-beirag", name: "Nazar Beirag",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 200 },
+  {
+    slug: "zabreen-busharat",
+    name: "Zabreen Busharat",
+    memberType: "alumni",
+    photoUrl: "/images/placeholdersilhouette.webp",
+    order: 201,
+  },
+  { slug: "ylenia-ciciro", name: "Ylenia Cicirò",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 202 },
+  {
+    slug: "christopher-dsouza",
+    name: "Christopher D'Souza",
+    memberType: "alumni",
+    photoUrl: "/images/placeholdersilhouette.webp",
+    order: 203,
+  },
+  { slug: "karanjit-das", name: "Karanjit Das",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 204 },
+  { slug: "christiana-doulami", name: "Christiana Doulami",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 205 },
+  { slug: "fred-jonathan-edzeamey", name: "Fred Jonathan Edzeamey",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 206 },
+  {
+    slug: "kavita-gadar",
+    name: "Kavita Gadar",
+    memberType: "alumni",
+    photoUrl: "/images/placeholdersilhouette.webp",
+    order: 207,
+  },
+  { slug: "angila-gurung", name: "Angila Gurung",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 208 },
+  { slug: "luxshieha-hareymaaran", name: "Luxshieha Hareymaaran",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 209 },
+  { slug: "periklis-katopodis", name: "Periklis Katopodis",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 210 },
+  { slug: "gideon-maccarthy", name: "Gideon MacCarthy",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 211 },
+  { slug: "ruchira-mann", name: "Ruchira Mann",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 212 },
+  { slug: "denise-ragusa", name: "Denise Ragusa",
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 213 },
 ];
 
 export function getPerson(slug: string): Person | undefined {

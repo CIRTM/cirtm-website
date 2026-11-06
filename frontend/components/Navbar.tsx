@@ -18,7 +18,6 @@ const navLinks: NavLink[] = [
       { label: "Publications", href: "/publications" },
       { label: "Facilities", href: "/facilities" },
       { label: "Research Culture", href: "/research-culture" },
-      { label: "Impact Case Studies", href: "/innovation/impact" },
       { label: "Industry Partners", href: "/innovation/industry" },
     ],
   },

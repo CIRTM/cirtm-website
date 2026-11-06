@@ -11,6 +11,7 @@ export default function PeoplePage() {
   const doctoral = sorted.filter((p) => p.memberType === "doctoral-researcher");
   const associateMembers = sorted.filter((p) => p.memberType === "associate-member");
   const professionalServices = sorted.filter((p) => p.memberType === "professional-services");
+  const alumni = sorted.filter((p) => p.memberType === "alumni");
 
   return (
     <>
@@ -49,6 +50,17 @@ export default function PeoplePage() {
         </section>
       )}
 
+
+      {alumni.length > 0 && (
+        <section className="py-16 bg-white" style={{ borderTop: "1px solid #F0F2F7" }}>
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-navy mb-8">Alumni</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
+              {alumni.map((person) => <CompactPersonCard key={person.slug} person={person} />)}
+            </div>
+          </div>
+        </section>
+      )}
 
       {partners.length > 0 && (
         <section className="py-16 bg-white" style={{ borderTop: "1px solid #F0F2F7" }}>

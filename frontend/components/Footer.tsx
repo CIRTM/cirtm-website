@@ -79,7 +79,6 @@ export default function Footer() {
                 ["Our members", "/people"],
                 ["Projects", "/projects"],
                 ["News & Events", "/seminars"],
-                ["Impact Case Studies", "/innovation/impact"],
                 ["Industry Partners", "/innovation/industry"],
                 ["Contact", "/contact"],
               ].map(([label, href]) => (

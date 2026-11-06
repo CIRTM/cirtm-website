@@ -37,7 +37,7 @@ export default function Home() {
               "radial-gradient(circle at 20% 50%, #1D4ED8 0%, transparent 50%), radial-gradient(circle at 80% 20%, #6D28D9 0%, transparent 50%)",
           }}
         />
-        <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-36">
+        <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 lg:pt-36 lg:pb-28">
           <div className="max-w-3xl">
             <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-amber-400">
               <span className="inline-block w-8 h-px bg-amber-400" />
@@ -72,26 +72,25 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Stats bar */}
-      <div className="relative bg-teal">
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: "16", label: "Research Projects" },
-              { value: "15", label: "Principal Investigators" },
-              { value: "1000+", label: "Peer-reviewed Publications" },
-              { value: "2019", label: "Year Established" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-4xl font-bold text-white">{stat.value}</div>
-                <div className="text-base text-white/70 mt-1">{stat.label}</div>
-              </div>
-            ))}
+        {/* Stats bar */}
+        <div className="relative border-t border-white/20 bg-teal/45 backdrop-blur-lg">
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <dl className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-8">
+              {[
+                { value: "16", label: "Research projects" },
+                { value: "15", label: "Principal investigators" },
+                { value: "1000+", label: "Peer-reviewed publications" },
+                { value: "2019", label: "Year established" },
+              ].map((stat) => (
+                <div key={stat.label} className="flex flex-col-reverse border-l border-white/40 pl-5">
+                  <dt className="mt-1 text-sm text-white/80">{stat.label}</dt>
+                  <dd className="text-4xl sm:text-5xl font-semibold tracking-tight text-white tabular-nums">{stat.value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
-      </div>
+      </section>
 
 {/* About with director */}
       <section className="py-20 bg-white">
