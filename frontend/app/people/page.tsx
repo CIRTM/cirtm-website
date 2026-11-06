@@ -137,22 +137,22 @@ function CompactPersonCard({ person, label }: { person: Person; label?: string }
   return (
     <Link
       href={`/people/${person.slug}`}
-      className="group flex items-center gap-4 rounded-2xl border border-gray-100 bg-white p-4 shadow-sm hover:shadow-md transition-shadow"
+      className="group flex items-stretch rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow"
     >
       {hasPhoto ? (
-        <div className="relative w-14 h-14 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100">
+        <div className="relative w-20 flex-shrink-0 bg-gray-100 min-h-[5rem]">
           <Image src={person.photoUrl!} alt="" fill className="object-cover object-top" unoptimized />
         </div>
       ) : (
         <div
-          className="w-14 h-14 flex-shrink-0 rounded-lg flex items-center justify-center text-sm font-semibold text-white"
+          className="w-20 min-h-[5rem] flex-shrink-0 flex items-center justify-center text-base font-semibold text-white"
           style={{ backgroundColor: NAVY }}
           aria-hidden="true"
         >
           {initials(person.name)}
         </div>
       )}
-      <div className="min-w-0">
+      <div className="min-w-0 flex flex-col justify-center px-4 py-3">
         <h3 className="font-semibold leading-snug group-hover:text-red-700 transition-colors" style={{ color: NAVY }}>
           {person.name}
         </h3>

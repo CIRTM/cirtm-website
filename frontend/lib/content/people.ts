@@ -2252,6 +2252,9 @@ Another area of interest is characterising zebrafish larvae, <120 hours post fer
     email: "magda.malliari@brunel.ac.uk",
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
+    bio: `## Summary
+
+PhD student holding a 3-year PhD studentship funded by the British Heart Foundation. My research employs human microfluidics and in-vivo models to explore the translational potential of promoting inflammation resolution in cardiovascular pathologies. I hold a BSc (Hons) in Immunology and an MSc in Precision Medicine and Pharmacological Innovation from the University of Glasgow.`,
   },
   { slug: "emma-cwilinski", name: "Emma Cwilinski",
     photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 103 },
@@ -2355,15 +2358,20 @@ TBL classes, seminars, conducting peer-learning sessions.`,
     college: "College of Health, Medicine and Life Sciences",
     bio: `### Newest selected publications
 
-Johns, A., Pina, C. and Ragusa, D.(2026)'[Cell-of-origin Discovery in Infant Leukemia through Integration of 3D Models and Patient Transcriptomic Data](http://dx.doi.org/10.3791/70278)'.Journal of Visualized Experiments. pp. 1 - 20.ISSN: 1940-087X [Open Access Link](https://bura.brunel.ac.uk/handle/2438/33103)
+Johns, A., Pina, C. and Ragusa, D.(2026)
+'[Cell-of-origin Discovery in Infant Leukemia through Integration of 3D Models and Patient Transcriptomic Data](http://dx.doi.org/10.3791/70278)'.Journal of Visualized Experiments. pp. 1 - 20.ISSN: 1940-087X [Open Access Link](https://bura.brunel.ac.uk/handle/2438/33103)
 
-Ragusa, D., Suen, CW., Torregrosa Cortes, G., Pastorino, F., Johns, A., Cicirò, Y., Dijkhuis, L., van den Brink, S., Cilli, M., Byrne, C., Ionescu, G-A., Cerveira, J., Kranc, KR., Hernandez-Hernandez, V., Ponzoni, M., Bigas, A., Garcia-Ojalvo, J., Martínez Arias, A. and Pina, C. et al.(2025)'[Dissecting infant leukemia developmental origins with a hemogenic gastruloid model](http://dx.doi.org/10.7554/elife.102324)'.eLife, 14. pp. 1 - 34.ISSN: 2050-084X [Open Access Link](https://bura.brunel.ac.uk/handle/2438/33104)
+Ragusa, D., Suen, CW., Torregrosa Cortes, G., Pastorino, F., Johns, A., Cicirò, Y., Dijkhuis, L., van den Brink, S., Cilli, M., Byrne, C., Ionescu, G-A., Cerveira, J., Kranc, KR., Hernandez-Hernandez, V., Ponzoni, M., Bigas, A., Garcia-Ojalvo, J., Martínez Arias, A. and Pina, C. et al.(2025)
+'[Dissecting infant leukemia developmental origins with a hemogenic gastruloid model](http://dx.doi.org/10.7554/elife.102324)'.eLife, 14. pp. 1 - 34.ISSN: 2050-084X [Open Access Link](https://bura.brunel.ac.uk/handle/2438/33104)
 
-Cicirò, Y., Ragusa, D. and Sala, A.(2024)'[Expression of the checkpoint kinase BUB1 is a predictor of response to cancer therapies](http://dx.doi.org/10.1038/s41598-024-55080-y)'.Scientific Reports, 14 (1). pp. 1 - 15.ISSN: 2045-2322 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/28433)
+Cicirò, Y., Ragusa, D. and Sala, A.(2024)
+'[Expression of the checkpoint kinase BUB1 is a predictor of response to cancer therapies](http://dx.doi.org/10.1038/s41598-024-55080-y)'.Scientific Reports, 14 (1). pp. 1 - 15.ISSN: 2045-2322 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/28433)
 
-Ragusa, D. and Vagnarelli, P.(2023)'[Contribution of histone variants to aneuploidy: a cancer perspective](http://dx.doi.org/10.3389/fgene.2023.1290903)'.Frontiers in Genetics, 14. pp. 1 - 17.ISSN: 1664-8021 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/27765)
+Ragusa, D. and Vagnarelli, P.(2023)
+'[Contribution of histone variants to aneuploidy: a cancer perspective](http://dx.doi.org/10.3389/fgene.2023.1290903)'.Frontiers in Genetics, 14. pp. 1 - 17.ISSN: 1664-8021 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/27765)
 
-Ragusa, D., Dijkhuis, L., Pina, C. and Tosi, S.(2023)'[Mechanisms associated with t(7;12) acute myeloid leukaemia: from genetics to potential treatment targets](http://dx.doi.org/10.1042/BSR20220489)'.Bioscience reports, 43 (1). pp. 1 - 17.ISSN: 0144-8463 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/26109)`,
+Ragusa, D., Dijkhuis, L., Pina, C. and Tosi, S.(2023)
+'[Mechanisms associated with t(7;12) acute myeloid leukaemia: from genetics to potential treatment targets](http://dx.doi.org/10.1042/BSR20220489)'.Bioscience reports, 43 (1). pp. 1 - 17.ISSN: 0144-8463 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/26109)`,
   },
 ];
 
