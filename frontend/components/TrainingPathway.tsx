@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 type PathwayStep = {
   level: string;
@@ -44,27 +43,8 @@ export default function TrainingPathway({ pathway }: { pathway: PathwayStep[] })
     return () => { stepObserver.disconnect(); lineObserver.disconnect(); };
   }, []);
 
-  const fade = "linear-gradient(to right, transparent 0%, black 30%, black 78%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)";
-
   return (
     <div className="relative">
-      <div
-        aria-hidden="true"
-        className="hidden xl:block absolute inset-y-0 left-[44rem] right-0 overflow-hidden pointer-events-none mix-blend-lighten"
-        style={{
-          maskImage: fade,
-          WebkitMaskImage: fade,
-          maskComposite: "intersect",
-          WebkitMaskComposite: "source-in",
-          opacity: lineHeight ? 1 : 0,
-          transition: "opacity 1.8s ease",
-        }}
-      >
-        {/* Scaled and nudged so each colour group sits level with its step. */}
-        <div className="absolute inset-x-0" style={{ top: "4%", height: "108.6%" }}>
-          <Image src="/images/education/edu-pathway.webp" alt="" fill sizes="560px" className="object-cover object-right" />
-        </div>
-      </div>
       <div ref={containerRef} className="relative max-w-3xl">
         {/* Animated vertical line */}
         <div className="absolute left-5 top-0 bottom-0 w-px bg-white/15" />

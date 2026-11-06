@@ -80,7 +80,7 @@ function Eyebrow({ children, light = false }: { children: React.ReactNode; light
 export default function EducationPage() {
   return (
     <>
-      <FadeBanner image="/images/education/research-festival-2026-panel.jpg" className="py-24">
+      <FadeBanner image="/images/education/research-festival-2026-panel.jpg" objectPosition="center 40%" className="py-24">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <Eyebrow light>Education</Eyebrow>
           <h1 className="text-5xl sm:text-6xl text-white mb-6" style={SERIF}>Education &amp; Training</h1>
@@ -140,11 +140,13 @@ export default function EducationPage() {
       {/* Training pathway */}
       <section className="py-20" style={{ backgroundColor: NAVY }}>
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Eyebrow light>The CIRTM training pathway</Eyebrow>
-          <h2 className="text-4xl sm:text-5xl text-white mb-12" style={SERIF}>
-            From first placement <em>to research leader</em>
-          </h2>
-          <TrainingPathway pathway={pathway} />
+          <div className="max-w-3xl mx-auto">
+            <Eyebrow light>The CIRTM training pathway</Eyebrow>
+            <h2 className="text-4xl sm:text-5xl text-white mb-12 lg:whitespace-nowrap" style={SERIF}>
+              From first placement <em>to research leader</em>
+            </h2>
+            <TrainingPathway pathway={pathway} />
+          </div>
         </div>
       </section>
 

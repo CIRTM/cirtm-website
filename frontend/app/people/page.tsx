@@ -32,7 +32,7 @@ export default function PeoplePage() {
         <section className="py-16 bg-white">
           <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold text-navy mb-8">Principal Investigators</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            <div className="max-w-6xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {pis.map((person) => <PersonCard key={person.slug} person={person} />)}
             </div>
           </div>
@@ -131,12 +131,12 @@ function PersonCard({ person }: { person: Person }) {
       href={`/people/${person.slug}`}
       className="card overflow-hidden border border-gray-100 hover:border-teal/30 hover:shadow-sm transition-all block"
     >
-      <div className="relative w-full aspect-[4/3]">
+      <div className="relative w-full aspect-[3/4]">
         <Image
           src={person.photoUrl || "/images/placeholdersilhouette.webp"}
           alt={person.name}
           fill
-          className="object-cover object-[center_20%]"
+          className="object-cover object-top"
           unoptimized
         />
       </div>

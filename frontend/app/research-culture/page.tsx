@@ -160,7 +160,7 @@ function Badge({ c, size }: { c: Commitment; size: "sm" | "lg" }) {
 export default function ResearchCulturePage() {
   return (
     <>
-      <FadeBanner image="/images/facilities/microscope-suite.jpg" className="py-24">
+      <FadeBanner image="/images/research-culture/researchers-in-lab-banner.jpg" objectPosition="right 85%" imageWidth="md:w-1/2 2xl:w-[40%]" className="py-32">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <Eyebrow light>Research culture</Eyebrow>
           <h1 className="text-5xl sm:text-6xl text-white mb-6 leading-tight" style={SERIF}>

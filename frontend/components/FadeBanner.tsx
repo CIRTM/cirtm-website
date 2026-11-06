@@ -6,16 +6,18 @@ export function FadeBanner({
   image,
   className = "py-20",
   objectPosition = "center",
+  imageWidth = "md:w-3/5",
   children,
 }: {
   image: string;
   className?: string;
   objectPosition?: string;
+  imageWidth?: string;
   children: React.ReactNode;
 }) {
   return (
     <section className={`relative overflow-hidden ${className}`} style={{ backgroundColor: NAVY }}>
-      <div className="absolute inset-y-0 right-0 w-full md:w-3/5">
+      <div className={`absolute inset-y-0 right-0 w-full ${imageWidth}`}>
         <Image
           src={image}
           alt=""
