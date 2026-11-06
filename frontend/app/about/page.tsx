@@ -3,6 +3,7 @@ import Link from "next/link";
 import { researchAreas } from "@/lib/content/research-areas";
 import { BeakerIcon, ChartBarIcon, Cog6ToothIcon, UserGroupIcon } from "@heroicons/react/24/outline";
 import ScaleExplorer, { type Method } from "@/components/ScaleExplorer";
+import { FadeBanner } from "@/components/FadeBanner";
 import "./about.css";
 
 const NAVY = "#0B1B3A";
@@ -158,11 +159,22 @@ function ExternalLink({ href, children }: { href: string; children: React.ReactN
 export default function AboutPage() {
   return (
     <>
+      <FadeBanner image="/images/about/campus-students-banner.jpg" objectPosition="center 45%" className="py-24">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Eyebrow light>About the centre</Eyebrow>
+          <h1 className="text-5xl sm:text-6xl text-white mb-6 leading-tight" style={SERIF}>
+            About <em>CIRTM</em>
+          </h1>
+          <p className="text-gray-300 text-lg leading-relaxed max-w-2xl">
+            The Centre for Inflammation Research and Translational Medicine at Brunel University of London.
+          </p>
+        </div>
+      </FadeBanner>
+
       {/* About CIRTM */}
       <section className="py-20 bg-white">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Eyebrow>About the centre</Eyebrow>
-          <h1 className="text-5xl sm:text-6xl mb-10" style={{ ...SERIF, color: NAVY }}>About CIRTM</h1>
+          <Eyebrow>Who we are</Eyebrow>
           <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-16">
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
               <p>
