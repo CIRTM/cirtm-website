@@ -140,12 +140,12 @@ function CompactPersonCard({ person, label }: { person: Person; label?: string }
       className="group flex items-center gap-4 rounded-2xl border border-gray-100 bg-white p-4 shadow-sm hover:shadow-md transition-shadow"
     >
       {hasPhoto ? (
-        <div className="relative w-12 h-12 flex-shrink-0 rounded-full overflow-hidden bg-gray-100">
+        <div className="relative w-14 h-14 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100">
           <Image src={person.photoUrl!} alt="" fill className="object-cover object-top" unoptimized />
         </div>
       ) : (
         <div
-          className="w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center text-sm font-semibold text-white"
+          className="w-14 h-14 flex-shrink-0 rounded-lg flex items-center justify-center text-sm font-semibold text-white"
           style={{ backgroundColor: NAVY }}
           aria-hidden="true"
         >

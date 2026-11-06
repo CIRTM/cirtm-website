@@ -1880,6 +1880,113 @@ PhD (City University, London, and Institute of Psychiatry, London) - awarded 200
     photoUrl: "/images/people/cristiano-scotta.jpg",
     researchAreaSlugs: ["inflammation-immunity-infection", "translational-medicine-novel-therapeutics", "vascular-cardiovascular-sciences"],
     order: 13,
+    role: "Lecturer in Biosciences",
+    email: "cristiano.scotta@brunel.ac.uk",
+    tel: "+44 (0)1895 265727",
+    office: "Heinz Wolff 129",
+    department: "Department of Life Sciences",
+    college: "College of Health, Medicine and Life Sciences",
+    bio: `## Summary
+
+Dr Cristiano Scottà is currently a Lecturer in Biosciences at Brunel University and a Visiting Lecturer at King’s College London. His scientific career centres on translating immunological processes into clinical applications. At King’s College London, he initiated studies on preclinical models of cellular therapy, focusing on regulatory T cells (Tregs) to modulate inflammation in transplantation and autoimmune diseases. He developed novel strategies to ex vivo manipulate human Tregs for immunotolerance in solid organ transplantation, resulting in functionally stable and effective cell products. These approaches, along with his studies on human Treg biology, influenced the first clinical trials of Treg adoptive transfer in transplantation (ONE Study, Thril). His contributions expanded to five more clinical trials, spanning transplantation, aplastic anaemia, and IBD, involving the training of GMP operators and the design of GMP-compatible cellular therapy techniques.
+
+His research also explored approaches to improve the tissue localisation of therapeutic cell products. Cell trafficking to the gut was aided by studies on synthetic molecules targeting the retinoic acid pathway, leading to a clinical trial involving Treg adoptive transfer for Crohn’s disease. His studies also explored Treg interactions with other cell types. He investigated Tregs' role in reducing cholesterol accumulation in macrophages and stabilising atherosclerotic plaque, suggesting a positive impact in delaying atherosclerosis progression. Furthermore, he explored the genetic manipulation of human Tregs, designing CAR-Tregs to target allogeneic antigens and produce tolerogenic IL-10, with ongoing development of CAR molecules for therapeutic Tregs targeting either B cells or macrophages.
+
+## Qualifications
+
+- PhD in Cellular and Developmental Biology, “Sapienza” University of Rome.
+- School of Specialisation in Biotechnological Applications (3 years), “Sapienza” University of Rome.
+- Professional Diploma in Biology.
+- Biological Science Degree (BSc+MSc), “La Sapienza” University of Rome.
+
+## Responsibility
+
+Principal Investigator at the [Centre for Inflammation Research and Translational Medicine](https://www.brunel.ac.uk/research/Centres/Inflammation-Research-and-Translational-Medicine)
+
+Medical Immunology (BB3720) Module Block Lead
+
+### Newest selected publications
+
+Mensah, NE., Efthymiou, A., Mureanu, N., Martín Monreal, MT., Vaikkinen, H., Kannambath, S., Bowman, A., Menon, A., Tree, T., Lombardi, G., Dhami, P., Nicolaides, KH., Scottà, C. and Shangaris, P. et al.(2026)
+'[Single-cell transcriptomics identifies regulatory T cell heterogeneity in gestational diabetes mellitus](http://dx.doi.org/10.1038/s43856-026-01563-0)'.Communications Medicine, 0 (article in press). pp. 1 - 31.ISSN: 2730-664X [Open Access Link](https://bura.brunel.ac.uk/handle/2438/33116)
+
+Edwards, W., Sun, N., Wang, Y., Lu, Y., Wang, C., Mastronicola, D., Scottà, C., Romano, M., Cejas, CM., Espinet, A., Lombardi, G. and Chiappini, C. et al.(2026)
+'[Perfusion microbioreactor for CAR-Treg manufacturing](http://dx.doi.org/10.1016/j.isci.2026.115246)'.iScience, 29 (4). pp. 1 - 17.ISSN: 2589-0042 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/32944)
+
+Sun, N., Wang, C., Wang, Y., Edwards, W., Dimitrievska, M., Li, Y., Vasovic, N., McLennan, S., Zhu, H., Mäkilä, E., Salonen, J., Shen, J., Peng, Q., Scottà, C., Lombardi, G. and Chiappini, C. et al.(2026)
+'[Caveolar Endocytosis Governs Nanoneedle Transfection](http://dx.doi.org/10.1021/acsnano.5c11011)'.ACS Nano, 20 (6). pp. 4663 - 4676.ISSN: 1936-0851 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/32946)
+
+Saleem, A., Peng, Q., Tang, Z., Mohseni, YR., Scottà, C., Shangaris, P., Smit, K., Vermeij, WP., Issa, F., Lombardi, G. and Fruhwirth, GO. et al.(2026)
+'[CAR-mediated release of IL-10 increases the function of regulatory T cells: relevance for future clinical application](http://dx.doi.org/10.1016/j.ymthe.2026.02.001)'.Molecular Therapy, 34 (5). pp. 1 - 16.ISSN: 1525-0016 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/33179)
+
+Alhabbab, RY., Mastronicola, D., Lombardi, G. and Scottà, C.(2025)
+'[TIM3-mediated differentiation of IL-10-producing CD25+ B cells by expanded regulatory T cells](http://dx.doi.org/10.1007/s00109-025-02606-0)'.Journal of Molecular Medicine, 104 (1). pp. 1 - 13.ISSN: 0946-2716 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/32620)`,
+    sections: {
+      research: `## Research area(s)
+
+Design novel adoptive cell therapies, Drug Discovery and Development, Characterisation of immune cell subsets , Disease Immuno-monitoring, Multiparametric Flow Cytometry and Deep-immunophenotyping, Regulatory T Cell Manipulation, Design and production of CAR-T cells
+
+## Research Interests
+
+Cristiano Scottà's current research within the Centre for Inflammation Research and Translational Medicine (CIRTM) focuses on understanding the regulatory processes behind pathological inflammatory conditions and manipulating human regulatory T cells (Tregs) to develop novel cellular therapies for controlling immune-mediated inflammatory diseases.
+
+His work is structured around five main objectives:
+
+- **Understanding Treg Heterogeneity**: Investigating the diverse subpopulations of Tregs to identify therapeutic targets, particularly in conditions like atherosclerosis, pregnancy, and systemic lupus erythematosus.
+- **Enhancing Treg Clinical Efficacy**: Exploring molecular mechanisms, such as FOXP3 acetylation/ubiquitination, to improve Treg stability and function in inflammatory settings.
+- **Investigating Treg Cells Function in Pregnancy Complications**: Exploring the role of Tregs during pregnancy complications such as preeclampsia and gestational diabetes.
+- **Studying Treg Cell Crosstalk with Other Immune Cells in Cardiovascular Disease**: Exploring the role of Tregs in mitigating endothelial cell dysfunction and progression of atherosclerosis.
+- **Producing Novel Therapeutic Treg Products**: Developing new therapeutic approaches, including CAR-Tregs, to treat inflammatory disorders. Current research focuses on treating skin inflammation and regulating B cell responses by controlling autoantibody production.
+
+Together, these objectives aim to translate innovative immunological insights into targeted, effective treatments for chronic inflammatory diseases.
+
+## Research grants and projects
+
+### Grants
+
+Gestational diabetes mellitus (GDM) disrupts endothelial cell function, leading to complications in placental development and posing long-term risks of diabetes and cardiovascular diseases post-pregnancy. Traditional animal models fall short due to ethical and physiological limitations, prompting the development of more human-relevant in vitro systems. This project aims to create a vasculature-on-a-chip model that mimics endothelial dysfunction in GDM. By utilizing placental and decidua explants from GDM-affected and healthy pregnancies, the model will simulate the interactions between endothelial cells and immune system components, including regulatory T cells (Tregs) and macrophages. These interactions will be studied under conditions of oxidative stress and inflammation typical of GDM. The innovative platform will provide insights into the mechanisms driving endothelial dysfunction and inflammation, particularly the role of Tregs in maintaining vascular health. Ultimately, this research could guide the development of targeted therapies to mitigate the adverse effects of GDM, improving outcomes for both mother and child.
+
+Alzheimer’s disease (AD) involves not only protein aggregation but also profound dysregulation of innate immunity, particularly microglial function. This project aims to develop a first‑in‑class immunotherapy that targets this axis by harnessing regulatory T cells (Tregs). We hypothesize that adoptive transfer of Tregs engineered with a chimeric antigen receptor (CAR) specific for TREM2 will restore a protective microglial phenotype, enhance amyloid‑β (Aβ) clearance, and reduce neuroinflammation. To address whether human Tregs can reprogramme microglia in an AD‑relevant context, we will use co‑culture systems combining GMP‑expanded human Tregs with iPSC‑derived microglia exposed to Aβ. Functional readouts will assess microglial activation, cytokine production, oxidative stress, and Aβ uptake. Transcriptomic and metabolic profiling will define the mechanisms by which Tregs influence microglial phenotype and function. Building on this, Tregs will be engineered to express anti‑TREM2 CARs to enhance antigen‑specific targeting and activity within the disease environment. Using established lentiviral platforms, we will optimise CAR design and evaluate Treg stability, activation, and suppressive function. Overall, this work will provide proof‑of‑concept for a novel strategy linking systemic immune regulation to CNS innate immunity, laying the foundation for targeted immunotherapies in AD.
+
+MRC Centre for Transplantation 10-year anniversary
+
+Research Translation Award
+
+Research and Development Challenge Fund
+
+### Research links
+
+- [orcid.org/0000-0003-3942-5201](https://orcid.org/0000-0003-3942-5201)
+
+### Similar research interests
+
+- [Mr Zeqi Huang](https://www.brunel.ac.uk/people/zeqi-huang)
+- [Professor David Harrison](https://www.brunel.ac.uk/people/david-harrison)
+- [Dr Busayawan Lam](https://www.brunel.ac.uk/people/busayawan-lam)
+- [Professor Joseph Giacomin](https://www.brunel.ac.uk/people/joseph-giacomin)
+- [Professor John Cosmas](https://www.brunel.ac.uk/people/john-cosmas)`,
+      teaching: `## Courses taught
+
+- Cells and Receptors of the Immune System(BB5706)Level: Postgraduate
+ Date: November 2024
+
+## Courses developed
+
+- Research Skills in Immunology
+- Medical Immunology
+
+## PhD supervision
+
+- CD101 expression identifies a distinct subpopulation of regulatory T cells with TH22-like properties and skin homing capacitySupervisory role: Lead supervisor
+
+Date: 2019- 2023
+- Dissecting the role of Regulatory T cells in AtherosclerosisSupervisory role: Joint supervisor
+
+Date: 2018- 2021`,
+      phdTopics: `### PhD projects for research students
+
+- [Engineering the Peacekeepers: Novel CAR-Treg and Adoptive Cell Therapies for Pregnancy Complications](https://www.brunel.ac.uk/research/Research-degrees/PhD-Topics/Topics?id=78f6202f-e8f8-41d8-badc-e2ee880e5c4a)`,
+    },
   },
   {
     slug: "sook-lee",
@@ -1896,6 +2003,132 @@ PhD (City University, London, and Institute of Psychiatry, London) - awarded 200
     researchAreaSlugs: ["inflammation-immunity-infection"],
     photoUrl: "/images/people/ayca-sayi-yazgan.jpg",
     order: 12,
+    role: "Lecturer in Biosciences",
+    email: "ayca.sayiyazgan@brunel.ac.uk",
+    tel: "+44 (0)1895 268790",
+    office: "Heinz Wolff 229",
+    department: "Department of Life Sciences",
+    college: "College of Health, Medicine and Life Sciences",
+    bio: `## Summary
+
+I am a biomedical scientist specializing in pathogen-immune system interactions within gastrointestinal diseases. Throughout my scientific career, I have developed expertise in cancer biology and molecular immunology, ranging from investigating the role of kinases in cancer progression to exploring innate and adaptive immune responses in disease setting.
+
+I earned my Ph.D. at the University of Basel, conducting research at the Friedrich Miescher Institute (FMI) and ETH-Zurich under the mentorship of Prof. Wilhelm Krek. During this time, I was awarded a scholarship that supported my research and academic endeavors. My doctoral research focused on the role of a kinase in cancer progression, providing me with extensive training in cell biology and biochemistry. Following my Ph.D., I became deeply interested in studying the chronic inflammation that leads to cancer using model systems.
+
+I pursued postdoctoral studies in the laboratory of Prof. Anne Müller at the University of Zurich’s Institute of Cancer Research, supported by a University of Zurich URPP Systems Biology postdoctoral fellowship. During this time, I explored immune modulation by Helicobacter pylori, a bacterium associated with chronic gastric diseases and cancer. My research demonstrated that H. pylori induces Regulatory B cells (Bregs), which promote T Regulatory 1 (Tr1) cells, highlighting cooperative immune regulation in bacterial infection models.
+
+Following my postdoctoral training, I joined the Department of Molecular Biology and Genetics at Istanbul Technical University (ITU) as a faculty member, establishing a multidisciplinary Molecular Immunology research group. I mentored numerous MSc and Ph.D. students, taught undergraduate and graduate courses, and led several competitive research projects funded by organizations such as TÜBİTAK and the Istanbul Development Agency.
+
+In 2018, I was awarded a Fulbright Visiting Scholarship to work with Prof. Peter Ernst at the University of California, San Diego. There, I investigated the role of Regulatory B cells in the pathogenesis of Crohn’s disease. My contributions to immunology were recognized in 2022 when I was honored with the prestigious İsil Berat Barlan Award for Outstanding Women Scientists in Immunology.
+
+I actively engage in European Union COST Actions to foster collaborations and initiate joint projects focusing on host immune responses to pathogens in chronic diseases. My goal remains to unravel the complex mechanisms underlying immune regulation and inflammation, ultimately contributing to improved therapeutic strategies for chronic diseases and cancer.
+
+I joined the Division of Biosciences in late 2024 and hold an Honorary Professorship at Istanbul Technical University, Turkey.
+
+## Qualifications
+
+Associate Professor in Immunology, Turkish National Scientific Qualification by Council of Higher Education, Turkey
+
+Ph.D. in Biochemistry/Cancer Biology University of Basel, Switzerland
+
+MSc in Molecular Biology & Genetics Bilkent University, Turkey
+
+BSc (Hons) in Biomedical Sciences Istanbul University, Cerrahpasa Medical Faculty, Turkey
+
+### 
+
+## Responsibility
+
+I am a Lecturer in Biosciences (Microbiology/Immunology) with Research and Teaching responsibilities.
+
+### Newest selected publications
+
+Reste, M., Ajazi, K., Sayi-Yazgan, A., Jankovic, R., Bufan, B., Brandau, S., Bækkevold, ES., Petitprez, F., Lindstedt, M., Adema, GJ. and Almeida, CR. et al.(2024)
+'[The role of dendritic cells in tertiary lymphoid structures: implications in cancer and autoimmune diseases](http://dx.doi.org/10.3389/fimmu.2024.1439413)'.Frontiers in Immunology, 15. pp. 1 - 13.ISSN: 1664-3224 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/30133)
+
+Senturk, ZN., Akdag, I., Deniz, B. and Sayi Yazgan, A.(2023)
+'[Pancreatic cancer: Emerging field of regulatory B-cell-targeted immunotherapies](http://dx.doi.org/10.3389/fimmu.2023.1152551)'.Frontiers in Immunology, 14. pp. 1 - 7.ISSN: 1664-3224 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/30132)
+
+Aydın, EM., Demir, TD., Seymen, N., Said, SS., Oktem-Okullu, S., Tiftikci, A., Cicek, B., Tokat, F., Tozun, N., Ince, U., Sezerman, U. and Sayi Yazgan, A. et al.(2021)
+'[The crosstalk between H. pylori virulence factors and the PD1:PD-L1 immune checkpoint inhibitors in progression to gastric cancer](http://dx.doi.org/10.1016/j.imlet.2021.06.009)'.Immunology Letters, 239. pp. 1 - 11.ISSN: 0165-2478
+
+Birol, SZ., Fucucuoglu, R., Cadirci, S., Sayi Yazgan, A. and Trabzon, L.(2021)
+'[Studying dynamic stress effects on the behaviour of THP-1 cells by microfluidic channels](http://dx.doi.org/10.1038/s41598-021-93935-w)'.Scientific Reports, 11 (1). pp. 1 - 10.ISSN: 2045-2322 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/30134)
+
+Altunöz, D. and Sayi Yazgan, A.(2021)
+'[Helicobacter-stimulated il-10-producing b cells suppress differentiation of lipopolysaccharide/helicobacter felis-activated stimulatory dendritic cells](http://dx.doi.org/10.3906/biy-2012-11)'.Turkish Journal of Biology, 45 (2). pp. 214 - 224.ISSN: 1300-0152 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/29463)`,
+    sections: {
+      research: `## Research area(s)
+
+Cancer Immunology, Mucosal Immunology, Immune Regulation, Host-Pathogen interaction, Gastrointestinal Diseases
+
+## Research Interests
+
+### 
+
+Our research investigates the impact of pathogenic and commensal gut microbes on immune modulation in gastrointestinal diseases. We employ state-of-the-art cellular, microbiological, and immunological techniques in both human and murine models, aiming to bridge laboratory findings with clinical applications. Our interdisciplinary approach involves collaborations with gastroenterologists, oncologists, immunologists, pathologists, and bioinformaticians.Our primary research areas include:
+
+- Exploring the development and function of Regulatory B-cells in chronic bacterial infections and cancer.
+- Investigating the role of adaptive immune cells (B and T cells) in pathogen-induced gastrointestinal pathogenesis, from chronic inflammation to cancer development.
+- Unraveling the intricate interactions between pathogens, epithelial cells (using advanced organoid models), and immune cells. We focus on how these interactions shape host defense mechanisms, influence pathogen invasion strategies, and modulate inflammatory responses in mucosal tissues.
+
+This multifaceted approach aims to deepen our understanding of host-microbe interactions and their implications for gastrointestinal health and disease.
+
+### Research Collaboration
+
+Open to academic collaboration, industry partnerships and joint PhD supervision.
+
+### Research links
+
+- [orcid.org/0000-0002-9015-8244](https://orcid.org/0000-0002-9015-8244)
+
+### Similar research interests
+
+- [Dr Su-ling Li](https://www.brunel.ac.uk/people/su-ling-li)
+- [Dr Doreen Lau](https://www.brunel.ac.uk/people/aihuidoreen-lau)`,
+      teaching: `## Teaching
+
+BB2711-Human Pathology and Immunology
+
+BB3091-Final Year Projects
+
+BB2802&LS2800-Primary Literature Interrogation and Synthesis
+
+BB5706 Cell and Receptor of the Immune System`,
+      impact: `## Membership and affiliation
+
+British Society of Immunology- since 2024
+
+The European Association for Cancer Research- since 2013
+
+The European Federation of Immunology (EFIS)- since 2009
+
+Turkish Society of Immunology (2009-),General Secretary of Turkish Society of Immunology (2013-to date)`,
+      phdTopics: `### PhD projects for research students
+
+- [Immunometabolic Regulation of B Cells in Gastric Cancer and Infection-Associated Immunity](https://www.brunel.ac.uk/research/Research-degrees/PhD-Topics/Topics?id=13d8bf34-3b19-43d4-9ef4-4c874c8a058a)
+- [Bacterial Outer Membrane Vesicles as Modulators of Host Immune Crosstalk in Colorectal Cancer Organoid Models](https://www.brunel.ac.uk/research/Research-degrees/PhD-Topics/Topics?id=96535d54-e04c-4c57-a94e-f5f1936279ca)
+
+## Research supervision
+
+### PhD, Postdoctoral, and Visiting Scholar Opportunities
+
+Enquiries are welcomed from highly motivated and talented applicants interested in joining the research group. Opportunities may be available through a range of competitive funding schemes, including:
+
+- Marie Skłodowska-Curie Actions (MSCA) Postdoctoral Fellowships
+- Royal Society Newton International Fellowships
+- Commonwealth PhD Scholarships (for applicants from Commonwealth countries)
+- TUBITAK 2213-A, 2214-A, 2215 PhD Scholarships (for Turkish students)
+- Brunel–CSC Scholarship (for Chinese students and scholars)
+
+Prospective applicants are encouraged to make contact well in advance of application deadlines so that potential research directions can be discussed and a competitive proposal can be developed. A brief CV and a short statement of research interests should be included with all enquiries.
+
+The Division of Biosciences is currently offering PhD opportunities for EU and international students who can provide their own funding for research.
+
+Prospective graduate students are encouraged to reach out to Dr. Sayi-Yazgan to discuss potential projects and receive training in areas aligned with the group's research interests.
+
+For more information on PhD applications, entry requirements, fees, and funding, please visit: [Biosciences PhD | Brunel University of London](https://www.brunel.ac.uk/study/courses/phd-biosciences).`,
+    },
   },
   {
     slug: "paul-hellewell",
@@ -1909,17 +2142,117 @@ PhD (City University, London, and Institute of Psychiatry, London) - awarded 200
     slug: "ansar-pathan",
     name: "Dr Ansar Pathan",
     memberType: "associate-member",
-    photoUrl: "/images/placeholdersilhouette.webp",
+    photoUrl: "/images/people/ansar-pathan.jpg",
     researchAreaSlugs: ["translational-medicine-novel-therapeutics"],
     order: 53,
+    role: "Honorary Lecturer - Life Sciences",
+    email: "ansar.pathan@brunel.ac.uk",
+    tel: "+44 (0)1895 267761",
+    office: "Heinz Wolff 227",
+    department: "Department of Life Sciences",
+    college: "College of Health, Medicine and Life Sciences",
+    bio: `### Newest selected publications
+
+Rowland, R., Pathan, AA., Satti, I., Poulton, ID., Matsumiya, MML., Whittaker, M., Minassian, AM., O’Hara, GA., Hamill, M., Scott, JT., Harris, SA., Poyntz, HC., Bateman, C., Meyer, J., Williams, N., Gilbert, SC., Lawrie, AM., Hill, AVS. and McShane, H. et al.(2013)
+'[Safety and immunogenicity of an FP9-vectored candidate tuberculosis vaccine (FP85A), alone and with candidate vaccine MVA85A in BCG-vaccinated healthy adults](http://dx.doi.org/10.4161/hv.22464)'.Human Vaccines & Immunotherapeutics, 9 (1). pp. 50 - 62.ISSN: 2164-5515
+
+Pathan, AA., Minassian, AM., Sander, CR., Rowland, R., Porter, DW., Poulton, ID., Hill, AVS., Fletcher, HA. and McShane, H. et al.(2012)
+'[Effect of vaccine dose on the safety and immunogenicity of a candidate TB vaccine, MVA85A, in BCG vaccinated UK adults](http://dx.doi.org/10.1016/j.vaccine.2012.06.084)'.Vaccine, 30 (38). pp. 5616 - 5624.ISSN: 0264-410X
+
+Rowland, R., Brittain, N., Poulton, ID., Minassian, AM., Sander, C., Porter, DW., Williams, N., Satti, I., Pathan, AA., Lawrie, AM. and McShane, H. et al.(2012)
+'[A review of the tolerability of the candidate TB vaccine, MVA85A compared with BCG and Yellow Fever vaccines, and correlation between MVA85A vaccine reactogenicity and cellular immunogenicity](http://dx.doi.org/10.1016/j.trivac.2012.07.001)'.Trials in Vaccinology, 1. pp. 27 - 35.ISSN: 1879-4378 [Open Access Link](http://bura.brunel.ac.uk/handle/2438/7705)
+
+Griffiths, KL., Pathan, AA., Minassian, AM., Sander, CR., Beveridge, NER., Hill, AVS., Fletcher, HA. and McShane, H. et al.(2011)
+'[Th1/Th17 Cell Induction and Corresponding Reduction in ATP Consumption following Vaccination with the Novel Mycobacterium tuberculosis Vaccine MVA85A](http://dx.doi.org/10.1371/journal.pone.0023463)'.PLoS One, 6 (8). pp. e23463 - e23463.ISSN: 1932-6203 [Open Access Link](http://bura.brunel.ac.uk/handle/2438/8112)
+
+Beveridge, NER., Price, DA., Casazza, JP., Pathan, AA., Sander, CR., Asher, TE., Ambrozak, DR., Precopio, ML., Scheinberg, P., Alder, NC., Roederer, M., Koup, RA., Douek, DC., Hill, AVS. and McShane, H. et al.(2011)
+'[Correction: Immunisation with BCG and recombinant MVA85A induces long‐lasting, polyfunctional Mycobacterium tuberculosis ‐specific CD4 + memory T lymphocyte populations](http://dx.doi.org/10.1002/eji.201190032)'.European Journal of Immunology, 41 (5). pp. 1501 - 1501.ISSN: 0014-2980`,
+    sections: {
+      research: `## Research area(s)
+
+- Innate and adaptive immunity
+- Host-pathogen interaction
+- Immunity to Mycobacterium tuberculosis
+- TB diagnostics
+- Vaccinology
+
+### Research links
+
+- [orcid.org/0000-0002-5759-3420](https://orcid.org/0000-0002-5759-3420)
+
+### Co-author network
+
+- [Dr Steven Smith](https://www.brunel.ac.uk/people/steven-smith)
+- [Visualise network](https://www.brunel.ac.ukAuthorNetwork)
+
+### Similar research interests
+
+- [Dr Steven Smith](https://www.brunel.ac.uk/people/steven-smith)
+- [Dr Anthony Tsolaki](https://www.brunel.ac.uk/people/anthony-tsolaki)
+- [Professor Mark Neocleous](https://www.brunel.ac.uk/people/mark-neocleous)
+- [Dr Patrizia Dalla Bona](https://www.brunel.ac.uk/people/patricia-hobbs)
+- [Dr Jacqueline Cliff](https://www.brunel.ac.uk/people/jacqeline-cliff)`,
+    },
   },
   // Doctoral Researchers and Fellows
   { slug: "thomas-williams", name: "Thomas Williams",
-    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 100 },
+    photoUrl: "/images/people/thomas-williams.jpg", memberType: "doctoral-researcher", order: 100,
+    role: "PhD Student",
+    email: "tom.williams@brunel.ac.uk",
+    department: "Department of Life Sciences",
+    college: "College of Health, Medicine and Life Sciences",
+    externalLinks: [{"label": "Gavins Lab", "url": "https://www.gavins-lab.com/"}],
+    bio: `## Summary
+
+Tom graduated in 2014, from Portsmouth University, with a BSc (Hons) in biology. Thomas then went on to work at Plasticell LTD researching acute myeloid leukaemia, differentiation of stem cells into mature myeloid lineages, and gene editing of hematopoietic stem cells. From there Tom started working at the Danovi Lab at King’s College London investigating the cytotoxic effect of neutrophils and neutrophil differentiation. From 2021 to 2023 Tom was part of the Watt lab at KCL becoming part of the team managing the High-content imaging facility the “Stem Cell Hotel” training and assisting across multiple projects from both KCL and external entities. Tom is now carrying out his PhD in the Gavins lab, restarting his work with neutrophils, investigating how they change with ageing, are affected by inflammation, and possible treatments to reduce chronic inflammatory effects.`,
+    sections: {
+      research: `## Research area(s)
+
+Tom’s research uses a highly innovative High-content imaging combined with functional assays, ICC, and in-vivo modelling to gain insights into how neutrophil morphology, physiology, and functionality changes with age and inflammation.
+
+## Research Interests
+
+- High-content screening and assessment of how ageing changes neutrophil biology
+- Understanding how chronic inflammation affects neutrophils from both human donors and murine models
+- Investigating potential therapeutic agents to reverse negative effects of ageing and inflammation on neutrophils`,
+      impact: `## Membership and affiliation
+
+- Affiliate research assistant at King’s College London`,
+    },
+  },
   { slug: "amina-ali", name: "Amina Ali",
-    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 101 },
+    photoUrl: "/images/people/amina-ali.jpg", memberType: "doctoral-researcher", order: 101,
+    role: "PhD Student",
+    email: "amina.ali@brunel.ac.uk",
+    department: "Department of Life Sciences",
+    college: "College of Health, Medicine and Life Sciences",
+    bio: `## Summary
+
+Amina graduated in 2023 from the University of Reading with a Bachelor's degree in Biomedical Science. Throughout her studies, she demonstrated a keen interest in the field of Cardiovascular and Immunology. Currently, Amina’s research is within the field of neurovascular science and immunology, specifically looking at the utilisation of zebrafish larvae as a preclinical model for ischaemic stroke research. Amina is hoping that her research will lead to the successful use of the non-mammalian model during Ischaemic stroke drug development with a key aim of prevention and treatment against long-term negative impacts of the disease including disabilities caused by necrosis.`,
+    sections: {
+      research: `## Research area(s)
+
+Amina aims to validate the use of the zebrafish model as a preclinical tool used during Ischaemic Stroke research. Her research focuses on successfully inducing thrombotic activity within the cerebrum of an adult zebrafish whilst using in vivo imaging and behavioural profiling techniques to monitor cellular trafficking pre and post induction. Vigorously analysis allows conformation of disease activation as well as quantification of spatial and temporal resolution changes. The translational comprehensive data obtained from these techniques provide valuable insight into the development and progression of Ischaemic strokes within humans. This allows for progression within drug development for Ischaemic stroke prevention and treatment, working to reduce the death rate and long-term negative impacts of diagnosis including long-term disability. Positive implications from this research will eventually lead to increased survival rates as well as quality of life.
+
+## Research Interests
+
+Immunology and neutrophil activity can be researched using different animal models. The first area of interest is identifying a non-mammalian model, specifically tail-cut zebrafish larvae, to confirm the ability to successfully study inflammatory activity and neutrophil activity. Zebrafish larvae <120 hours post fertilisation are protected by their innate immune defence system up until 4-6 weeks post fertilisation where the adaptive immune system eventually matures. Inflammation is detected and initiated by the innate immune response which recruits additional immune cells including neutrophils and cytokines at the site of tissue damage. Due to the distinct separation between the two systems, the larvae model presents as a useful model for inflammatory research as it allows the study of real time live innate immune response especially as the larvae model appears transparent.
+
+Another area of interest is characterising zebrafish larvae, <120 hours post fertilisation, as a preclinical non-mammalian model for ischaemic stroke research, specifically thrombotic activity using in vivo neuroimaging techniques and photothrombosis. From this neutrophil trafficking and neurovascular damage within the zebrafish larvae cerebral can be compare with mammalian models making findings translatable to human stroke research. This would allow wider understanding of the effects of ischaemic stroke and the long-term damage caused within the cerebrum, to then identify drug targets for developments within ischaemic stoke treatment.
+
+### Current projects:
+
+- Identify a non-mammalian model as an inflammatory model to study neutrophil biology and host-pathology interactions.
+- Characterise zebrafish larvae as a model for Ischaemic stroke research, specifically thrombotic research using in vivo neuroimaging techniques and photothrombosis.`,
+    },
+  },
   { slug: "magda-malliari", name: "Magda Malliari",
-    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 102 },
+    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 102,
+    role: "PhD Student",
+    email: "magda.malliari@brunel.ac.uk",
+    department: "Department of Life Sciences",
+    college: "College of Health, Medicine and Life Sciences",
+  },
   { slug: "emma-cwilinski", name: "Emma Cwilinski",
     photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 103 },
   { slug: "sajika-sritharan", name: "Sajika Sritharan",
@@ -1974,9 +2307,64 @@ PhD (City University, London, and Institute of Psychiatry, London) - awarded 200
   { slug: "gideon-maccarthy", name: "Gideon MacCarthy",
     photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 211 },
   { slug: "ruchira-mann", name: "Ruchira Mann",
-    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 212 },
+    photoUrl: "/images/people/ruchira-mann.jpg", memberType: "alumni", order: 212,
+    role: "Senior Lecturer (Education) in Biosciences",
+    email: "ruchira.mann2@brunel.ac.uk",
+    tel: "+44 (0)1895 266711",
+    department: "Department of Life Sciences",
+    college: "College of Health, Medicine and Life Sciences",
+    bio: `## Summary
+
+Dr Mann graduated in BSc Biomedical Sciences in 2016 before comepleting her PhD in nanomedicine in 2021 at Brunel University London. Soon after, she was appointed as an Education Academic (in Biosciences) at Brunel University London.
+
+## Qualifications
+
+BSc (Hons.) Biomedical Sciences (Thick Sandwich) with First Class Honours - Brunel University London, 2016
+
+PhD in Nanomedicine - Brunel University London, 2021 ("Investigating the biosafety and toxicity of magnetic iron oxide nanoparticlesin vitro and in vivo")
+
+## Responsibility
+
+BB1701 Study Block Coordinator - The Human Body: Principles of Anatomy & Physiology
+
+BB1801 Assessment Block Coordinator - Research and Communication Skills
+
+Deputy Chair for the Departmental Athena Swan Self Assessment Team`,
+    sections: {
+      research: `## Research area(s)
+
+Dr Mann's pedagogical research interests includes game-based learning, simulation-based teaching & learning. She is also interested in strategies to improve student experience throughout the students' degrees.
+
+### Scientific Research Interests:
+
+The cellular toxicity of different types of nanoparticles (Iron oxide, Gold) and factors affecting intracellular uptake of nanoparticles.`,
+      teaching: `## Teaching
+
+Principles of Human Anatomy & Physiology (FHEQ Level 4).
+
+Practical classes: Anatomy & Physiology, Immunology (FHEQ Level 4&5).
+
+TBL classes, seminars, conducting peer-learning sessions.`,
+    },
+  },
   { slug: "denise-ragusa", name: "Denise Ragusa",
-    photoUrl: "/images/placeholdersilhouette.webp", memberType: "alumni", order: 213 },
+    photoUrl: "/images/people/denise-ragusa.jpg", memberType: "alumni", order: 213,
+    role: "Research Fellow",
+    email: "denise.ragusa@brunel.ac.uk",
+    department: "Department of Life Sciences",
+    college: "College of Health, Medicine and Life Sciences",
+    bio: `### Newest selected publications
+
+Johns, A., Pina, C. and Ragusa, D.(2026)'[Cell-of-origin Discovery in Infant Leukemia through Integration of 3D Models and Patient Transcriptomic Data](http://dx.doi.org/10.3791/70278)'.Journal of Visualized Experiments. pp. 1 - 20.ISSN: 1940-087X [Open Access Link](https://bura.brunel.ac.uk/handle/2438/33103)
+
+Ragusa, D., Suen, CW., Torregrosa Cortes, G., Pastorino, F., Johns, A., Cicirò, Y., Dijkhuis, L., van den Brink, S., Cilli, M., Byrne, C., Ionescu, G-A., Cerveira, J., Kranc, KR., Hernandez-Hernandez, V., Ponzoni, M., Bigas, A., Garcia-Ojalvo, J., Martínez Arias, A. and Pina, C. et al.(2025)'[Dissecting infant leukemia developmental origins with a hemogenic gastruloid model](http://dx.doi.org/10.7554/elife.102324)'.eLife, 14. pp. 1 - 34.ISSN: 2050-084X [Open Access Link](https://bura.brunel.ac.uk/handle/2438/33104)
+
+Cicirò, Y., Ragusa, D. and Sala, A.(2024)'[Expression of the checkpoint kinase BUB1 is a predictor of response to cancer therapies](http://dx.doi.org/10.1038/s41598-024-55080-y)'.Scientific Reports, 14 (1). pp. 1 - 15.ISSN: 2045-2322 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/28433)
+
+Ragusa, D. and Vagnarelli, P.(2023)'[Contribution of histone variants to aneuploidy: a cancer perspective](http://dx.doi.org/10.3389/fgene.2023.1290903)'.Frontiers in Genetics, 14. pp. 1 - 17.ISSN: 1664-8021 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/27765)
+
+Ragusa, D., Dijkhuis, L., Pina, C. and Tosi, S.(2023)'[Mechanisms associated with t(7;12) acute myeloid leukaemia: from genetics to potential treatment targets](http://dx.doi.org/10.1042/BSR20220489)'.Bioscience reports, 43 (1). pp. 1 - 17.ISSN: 0144-8463 [Open Access Link](https://bura.brunel.ac.uk/handle/2438/26109)`,
+  },
 ];
 
 export function getPerson(slug: string): Person | undefined {
