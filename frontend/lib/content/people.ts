@@ -2250,7 +2250,7 @@ Another area of interest is characterising zebrafish larvae, <120 hours post fer
     },
   },
   { slug: "magda-malliari", name: "Magda Malliari",
-    photoUrl: "/images/placeholdersilhouette.webp", memberType: "doctoral-researcher", order: 102,
+    photoUrl: "/images/people/magda-malliari.jpg", memberType: "doctoral-researcher", order: 102,
     role: "PhD Student",
     email: "magda.malliari@brunel.ac.uk",
     department: "Department of Life Sciences",
