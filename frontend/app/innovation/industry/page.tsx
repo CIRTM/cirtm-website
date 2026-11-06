@@ -128,7 +128,7 @@ export default function IndustryPartnersPage() {
             {industryPartners.map((p) => (
               <li
                 key={p.slug}
-                className="group flex items-center justify-center h-28 rounded-2xl border border-gray-100 bg-white px-6 shadow-sm hover:shadow-md transition-shadow"
+                className="flex items-center justify-center h-28 rounded-2xl border border-gray-100 bg-white px-6 shadow-sm"
               >
                 <div className={`relative w-full ${p.compact ? "h-16" : "h-10"}`}>
                   <Image
@@ -136,7 +136,7 @@ export default function IndustryPartnersPage() {
                     alt={p.name}
                     fill
                     sizes="200px"
-                    className="object-contain grayscale opacity-60 transition duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                    className="object-contain"
                   />
                 </div>
               </li>
