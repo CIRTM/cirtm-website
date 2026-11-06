@@ -3,7 +3,6 @@ import Image from "next/image";
 import { researchAreas } from "@/lib/content/research-areas";
 import { projects } from "@/lib/content/projects";
 import { funders } from "@/lib/content/funders";
-import HeroVideo from "@/components/HeroVideo";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { VisitCirtm } from "@/components/VisitCirtm";
 import ImmuneCells from "@/components/ImmuneCells";
@@ -22,8 +21,15 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ backgroundColor: "#0B1B3A" }}>
-        <HeroVideo />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B3A]/90 via-[#0B1B3A]/65 to-[#0B1B3A]/25" />
+        <Image
+          src="/images/hero-images/hero-img.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B3A]/95 via-[#0B1B3A]/80 to-[#0B1B3A]/45" />
         <div
           className="absolute inset-0 opacity-30 mix-blend-overlay"
           style={{
