@@ -126,10 +126,12 @@ function PublicationEntry({
   pub,
   self,
   memberNames,
+  showYear = false,
 }: {
   pub: PersonPublication;
   self?: string;
   memberNames?: Record<string, string>;
+  showYear?: boolean;
 }) {
   const [showCite, setShowCite] = useState(false);
   const authors = pub.authors.join(", ");
@@ -151,6 +153,7 @@ function PublicationEntry({
       )}
       {authors && <p className="text-sm text-gray-600 mt-1.5 leading-relaxed">{authors}</p>}
       <p className="text-sm text-gray-500 mt-0.5">
+        {showYear && <span className="font-semibold text-gray-700">{pub.year} · </span>}
         {pub.journal && <em>{pub.journal}</em>}
         {(pub.volume || pub.issue) && (
           <>
@@ -171,6 +174,14 @@ function PublicationEntry({
             {memberNames![s]}
           </Link>
         ))}
+        {(pub.cites ?? 0) > 0 && (
+          <span className="text-xs text-gray-500">Cited by {pub.cites!.toLocaleString()}</span>
+        )}
+        {pub.top ? (
+          <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">
+            Top {pub.top}% cited
+          </span>
+        ) : null}
         {pub.openAccessUrl && (
           <a href={pub.openAccessUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-emerald-700 hover:underline">
             Open access
@@ -200,6 +211,8 @@ export function PublicationsList({
 }) {
   const [query, setQuery] = useState("");
   const [brunelOnly, setBrunelOnly] = useState(false);
+  const [byCites, setByCites] = useState(false);
+  const hasCites = publications.some((p) => (p.cites ?? 0) > 0);
   const hasScope = publications.some((p) => p.atBrunel !== undefined);
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -209,6 +222,8 @@ export function PublicationsList({
       return [p.title, p.journal ?? "", String(p.year ?? ""), ...p.authors].join(" ").toLowerCase().includes(q);
     });
   }, [publications, query, brunelOnly]);
+
+  const ranked = useMemo(() => [...filtered].sort((a, b) => (b.cites ?? 0) - (a.cites ?? 0)), [filtered]);
 
   const groups = useMemo(() => {
     const m = new Map<number, PersonPublication[]>();
@@ -228,6 +243,24 @@ export function PublicationsList({
           placeholder="Search by title, author, journal, year..."
           className="flex-1 px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-700/20"
         />
+        {hasCites && (
+          <div className="inline-flex rounded-full border border-gray-200 p-1 bg-gray-50 self-start">
+            {[
+              { v: false, label: "Newest" },
+              { v: true, label: "Most cited" },
+            ].map((o) => (
+              <button
+                key={o.label}
+                type="button"
+                onClick={() => setByCites(o.v)}
+                className="px-4 py-1.5 rounded-full text-sm font-medium transition-colors"
+                style={byCites === o.v ? { backgroundColor: NAVY, color: "#fff" } : { color: NAVY }}
+              >
+                {o.label}
+              </button>
+            ))}
+          </div>
+        )}
         {hasScope && (
           <div className="inline-flex rounded-full border border-gray-200 p-1 bg-gray-50 self-start">
             {[
@@ -252,6 +285,12 @@ export function PublicationsList({
       </p>
       {filtered.length === 0 ? (
         <p className="text-gray-500 italic text-sm">No publications match your search.</p>
+      ) : byCites ? (
+        <ol className="list-none p-0">
+          {ranked.map((p) => (
+            <PublicationEntry key={p.slug} pub={p} self={self} memberNames={memberNames} showYear />
+          ))}
+        </ol>
       ) : (
         <div className="space-y-8">
           {groups.map(([year, pubs]) => (

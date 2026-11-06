@@ -15,6 +15,8 @@ export type PersonPublication = {
   openAccessUrl?: string;
   memberSlugs?: string[];
   atBrunel?: boolean;
+  cites?: number;
+  top?: number;
 };
 
 export const felicityGavinsPublications: PersonPublication[] = [

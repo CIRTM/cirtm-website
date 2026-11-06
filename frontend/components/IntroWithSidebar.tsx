@@ -38,7 +38,7 @@ export function IntroWithSidebar({
                 View all {papers.length} publications →
               </button>
               <Link
-                href={`/publications?member=${slug}`}
+                href={`/publications?focus=${slug}`}
                 className="text-xs font-semibold uppercase tracking-widest text-gray-500 hover:text-red-700"
               >
                 Explore in the publications map →

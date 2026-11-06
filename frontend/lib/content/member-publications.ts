@@ -35,6 +35,8 @@ export function getMemberPublications(slug: string): PersonPublication[] {
         doiUrl: p.doi ? `https://doi.org/${p.doi}` : undefined,
         memberSlugs: p.people,
         atBrunel: p.cirtm,
+        cites: p.cites,
+        top: p.top,
       };
     })
     .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));

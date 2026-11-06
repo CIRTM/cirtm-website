@@ -14,10 +14,10 @@ const SERIF = { fontFamily: "Georgia, serif" };
 export type ExplorerMember = { slug: string; name: string; short: string; area: string | null };
 
 const AREAS: Record<string, { label: string; hex: string }> = {
-  "inflammation-immunity-infection": { label: "Inflammation, Immunity & Infection", hex: "#F59E0B" },
-  "vascular-cardiovascular-sciences": { label: "Vascular & Cardiovascular Sciences", hex: "#F87171" },
-  "cancer-biology": { label: "Cancer Biology", hex: "#C084FC" },
-  "translational-medicine-novel-therapeutics": { label: "Translational Medicine & Novel Therapeutics", hex: "#2DD4BF" },
+  "inflammation-immunity-infection": { label: "Inflammation, Immunity & Infection", hex: "#2563EB" },
+  "vascular-cardiovascular-sciences": { label: "Vascular & Cardiovascular Sciences", hex: "#DC2626" },
+  "cancer-biology": { label: "Cancer Biology", hex: "#9333EA" },
+  "translational-medicine-novel-therapeutics": { label: "Translational Medicine & Novel Therapeutics", hex: "#0D9488" },
 };
 const NO_AREA = "#9CA3AF";
 
@@ -63,6 +63,8 @@ export default function PublicationsExplorer({ papers, members }: { papers: Expl
   const [filters, setFilters] = useState<Filters>(EMPTY);
   const [shown, setShown] = useState(20);
   const listRef = useRef<HTMLDivElement>(null);
+  const networkRef = useRef<HTMLDivElement>(null);
+  const [networkFocus, setNetworkFocus] = useState<string | null>(null);
 
   const memberBySlug = useMemo(() => Object.fromEntries(members.map((m) => [m.slug, m])), [members]);
   const scoped = useMemo(() => (fullCareers ? papers : papers.filter((p) => p.cirtm)), [papers, fullCareers]);
@@ -72,6 +74,14 @@ export default function PublicationsExplorer({ papers, members }: { papers: Expl
     const q = new URLSearchParams(window.location.search);
     const model = q.get("model") ?? "";
     const member = q.get("member") ?? "";
+    const focus = q.get("focus") ?? "";
+    if (focus) {
+      // From a member's profile: select their node and land on the network; the list below is pre-filtered.
+      setNetworkFocus(focus);
+      setFilters({ ...EMPTY, member: focus });
+      setTimeout(() => networkRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 300);
+      return;
+    }
     if (!model && !member) return;
     setFilters({ ...EMPTY, model: MODEL_KEYS.includes(model) ? model : "", member });
     setTimeout(() => listRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }), 300);
@@ -83,59 +93,9 @@ export default function PublicationsExplorer({ papers, members }: { papers: Expl
     listRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const stats = useMemo(() => {
-    const active = new Set(scoped.flatMap((p) => p.people));
-    const years = scoped.map((p) => p.year);
-    return {
-      total: scoped.length,
-      oa: scoped.length ? Math.round((100 * scoped.filter((p) => p.oa).length) / scoped.length) : 0,
-      members: active.size,
-      span: years.length ? `${Math.min(...years)}–${Math.max(...years)}` : "",
-    };
-  }, [scoped]);
-
   return (
     <>
-      {/* Scope + headline numbers */}
-      <section className="bg-white border-b border-gray-100">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
-            <div className="flex-shrink-0">
-              <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Showing</p>
-              <div className="inline-flex rounded-full border border-gray-200 p-1 bg-gray-50">
-                {[
-                  { full: false, label: "At Brunel" },
-                  { full: true, label: "Full careers" },
-                ].map((o) => (
-                  <button
-                    key={o.label}
-                    onClick={() => { setFullCareers(o.full); setShown(20); }}
-                    className="px-4 py-2 rounded-full text-sm font-medium transition-colors"
-                    style={fullCareers === o.full ? { backgroundColor: NAVY, color: "#fff" } : { color: NAVY }}
-                  >
-                    {o.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <dl className="grid grid-cols-2 sm:grid-cols-4 gap-6 flex-1">
-              {[
-                { label: "Publications", value: stats.total.toLocaleString() },
-                { label: "Open access", value: `${stats.oa}%` },
-                { label: "Members publishing", value: stats.members },
-                { label: "Years", value: stats.span },
-              ].map((s) => (
-                <div key={s.label}>
-                  <dd className="text-3xl sm:text-4xl" style={{ ...SERIF, color: NAVY }}>{s.value}</dd>
-                  <dt className="text-xs font-semibold uppercase tracking-widest text-gray-500 mt-1">{s.label}</dt>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <SharedGround papers={scoped} members={members} onShow={applyFilters} />
+      <SharedGround papers={scoped} members={members} onShow={applyFilters} focusSlug={networkFocus} sectionRef={networkRef} scopeLabel={fullCareers ? "Full careers" : "At Brunel"} fullCareers={fullCareers} setFullCareers={(v) => { setFullCareers(v); setShown(20); }} />
 
       <ModelFinder papers={scoped} members={members} onShow={applyFilters} />
 
@@ -153,6 +113,81 @@ export default function PublicationsExplorer({ papers, members }: { papers: Expl
   );
 }
 
+/* ---------- Stats for any set of papers ---------- */
+
+type PaperStats = {
+  n: number;
+  cites: number;
+  h: number;
+  top: number;
+  oa: number;
+  people: number;
+  byYear: { y: number; n: number }[];
+  best: ExplorerPaper | null;
+};
+
+function paperStats(list: ExplorerPaper[]): PaperStats {
+  const sorted = list.map((p) => p.cites ?? 0).sort((a, b) => b - a);
+  const by = new Map<number, number>();
+  for (const p of list) by.set(p.year, (by.get(p.year) ?? 0) + 1);
+  const to = list.length ? Math.max(...by.keys()) : 0;
+  const from = list.length ? Math.max(Math.min(...by.keys()), to - 14) : 0;
+  const byYear = [];
+  for (let y = from; y <= to && list.length; y++) byYear.push({ y, n: by.get(y) ?? 0 });
+  return {
+    n: list.length,
+    cites: sorted.reduce((a, b) => a + b, 0),
+    h: sorted.filter((c, i) => c >= i + 1).length,
+    top: list.filter((p) => p.top).length,
+    oa: list.length ? Math.round((100 * list.filter((p) => p.oa).length) / list.length) : 0,
+    people: new Set(list.flatMap((p) => p.people)).size,
+    byYear,
+    best: list.reduce<ExplorerPaper | null>((b, p) => ((p.cites ?? 0) > (b?.cites ?? -1) ? p : b), null),
+  };
+}
+
+function StatGrid({ stats, member = false }: { stats: PaperStats; member?: boolean }) {
+  const items = [
+    { label: "Publications", value: stats.n.toLocaleString() },
+    { label: "Citations", value: stats.cites.toLocaleString() },
+    { label: "h-index", value: stats.h },
+    { label: "Top 10% cited", value: stats.top },
+    { label: "Open access", value: `${stats.oa}%` },
+    member ? null : { label: "Members", value: stats.people },
+  ].filter(Boolean) as { label: string; value: string | number }[];
+  return (
+    <dl className="grid grid-cols-2 gap-x-4 gap-y-4 mb-6">
+      {items.map((s) => (
+        <div key={s.label}>
+          <dd className="text-2xl" style={{ ...SERIF, color: NAVY }}>{s.value}</dd>
+          <dt className="text-[10px] font-semibold uppercase tracking-widest text-gray-500 mt-0.5">{s.label}</dt>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+function MiniYears({ byYear }: { byYear: { y: number; n: number }[] }) {
+  if (byYear.length < 2) return null;
+  const max = Math.max(1, ...byYear.map((d) => d.n));
+  return (
+    <div className="mb-6">
+      <div className="flex items-end gap-0.5 h-12" aria-hidden>
+        {byYear.map((d) => (
+          <div key={d.y} className="flex-1 h-full flex items-end" title={`${d.y}: ${d.n}`}>
+            <div className="w-full rounded-t-[2px]" style={{ height: `${d.n ? Math.max(6, (100 * d.n) / max) : 0}%`, backgroundColor: NAVY, opacity: 0.25 }} />
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-between text-[10px] text-gray-400 mt-1">
+        <span>{byYear[0].y}</span>
+        <span>Papers per year</span>
+        <span>{byYear[byYear.length - 1].y}</span>
+      </div>
+    </div>
+  );
+}
+
 /* ---------- Shared ground network ---------- */
 
 const W = 1000;
@@ -165,14 +200,25 @@ function SharedGround({
   papers,
   members,
   onShow,
+  focusSlug,
+  sectionRef,
+  scopeLabel,
+  fullCareers,
+  setFullCareers,
 }: {
   papers: ExplorerPaper[];
   members: ExplorerMember[];
   onShow: (f: Partial<Filters>) => void;
+  focusSlug?: string | null;
+  sectionRef?: React.RefObject<HTMLDivElement | null>;
+  scopeLabel: string;
+  fullCareers: boolean;
+  setFullCareers: (v: boolean) => void;
 }) {
   const [hover, setHover] = useState<string | null>(null);
-  const [selected, setSelected] = useState<string | null>(null);
-  const focus = hover ?? selected;
+  // undefined = untouched: fall back to the member passed in from a profile link (if they're on the network).
+  const [picked, setSelected] = useState<string | null | undefined>(undefined);
+
 
   const graph = useMemo(() => {
     const edgeCount = new Map<string, number>();
@@ -220,6 +266,10 @@ function SharedGround({
     return { ms, models, pos, edges, maxEdge, memberCount, modelCount, maxModel, maxMember, edgeCount };
   }, [papers, members]);
 
+
+  const selected = picked !== undefined ? picked : focusSlug && graph.memberCount.has(focusSlug) ? focusSlug : null;
+  const focus = hover ?? selected;
+
   const neighbours = useMemo(() => {
     if (!focus) return null;
     const set = new Set<string>([focus]);
@@ -238,27 +288,47 @@ function SharedGround({
       .map((e) => ({ key: isMember ? e.t : e.m, n: e.n }))
       .sort((a, b) => b.n - a.n);
     const member = graph.ms.find((m) => m.slug === selected);
+    const subset = papers.filter((p) => (isMember ? p.people.includes(selected) : tagsOf(p).includes(selected)));
     return {
       isMember,
       title: member ? member.name : modelLabel(selected),
-      total: isMember ? graph.memberCount.get(selected)! : graph.modelCount.get(selected)!,
       links,
+      stats: paperStats(subset),
     };
-  }, [selected, graph]);
+  }, [selected, graph, papers]);
+
+  const overall = useMemo(() => paperStats(papers), [papers]);
 
   const dim = (id: string) => (neighbours && !neighbours.has(id) ? 0.15 : 1);
 
   return (
-    <section className="py-20 text-white" style={{ backgroundColor: NAVY }}>
+    <section ref={sectionRef} className="py-20 scroll-mt-20" style={{ backgroundColor: IVORY, color: NAVY }}>
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Eyebrow light>Shared ground</Eyebrow>
+        <Eyebrow>Shared ground</Eyebrow>
         <h2 className="text-4xl sm:text-5xl mb-4" style={SERIF}>
           How our research <em>connects</em>
         </h2>
-        <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mb-6">
-          Members on the outer ring, the biological models and approaches they publish with in the centre. Shared
-          models are where collaborations start. Hover to trace connections, click to explore.
-        </p>
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
+            Members on the outer ring, the biological models and approaches they publish with in the centre. Shared
+            models are where collaborations start. Hover to trace connections, click to explore.
+          </p>
+          <div className="inline-flex self-start lg:self-auto rounded-full border border-gray-200 p-1 bg-white flex-shrink-0">
+            {[
+              { full: false, label: "At Brunel" },
+              { full: true, label: "Full careers" },
+            ].map((o) => (
+              <button
+                key={o.label}
+                onClick={() => setFullCareers(o.full)}
+                className="px-4 py-2 rounded-full text-sm font-medium transition-colors"
+                style={fullCareers === o.full ? { backgroundColor: NAVY, color: "#fff" } : { color: NAVY }}
+              >
+                {o.label}
+              </button>
+            ))}
+          </div>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_20rem] gap-8 items-start">
           <div>
             <svg
@@ -268,12 +338,12 @@ function SharedGround({
               aria-label="Network of CIRTM members and the biological models they publish with"
               onClick={() => setSelected(null)}
             >
-              <circle cx={C} cy={C} r={R_IN} fill="none" stroke="rgba(255,255,255,0.08)" />
-              <circle cx={C} cy={C} r={R_OUT} fill="none" stroke="rgba(255,255,255,0.06)" />
-              <text x={C} y={C - R_IN - 26} textAnchor="middle" fill="rgba(255,255,255,0.35)" fontSize="13" letterSpacing="3">
+              <circle cx={C} cy={C} r={R_IN} fill="none" stroke="rgba(11,27,58,0.10)" />
+              <circle cx={C} cy={C} r={R_OUT} fill="none" stroke="rgba(11,27,58,0.08)" />
+              <text x={C} y={C - R_IN - 26} textAnchor="middle" fill="rgba(11,27,58,0.4)" fontSize="13" letterSpacing="3">
                 ORGANISMS
               </text>
-              <text x={C} y={C + R_IN + 36} textAnchor="middle" fill="rgba(255,255,255,0.35)" fontSize="13" letterSpacing="3">
+              <text x={C} y={C + R_IN + 36} textAnchor="middle" fill="rgba(11,27,58,0.4)" fontSize="13" letterSpacing="3">
                 APPROACHES
               </text>
 
@@ -292,7 +362,7 @@ function SharedGround({
                     fill="none"
                     stroke={hex}
                     strokeWidth={0.6 + 7 * Math.sqrt(e.n / graph.maxEdge)}
-                    strokeOpacity={focus ? (on ? 0.85 : 0.03) : 0.22}
+                    strokeOpacity={focus ? (on ? 0.9 : 0.04) : 0.3}
                     style={{ transition: "stroke-opacity 0.25s" }}
                   />
                 );
@@ -313,14 +383,14 @@ function SharedGround({
                     onMouseLeave={() => setHover(null)}
                     onClick={(ev) => { ev.stopPropagation(); setSelected(k); }}
                   >
-                    <circle cx={p.x} cy={p.y} r={r} fill={org ? GOLD : NAVY} stroke={GOLD} strokeWidth={org ? 0 : 3} />
+                    <circle cx={p.x} cy={p.y} r={r} fill={org ? NAVY : IVORY} stroke={NAVY} strokeWidth={org ? 0 : 3} />
                     <text
                       x={p.x}
                       y={below ? p.y - r - 10 : p.y + r + 22}
                       textAnchor="middle"
-                      fill="#fff"
+                      fill={NAVY}
                       fontSize="17"
-                      style={{ paintOrder: "stroke", stroke: NAVY, strokeWidth: 5, ...SERIF }}
+                      style={{ paintOrder: "stroke", stroke: IVORY, strokeWidth: 5, ...SERIF }}
                     >
                       {modelLabel(k)}
                     </text>
@@ -345,12 +415,12 @@ function SharedGround({
                     onMouseLeave={() => setHover(null)}
                     onClick={(ev) => { ev.stopPropagation(); setSelected(m.slug); }}
                   >
-                    <circle cx={p.x} cy={p.y} r={r} fill={hex} stroke={selected === m.slug ? "#fff" : NAVY} strokeWidth={3} />
+                    <circle cx={p.x} cy={p.y} r={r} fill={hex} stroke={selected === m.slug ? NAVY : IVORY} strokeWidth={3} />
                     <text
                       x={lx}
                       y={ly + 5}
                       textAnchor={Math.abs(cos) < 0.2 ? "middle" : cos > 0 ? "start" : "end"}
-                      fill="#fff"
+                      fill={NAVY}
                       fontSize="17"
                     >
                       {m.short}
@@ -362,16 +432,46 @@ function SharedGround({
           </div>
 
           <aside className="lg:sticky lg:top-28 space-y-6">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 min-h-[18rem]">
+            <div className="rounded-2xl border border-gray-100 bg-white shadow-sm p-6 min-h-[18rem]">
               {detail ? (
                 <>
-                  <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: GOLD }}>
-                    {detail.isMember ? "Member" : isOrganism(selected!) ? "Organism" : "Approach"}
+                  <div className="flex items-start justify-between gap-3">
+                    <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: RED }}>
+                      {detail.isMember ? "Member" : isOrganism(selected!) ? "Organism" : "Approach"}
+                    </p>
+                    <button
+                      onClick={() => setSelected(null)}
+                      className="text-gray-400 hover:text-red-700 -mt-1"
+                      aria-label="Clear selection"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                  <h3 className="text-2xl mb-5" style={{ ...SERIF, color: NAVY }}>{detail.title}</h3>
+                  <p className="-mt-4 mb-5 text-xs text-gray-400">{scopeLabel}</p>
+                  <StatGrid stats={detail.stats} member={detail.isMember} />
+                  <MiniYears byYear={detail.stats.byYear} />
+                  {detail.stats.best && (
+                    <div className="mb-6">
+                      <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-2">Most cited</p>
+                      <a
+                        href={detail.stats.best.doi ? `https://doi.org/${detail.stats.best.doi}` : undefined}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-sm leading-snug hover:text-red-700" style={{ color: NAVY }}
+                      >
+                        {detail.stats.best.title}
+                      </a>
+                      <p className="text-xs text-gray-400 mt-1">
+                        {detail.stats.best.year} · cited by {detail.stats.best.cites.toLocaleString()}
+                      </p>
+                    </div>
+                  )}
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-400 mb-3">
+                    {detail.isMember ? "Models & approaches" : "Members"}
                   </p>
-                  <h3 className="text-2xl mb-1" style={SERIF}>{detail.title}</h3>
-                  <p className="text-gray-400 text-sm mb-5">{detail.total} publications</p>
                   <ul className="space-y-2.5 mb-6">
-                    {detail.links.slice(0, 8).map((l) => {
+                    {detail.links.slice(0, 6).map((l) => {
                       const label = detail.isMember ? modelLabel(l.key) : graph.ms.find((m) => m.slug === l.key)?.name ?? l.key;
                       return (
                         <li key={l.key}>
@@ -380,11 +480,11 @@ function SharedGround({
                             className="w-full text-left group"
                           >
                             <div className="flex justify-between text-sm mb-1">
-                              <span className="text-gray-200 group-hover:text-white">{label}</span>
+                              <span className="text-gray-700 group-hover:text-red-700">{label}</span>
                               <span className="text-gray-400">{l.n}</span>
                             </div>
-                            <div className="h-1 rounded-full bg-white/10">
-                              <div className="h-1 rounded-full" style={{ width: `${(100 * l.n) / detail.links[0].n}%`, backgroundColor: GOLD }} />
+                            <div className="h-1 rounded-full bg-gray-100">
+                              <div className="h-1 rounded-full" style={{ width: `${(100 * l.n) / detail.links[0].n}%`, backgroundColor: RED }} />
                             </div>
                           </button>
                         </li>
@@ -394,22 +494,25 @@ function SharedGround({
                   <button
                     onClick={() => onShow(detail.isMember ? { member: selected! } : { model: selected! })}
                     className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest"
-                    style={{ color: GOLD }}
+                    style={{ color: RED }}
                   >
                     Show these publications →
                   </button>
                 </>
               ) : (
                 <>
-                  <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: GOLD }}>Explore</p>
-                  <p className="text-gray-300 leading-relaxed">
-                    Click a member to see the models and approaches they work with, or click a model to see who uses
-                    it. Line thickness shows how many publications connect them.
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: RED }}>Overview</p>
+                  <h3 className="text-2xl mb-5" style={{ ...SERIF, color: NAVY }}>All publications</h3>
+                  <p className="-mt-4 mb-5 text-xs text-gray-400">{scopeLabel} · citations from OpenAlex</p>
+                  <StatGrid stats={overall} />
+                  <MiniYears byYear={overall.byYear} />
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Click a member to see their numbers and the models they work with, or click a model to see who uses it.
                   </p>
                 </>
               )}
             </div>
-            <div className="space-y-2 text-sm text-gray-300">
+            <div className="space-y-2 text-sm text-gray-600">
               {Object.values(AREAS).map((a) => (
                 <div key={a.label} className="flex items-center gap-3">
                   <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: a.hex }} />
@@ -417,8 +520,8 @@ function SharedGround({
                 </div>
               ))}
               <div className="flex items-center gap-3 pt-2">
-                <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: GOLD }} /> Organism
-                <span className="w-3 h-3 rounded-full flex-shrink-0 ml-4 border-2" style={{ borderColor: GOLD }} /> Approach
+                <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: NAVY }} /> Organism
+                <span className="w-3 h-3 rounded-full flex-shrink-0 ml-4 border-2" style={{ borderColor: NAVY }} /> Approach
               </div>
             </div>
           </aside>
@@ -456,16 +559,16 @@ function ModelFinder({
   }, [papers, members]);
 
   return (
-    <section className="py-20" style={{ backgroundColor: IVORY }}>
+    <section className="py-20" style={{ backgroundColor: NAVY }}>
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Eyebrow>Model finder</Eyebrow>
-        <h2 className="text-4xl sm:text-5xl mb-4" style={{ ...SERIF, color: NAVY }}>
+        <Eyebrow light>Model finder</Eyebrow>
+        <h2 className="text-4xl sm:text-5xl mb-4 text-white" style={SERIF}>
           Who works <em>with what</em>
         </h2>
-        <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mb-10">
+        <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mb-10">
           Every member against the organisms and approaches in their publications. Click a cell to see the papers.
         </p>
-        <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <div className="overflow-x-auto rounded-2xl bg-white shadow-xl">
           <table className="w-full text-sm">
             <thead>
               <tr>
@@ -567,6 +670,11 @@ function PaperList({
     return { list, max: Math.max(1, ...all.values()) };
   }, [papers, filtered]);
 
+  const [byCites, setByCites] = useState(false);
+  const ordered = useMemo(
+    () => (byCites ? [...filtered].sort((a, b) => (b.cites ?? 0) - (a.cites ?? 0)) : filtered),
+    [filtered, byCites]
+  );
   const active = filters.member || filters.model || filters.query || filters.oa;
   const select = "rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-red-700/20";
 
@@ -628,6 +736,21 @@ function PaperList({
           <p className="text-sm text-gray-500">
             {filtered.length.toLocaleString()} publication{filtered.length === 1 ? "" : "s"}
           </p>
+          <div className="inline-flex rounded-full border border-gray-200 p-1 bg-gray-50 ml-auto">
+            {[
+              { v: false, label: "Newest" },
+              { v: true, label: "Most cited" },
+            ].map((o) => (
+              <button
+                key={o.label}
+                onClick={() => setByCites(o.v)}
+                className="px-4 py-1.5 rounded-full text-sm font-medium transition-colors"
+                style={byCites === o.v ? { backgroundColor: NAVY, color: "#fff" } : { color: NAVY }}
+              >
+                {o.label}
+              </button>
+            ))}
+          </div>
           {active && (
             <button
               onClick={() => setFilters(EMPTY)}
@@ -640,7 +763,7 @@ function PaperList({
         </div>
 
         <ul className="divide-y divide-gray-100 border-y border-gray-100">
-          {filtered.slice(0, shown).map((p) => (
+          {ordered.slice(0, shown).map((p) => (
             <li key={p.id} className="py-5">
               <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6">
                 <span className="text-sm font-semibold w-12 flex-shrink-0" style={{ color: RED }}>{p.year}</span>
@@ -662,6 +785,12 @@ function PaperList({
                   <p className="text-sm text-gray-500 mt-1">
                     {p.journal && <em>{p.journal}</em>}
                     {p.oa && <span className="ml-2 text-xs font-semibold uppercase tracking-wider text-emerald-700">Open access</span>}
+                    {p.cites > 0 && <span className="ml-2 text-xs text-gray-500">Cited by {p.cites.toLocaleString()}</span>}
+                    {p.top ? (
+                      <span className="ml-2 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">
+                        Top {p.top}% cited
+                      </span>
+                    ) : null}
                   </p>
                   <div className="flex flex-wrap gap-1.5 mt-3">
                     {p.people.map((s) => (

@@ -38,16 +38,24 @@ export default function AreaOutputsCard({
 
   const yearsAll = papers.map((p) => p.year);
   const oa = `${Math.round((100 * papers.filter((p) => p.oa).length) / papers.length)}%`;
+  const cites = papers.reduce((n, p) => n + (p.cites ?? 0), 0);
+  const topTen = papers.filter((p) => p.top).length;
+  const sortedCites = papers.map((p) => p.cites ?? 0).sort((a, b) => b - a);
+  const hIndex = sortedCites.filter((c, i) => c >= i + 1).length;
   const stats = member
     ? [
         { label: "Publications", value: papers.length.toLocaleString() },
         { label: "At Brunel", value: papers.filter((p) => p.cirtm).length.toLocaleString() },
+        { label: "Citations", value: cites.toLocaleString() },
+        { label: "h-index", value: hIndex },
         { label: "Open access", value: oa },
-        { label: "Since", value: Math.min(...yearsAll) },
+        { label: "Top 10% cited", value: topTen },
       ]
     : [
         { label: "Publications", value: papers.length.toLocaleString() },
         { label: "Members publishing", value: new Set(papers.flatMap((p) => p.people)).size },
+        { label: "Citations", value: cites.toLocaleString() },
+        { label: "Top 10% cited", value: topTen },
         { label: "Open access", value: oa },
         { label: "Since", value: Math.min(...yearsAll) },
       ];
@@ -72,6 +80,7 @@ export default function AreaOutputsCard({
           </div>
         ))}
       </dl>
+      <p className="-mt-3 mb-6 text-[10px] text-gray-400">Citations from OpenAlex; usually lower than Google Scholar.</p>
 
       <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-500 mb-3">Papers per year</p>
       <div className="flex items-end gap-1 h-20" role="img" aria-label={`Papers per year, ${from} to ${to}`}>
@@ -102,7 +111,10 @@ export default function AreaOutputsCard({
                 className="group block"
               >
                 <p className="text-sm leading-snug group-hover:text-red-700 transition-colors" style={{ color: NAVY }}>{p.title}</p>
-                <p className="text-xs text-gray-500 mt-1">{p.journal ? <em>{p.journal}</em> : null}{p.journal ? ", " : ""}{p.year}</p>
+                <p className="text-xs text-gray-500 mt-1">
+                  {p.journal ? <em>{p.journal}</em> : null}{p.journal ? ", " : ""}{p.year}
+                  {p.cites > 0 && <span className="ml-2 text-gray-400">· Cited by {p.cites.toLocaleString()}</span>}
+                </p>
               </a>
               {coauthors.length > 0 && (
                 <div className="flex flex-wrap gap-1.5 mt-2">
