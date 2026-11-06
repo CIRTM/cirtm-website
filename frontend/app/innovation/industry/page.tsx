@@ -61,9 +61,13 @@ export default function IndustryPartnersPage() {
         </div>
       </FadeBanner>
 
-      <section className="py-20 bg-white">
+      <section className="py-20" style={{ backgroundColor: IVORY }}>
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mb-16">
+          <Eyebrow>Industry collaborators</Eyebrow>
+          <h2 className="text-4xl sm:text-5xl mb-4" style={{ ...SERIF, color: NAVY }}>
+            Companies <em>we work with</em>
+          </h2>
+          <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mb-10">
             Researchers within CIRTM work closely with industrial partners across drug discovery, biomedical
             engineering, microbial diagnostics and clinical translation. We welcome new opportunities for collaboration,
             sponsored research, consultancy and contract testing. If you are looking for a partner or expert
@@ -73,7 +77,29 @@ export default function IndustryPartnersPage() {
             </Link>{" "}
             page.
           </p>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {industryPartners.map((p) => (
+              <li
+                key={p.slug}
+                className="flex items-center justify-center h-28 rounded-2xl border border-gray-100 bg-white px-6 shadow-sm"
+              >
+                <div className={`relative w-full ${p.compact ? "h-16" : "h-10"}`}>
+                  <Image
+                    src={`/images/industry-partners/${p.slug}.png`}
+                    alt={p.name}
+                    fill
+                    sizes="200px"
+                    className="object-contain"
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
+      <section className="py-20 bg-white">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <Eyebrow>What we offer</Eyebrow>
           <h2 className="text-4xl sm:text-5xl mb-10" style={{ ...SERIF, color: NAVY }}>
             Ways to <em>work with us</em>
@@ -111,37 +137,6 @@ export default function IndustryPartnersPage() {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white border-t border-gray-100">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Eyebrow>Industry collaborators</Eyebrow>
-          <h2 className="text-4xl sm:text-5xl mb-4" style={{ ...SERIF, color: NAVY }}>
-            Companies <em>we work with</em>
-          </h2>
-          <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mb-10">
-            CIRTM researchers collaborate with pharmaceutical and biotechnology companies of every size, from global
-            leaders to specialist start-ups.
-          </p>
-          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {industryPartners.map((p) => (
-              <li
-                key={p.slug}
-                className="flex items-center justify-center h-28 rounded-2xl border border-gray-100 bg-white px-6 shadow-sm"
-              >
-                <div className={`relative w-full ${p.compact ? "h-16" : "h-10"}`}>
-                  <Image
-                    src={`/images/industry-partners/${p.slug}.png`}
-                    alt={p.name}
-                    fill
-                    sizes="200px"
-                    className="object-contain"
-                  />
-                </div>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
