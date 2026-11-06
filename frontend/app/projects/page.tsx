@@ -73,7 +73,7 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <FadeBanner image="/images/research-projects/research-projects-hero.png">
+      <FadeBanner image="/images/research-projects/researcher-microscope-banner.jpg" className="py-32" objectPosition="center 40%" imageWidth="md:w-3/5 2xl:w-1/2">
         <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="tag mb-4 inline-block" style={{ backgroundColor: "rgba(0,169,157,0.2)", color: "#1AC9BF" }}>
             Research

@@ -138,15 +138,23 @@ export default function EducationPage() {
       </section>
 
       {/* Training pathway */}
-      <section className="py-20" style={{ backgroundColor: NAVY }}>
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <Eyebrow light>The CIRTM training pathway</Eyebrow>
-            <h2 className="text-4xl sm:text-5xl text-white mb-12 lg:whitespace-nowrap" style={SERIF}>
-              From first placement <em>to research leader</em>
-            </h2>
-            <TrainingPathway pathway={pathway} />
-          </div>
+      <section className="relative overflow-hidden py-20" style={{ backgroundColor: NAVY }}>
+        <div
+          aria-hidden="true"
+          className="hidden lg:block absolute inset-y-0 right-0 w-[45%] opacity-40"
+          style={{
+            maskImage: "linear-gradient(to right, transparent 0%, black 45%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 45%)",
+          }}
+        >
+          <Image src="/images/education/seminar-discussion.jpg" alt="" fill sizes="45vw" className="object-cover" />
+        </div>
+        <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Eyebrow light>The CIRTM training pathway</Eyebrow>
+          <h2 className="text-4xl sm:text-5xl text-white mb-12" style={SERIF}>
+            From first placement <em>to research leader</em>
+          </h2>
+          <TrainingPathway pathway={pathway} />
         </div>
       </section>
 

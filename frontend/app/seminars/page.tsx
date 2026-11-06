@@ -59,7 +59,7 @@ export default function NewsEventsPage() {
   return (
     <>
       {/* Hero */}
-      <FadeBanner image="/images/hero-images/hero-img.jpg" className="">
+      <FadeBanner image="/images/news/lecture-theatre-banner.jpg" className="" objectPosition="center 60%" imageWidth="md:w-3/4 2xl:w-[65%]">
         <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-28">
           <Eyebrow dark>News &amp; Events</Eyebrow>
           <h1 className="text-5xl sm:text-6xl text-white leading-[1.08]" style={serif}>

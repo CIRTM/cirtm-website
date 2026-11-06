@@ -10,7 +10,7 @@ const SERIF = { fontFamily: "Georgia, serif" };
 export default function ResearchPage() {
   return (
     <>
-      <FadeBanner image="/images/our-approach/main-header.jpg" className="py-24" objectPosition="right">
+      <FadeBanner image="/images/research-areas/immersive-lab-banner-2.jpg" className="py-32" objectPosition="center 40%" imageWidth="md:w-3/4 2xl:w-[65%]">
         <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-amber-400">
             <span className="inline-block w-8 h-px bg-amber-400" />

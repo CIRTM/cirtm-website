@@ -3,6 +3,7 @@ import Image from "next/image";
 import { researchAreas } from "@/lib/content/research-areas";
 import { projects } from "@/lib/content/projects";
 import { funders } from "@/lib/content/funders";
+import HeroVideo from "@/components/HeroVideo";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { VisitCirtm } from "@/components/VisitCirtm";
 import ImmuneCells from "@/components/ImmuneCells";
@@ -21,15 +22,8 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ backgroundColor: "#0B1B3A" }}>
-        <Image
-          src="/images/hero-images/hero-img.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B3A]/95 via-[#0B1B3A]/80 to-[#0B1B3A]/45" />
+        <HeroVideo />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B3A]/90 via-[#0B1B3A]/65 to-[#0B1B3A]/25" />
         <div
           className="absolute inset-0 opacity-30 mix-blend-overlay"
           style={{
@@ -50,8 +44,8 @@ export default function Home() {
               <em>Translational<br />
               Medicine</em>
             </h1>
-            <p className="mt-5 text-lg italic text-gray-400 font-serif drop-shadow-md">
-              Innovation that heals. Science that changes lives.
+            <p className="mt-6 text-2xl sm:text-3xl italic leading-snug text-white drop-shadow-md" style={{ fontFamily: "Georgia, serif" }}>
+              Innovation that heals. <span className="text-amber-400">Science that changes lives.</span>
             </p>
             <hr className="mt-4 mb-6 border-amber-400 w-24" />
             <p className="text-lg text-gray-200 leading-relaxed max-w-2xl drop-shadow-md">
