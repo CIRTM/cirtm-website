@@ -7,6 +7,25 @@ import { projects } from "@/lib/content/projects";
 import { researchAreas } from "@/lib/content/research-areas";
 import { FadeBanner } from "@/components/FadeBanner";
 
+// Ongoing projects in the client's chosen order; anything not listed follows alphabetically.
+const ONGOING_ORDER = [
+  "pharmacological-strategies-for-resolution-of-inflammation",
+  "improving-immunotherapy-efficacy-for-neuroblastoma",
+  "manipulating-our-immune-system-to-protect-against-ageing",
+  "host-pathogen-interactions-in-tuberculosis",
+  "investigating-thrombo-inflammation-in-disease",
+  "reactivation-of-herpesviruses-in-chronic-fatigue-syndrome",
+  "xcell-cells-and-tissue-biochemistry-in-simulated-microgravity",
+  "human-endogenous-factors-in-the-control-of-mycobacterial-infection",
+  "dysfunction-of-the-cerebral-microvasculature-in-sickle-cell-disease",
+  "promoting-inflammation-resolution-in-sickle-cell-disease",
+  "investigating-innate-immune-signalling-in-gulf-war-illness-and-blast-related-tbi",
+];
+const ongoingRank = (slug: string) => {
+  const i = ONGOING_ORDER.indexOf(slug);
+  return i === -1 ? ONGOING_ORDER.length : i;
+};
+
 const ongoing = projects.filter((p) => p.status === "Ongoing");
 const completed = projects.filter((p) => p.status === "Completed");
 
@@ -43,7 +62,7 @@ export default function ProjectsPage() {
   });
 
   const sections = [
-    { label: "Ongoing", projects: filtered.filter((p) => p.status === "Ongoing").sort((a, b) => a.title.localeCompare(b.title)) },
+    { label: "Ongoing", projects: filtered.filter((p) => p.status === "Ongoing").sort((a, b) => ongoingRank(a.slug) - ongoingRank(b.slug) || a.title.localeCompare(b.title)) },
     { label: "Completed", projects: filtered.filter((p) => p.status === "Completed").sort((a, b) => a.title.localeCompare(b.title)) },
     { label: "Other", projects: filtered.filter((p) => !p.status).sort((a, b) => a.title.localeCompare(b.title)) },
   ].filter((s) => s.projects.length > 0);

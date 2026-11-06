@@ -135,7 +135,7 @@ export default function FacilitiesPage() {
           <div className="relative rounded-2xl overflow-hidden px-8 py-14 sm:px-14" style={{ backgroundColor: NAVY }}>
             <div className="absolute inset-y-0 right-0 w-full md:w-3/5">
               <Image
-                src="/images/facilities/brunel-university-london-1.jpg"
+                src="/images/facilities/eastern-gateway-night.jpg"
                 alt=""
                 fill
                 sizes="(min-width: 768px) 60vw, 100vw"

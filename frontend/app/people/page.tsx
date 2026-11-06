@@ -131,21 +131,21 @@ function PersonCard({ person }: { person: Person }) {
       href={`/people/${person.slug}`}
       className="card overflow-hidden border border-gray-100 hover:border-teal/30 hover:shadow-sm transition-all block"
     >
-      <div className="relative w-full aspect-[3/4]">
+      <div className="relative w-full aspect-[4/3]">
         <Image
           src={person.photoUrl || "/images/placeholdersilhouette.webp"}
           alt={person.name}
           fill
-          className="object-cover object-top"
+          className="object-cover object-[center_20%]"
           unoptimized
         />
       </div>
-      <div className="p-4">
-        <h3 className="font-semibold text-navy text-sm">{person.name}</h3>
-        {person.role && <p className="text-xs text-gray-500 mt-1">{person.role}</p>}
+      <div className="p-5">
+        <h3 className="font-semibold text-navy text-lg leading-snug">{person.name}</h3>
+        {person.role && <p className="text-sm text-gray-500 mt-1">{person.role}</p>}
         {areas.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-1">
-            {areas.map((a) => <span key={a!.slug} className="tag text-[10px]">{a!.title}</span>)}
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {areas.map((a) => <span key={a!.slug} className="tag text-xs">{a!.title}</span>)}
           </div>
         )}
       </div>

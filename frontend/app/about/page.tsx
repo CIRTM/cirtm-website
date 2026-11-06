@@ -185,11 +185,10 @@ export default function AboutPage() {
                 School and clinical education. Our work feeds directly into{" "}
                 <ExternalLink href={PG_COURSES}>Brunel&apos;s postgraduate teaching</ExternalLink>, including
                 master&apos;s programmes in{" "}
-                <ExternalLink href="https://www.brunel.ac.uk/study/courses/cancer-research-msc">Cancer Research</ExternalLink>,{" "}
                 <ExternalLink href="https://www.brunel.ac.uk/study/courses/infection-and-immunity-mres">Infection &amp; Immunity</ExternalLink>,{" "}
                 <ExternalLink href="https://www.brunel.ac.uk/study/courses/infection-and-antimicrobial-discovery-msc">Infection &amp; Antimicrobial Discovery</ExternalLink>{" "}
                 and{" "}
-                <ExternalLink href="https://www.brunel.ac.uk/study/courses/master-of-research-in-antimicrobial-resistance-mres">Antimicrobial Resistance</ExternalLink>,
+                <ExternalLink href="https://www.brunel.ac.uk/study/courses/cancer-research-msc">Cancer Research</ExternalLink>,
                 training the next generation of biomedical scientists in the fields our researchers lead.
               </p>
             </div>

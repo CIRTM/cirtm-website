@@ -527,7 +527,7 @@ The central hypothesis that will be investigated is whether MYB gene rearrangeme
     investigators: [
       { role: "PI", name: "Professor Felicity Gavins", personSlug: "felicity-gavins" },
     ],
-    status: "Completed",
+    status: "Ongoing",
     lastModified: "2023-09-29",
     funder: "National Institutes of Health",
     imageUrl: "https://www.brunel.ac.uk/research/Projects/images/intelligence-4234828-1920.x2942a3a9.jpg",

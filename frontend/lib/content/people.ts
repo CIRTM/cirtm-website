@@ -69,7 +69,7 @@ export const people: Person[] = [
       { label: "Lab website", url: "http://www.gavins-lab.com/" },
     ],
     photoUrl: "/images/people/felicity-gavins.jpg",
-    researchAreaSlugs: ["inflammation-immunity-infection", "vascular-cardiovascular-sciences", "translational-medicine-novel-therapeutics", "cancer-biology"],
+    researchAreaSlugs: ["inflammation-immunity-infection", "vascular-cardiovascular-sciences", "translational-medicine-novel-therapeutics"],
     publications: felicityGavinsPublications,
     bio: `## Summary
 
@@ -272,6 +272,7 @@ I have supervised a number of basic and clincal Ph.D. Students and post-doctoral
     slug: "claire-turner",
     name: "Prof. Claire Turner",
     memberType: "pi",
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     role: "Pro Vice Chancellor — Education",
     externalLinks: [
       { label: "LinkedIn", url: "https://uk.linkedin.com/in/claireturnerofsilsoe" },
@@ -300,7 +301,7 @@ Her aim is to enable all students to have an excellent education and student exp
 ## Responsibilities
 
 - Pro Vice Chancellor — Education, Brunel University of London`,
-    order: 10,
+    order: 4,
   },
   {
     slug: "su-ling-li",
@@ -776,7 +777,7 @@ Jiang, X., Anasanti, M., Drenos, F., Blakemore, A., & Pazoki, R. (2022). Urinary
 
 Jiang, X., Gao, H., Elliott, P., & Pazoki, R. (2022). Percentage of explained variance in alcohol consumption by genetic risk score in the UK Biobank. In EUROPEAN JOURNAL OF HUMAN GENETICS Vol. 30 (pp. 528-529). Online. doi:10.1038/s41431-021-01026-1`,
     },
-    order: 11,
+    order: 10,
     publications: rahaPazokiPublications,
   },
   {
@@ -864,7 +865,7 @@ Reactivation of herpesviruses in Myalgic Encephalomyelitis`,
 
 - Fellow of the Higher Education Academy`,
     },
-    order: 3,
+    order: 5,
     publications: jacquelineCliffPublications,
   },
   {
@@ -885,7 +886,7 @@ Reactivation of herpesviruses in Myalgic Encephalomyelitis`,
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/anthony-tsolaki.jpg",
-    researchAreaSlugs: ["translational-medicine-novel-therapeutics", "inflammation-immunity-infection"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     bio: `## Qualifications
 
 - BSc (Hons) Biochemistry — University of North London (1993)
@@ -923,7 +924,7 @@ Innate immunity in bovine tuberculosis`,
 
 - The role of PE/PPE proteins in tuberculosis`,
     },
-    order: 14,
+    order: 8,
     publications: anthonyTsolakiPublications,
   },
   {
@@ -985,7 +986,7 @@ Metabolic reprogramming for improved BCG vaccine efficacy`,
 
 - Medical Immunology (BB3720) Level: Third year Date: February 2020`,
     },
-    order: 5,
+    order: 6,
     publications: stevenSmithPublications,
   },
   {
@@ -1077,7 +1078,7 @@ gene and cell therapy
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/ashley-houlden.jpg",
-    researchAreaSlugs: ["translational-medicine-novel-therapeutics"],
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     bio: `## Summary
 
 I am a Microbial Ecologist in the Division of Biosciences at Brunel University of London.
@@ -1114,7 +1115,7 @@ BB2716 Medical Microbiology (Second Year)`,
 
 - PhD in Antimicrobial Resistant Genes (ARG) and Pollutants – from Seabed to Seafood Platter - BBSRC FoodBio DTP`,
     },
-    order: 15,
+    order: 7,
     publications: ashleyHouldenPublications,
   },
   {
@@ -1205,7 +1206,7 @@ Dr Keith Allen-Redpath’s research focuses on the molecular mechanisms that dri
 
 - Fellow of the Higher Education Academy, ( Advance HE )`,
     },
-    order: 12,
+    order: 14,
     publications: keithRedpathPublications,
   },
   {
@@ -1375,7 +1376,7 @@ Dr Cerutti has a strong commitment to science outreach, particularly to young pe
 - British Heart Foundation (BHF)-funded non-clinical PhD Studentship in cardiovascular and vascular biology
 - MSCA Postdoctoral Fellowships — prospective applicants are welcome to contact Dr Cerutti directly`,
     },
-    order: 8,
+    order: 9,
     publications: camillaCeruttiPublications,
   },
   {
@@ -1397,7 +1398,7 @@ Dr Cerutti has a strong commitment to science outreach, particularly to young pe
     department: "Department of Life Sciences",
     college: "College of Health, Medicine and Life Sciences",
     photoUrl: "/images/people/doreen-lau.jpg",
-    researchAreaSlugs: ["cancer-biology"],
+    researchAreaSlugs: ["cancer-biology", "translational-medicine-novel-therapeutics"],
     bio: `## Summary
 
 Dr Doreen Lau is a Lecturer at Brunel University of London and a Visiting Researcher at the University of Cambridge. She began her scientific career at the Agency for Science, Technology and Research (A*STAR) in Singapore, focusing on functional genomics and imaging in developmental biology. She later earned her PhD at the University of Cambridge as a Cancer Research UK and Cambridge Trust Scholar, specialising in cancer immunology and the clinical translation of molecular imaging biomarkers for cancer immunotherapy in patients and preclinical models.
@@ -1483,7 +1484,7 @@ We welcome qualified applicants to explore the following funding schemes to join
 
 Please contact Dr Lau well in advance of the relevant deadlines to discuss potential projects and develop a competitive proposal. For all enquiries, please include a brief CV and short statement of research interests.`,
     },
-    order: 6,
+    order: 11,
     publications: doreenLauPublications,
   },
   {
@@ -1877,29 +1878,32 @@ PhD (City University, London, and Institute of Psychiatry, London) - awarded 200
     name: "Dr Cristiano Scottà",
     memberType: "pi",
     photoUrl: "/images/people/cristiano-scotta.jpg",
-    researchAreaSlugs: ["inflammation-immunity-infection"],
-    order: 4,
+    researchAreaSlugs: ["inflammation-immunity-infection", "translational-medicine-novel-therapeutics", "vascular-cardiovascular-sciences"],
+    order: 13,
   },
   {
     slug: "sook-lee",
     name: "Dr Sook Lee",
     memberType: "pi",
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     photoUrl: "/images/people/sook-lee.jpg",
-    order: 7,
+    order: 15,
   },
   {
     slug: "ayca-sayi-yazgan",
     name: "Dr Ayca Sayi Yazgan",
     memberType: "pi",
+    researchAreaSlugs: ["inflammation-immunity-infection"],
     photoUrl: "/images/people/ayca-sayi-yazgan.jpg",
-    order: 9,
+    order: 12,
   },
   {
     slug: "paul-hellewell",
     name: "Prof. Paul Hellewell",
     memberType: "pi",
+    researchAreaSlugs: ["inflammation-immunity-infection", "vascular-cardiovascular-sciences"],
     photoUrl: "/images/people/paul-hellewell.jpg",
-    order: 13,
+    order: 3,
   },
   {
     slug: "ansar-pathan",

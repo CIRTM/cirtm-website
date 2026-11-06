@@ -8,16 +8,28 @@ type NavLink = { label: string; href?: string; children?: NavChild[] };
 
 const navLinks: NavLink[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  {
+    label: "About",
+    href: "/about",
+    children: [
+      { label: "About CIRTM", href: "/about" },
+      { label: "Research Culture", href: "/research-culture" },
+    ],
+  },
   { label: "Our members", href: "/people" },
   {
     label: "Research",
+    href: "/research",
     children: [
       { label: "Research Areas", href: "/research" },
       { label: "Projects", href: "/projects" },
       { label: "Publications", href: "/publications" },
+    ],
+  },
+  {
+    label: "Work with us",
+    children: [
       { label: "Facilities", href: "/facilities" },
-      { label: "Research Culture", href: "/research-culture" },
       { label: "Industry Partners", href: "/innovation/industry" },
     ],
   },
@@ -52,7 +64,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
             {navLinks.map((link) =>
               link.children ? (
                 <div
@@ -61,12 +73,25 @@ export default function Navbar() {
                   onMouseEnter={() => setDropdown(link.label)}
                   onMouseLeave={() => setDropdown(null)}
                 >
-                  <button className="flex items-center gap-1 px-3 py-2 text-base font-medium text-[#374151] hover:text-navy rounded-md hover:bg-gray-50 transition-colors">
-                    {link.label}
-                    <svg className="w-3.5 h-3.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
+                  {(() => {
+                    const content = (
+                      <>
+                        {link.label}
+                        <svg className="w-3.5 h-3.5 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </>
+                    );
+                    const cls =
+                      "flex items-center gap-1 px-2.5 xl:px-3 py-2 text-sm xl:text-base font-medium text-[#374151] hover:text-navy rounded-md hover:bg-gray-50 transition-colors";
+                    return link.href ? (
+                      <Link href={link.href} className={cls} onClick={() => setDropdown(null)}>
+                        {content}
+                      </Link>
+                    ) : (
+                      <button className={cls}>{content}</button>
+                    );
+                  })()}
                   {dropdown === link.label && (
                     <div className="absolute top-full left-0 pt-1 z-50">
                       <div className="w-56 bg-white rounded-xl shadow-lg border border-gray-100 py-1.5">
@@ -88,7 +113,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href!}
-                  className="px-3 py-2 text-base font-medium text-[#374151] hover:text-navy rounded-md hover:bg-gray-50 transition-colors"
+                  className="px-2.5 xl:px-3 py-2 text-sm xl:text-base font-medium text-[#374151] hover:text-navy rounded-md hover:bg-gray-50 transition-colors"
                 >
                   {link.label}
                 </Link>
