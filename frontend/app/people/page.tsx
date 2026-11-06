@@ -5,23 +5,31 @@ import { partners } from "@/lib/content/partners";
 import { getResearchArea } from "@/lib/content/research-areas";
 import { FadeBanner } from "@/components/FadeBanner";
 
+const NAVY = "#0B1B3A";
+const RED = "#B91C1C";
+const IVORY = "#F8F7F5";
+const SERIF = { fontFamily: "Georgia, serif" };
+const PLACEHOLDER = "/images/placeholdersilhouette.webp";
+
 export default function PeoplePage() {
   const sorted = people.filter((p) => !p.hidden).sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999));
   const pis = sorted.filter((p) => p.memberType === "pi");
   const doctoral = sorted.filter((p) => p.memberType === "doctoral-researcher");
-  const associateMembers = sorted.filter((p) => p.memberType === "associate-member");
   const professionalServices = sorted.filter((p) => p.memberType === "professional-services");
   const alumni = sorted.filter((p) => p.memberType === "alumni");
 
   return (
     <>
-      <FadeBanner image="/images/about/heinz-wolff-building.jpg" objectPosition="center bottom">
-        <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="tag mb-4 inline-block" style={{ backgroundColor: "rgba(0,169,157,0.2)", color: "#1AC9BF" }}>
-            Team
-          </span>
-          <h1 className="text-4xl font-bold text-white mb-4">Centre Members</h1>
-          <p className="text-gray-300 text-lg max-w-2xl">
+      <FadeBanner image="/images/about/heinz-wolff-building.jpg" objectPosition="center bottom" className="py-24">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="block w-8 h-px bg-amber-400" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-amber-400">Our people</span>
+          </div>
+          <h1 className="text-5xl sm:text-6xl text-white mb-6 leading-tight" style={SERIF}>
+            Our <em>members</em>
+          </h1>
+          <p className="text-gray-300 text-lg leading-relaxed max-w-2xl">
             The members of CIRTM comprise Principal Investigators and their groups, Doctoral Researchers and Fellows,
             Collaborative Partners, and Professional Services Staff.
           </p>
@@ -29,10 +37,10 @@ export default function PeoplePage() {
       </FadeBanner>
 
       {pis.length > 0 && (
-        <section className="py-16 bg-white">
-          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-navy mb-8">Principal Investigators</h2>
-            <div className="max-w-6xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <section className="py-20 bg-white">
+          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeading eyebrow="Research leaders" title={<>Principal <em>investigators</em></>} />
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {pis.map((person) => <PersonCard key={person.slug} person={person} />)}
             </div>
           </div>
@@ -40,37 +48,36 @@ export default function PeoplePage() {
       )}
 
       {doctoral.length > 0 && (
-        <section className="py-16" style={{ backgroundColor: "#F8F9FC" }}>
-          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-navy mb-8">Doctoral Researchers and Fellows</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
-              {doctoral.map((person) => <CompactPersonCard key={person.slug} person={person} />)}
+        <section className="py-20" style={{ backgroundColor: IVORY }}>
+          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeading eyebrow="The next generation" title={<>Doctoral researchers <em>and fellows</em></>} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {doctoral.map((person) => <CompactPersonCard key={person.slug} person={person} label="Doctoral researcher" />)}
             </div>
           </div>
         </section>
       )}
 
-
       {alumni.length > 0 && (
-        <section className="py-16 bg-white" style={{ borderTop: "1px solid #F0F2F7" }}>
-          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-navy mb-8">Alumni</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
-              {alumni.map((person) => <CompactPersonCard key={person.slug} person={person} />)}
+        <section className="py-20 bg-white">
+          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeading eyebrow="Former members" title={<em>Alumni</em>} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {alumni.map((person) => <CompactPersonCard key={person.slug} person={person} label="Alumni" />)}
             </div>
           </div>
         </section>
       )}
 
       {partners.length > 0 && (
-        <section className="py-16 bg-white" style={{ borderTop: "1px solid #F0F2F7" }}>
-          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-navy mb-8">Collaborative Partners</h2>
+        <section className="py-20" style={{ backgroundColor: IVORY }}>
+          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeading eyebrow="Working together" title={<>Collaborative <em>partners</em></>} />
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {partners.map((partner) => (
                 <div
                   key={partner.slug}
-                  className="card border border-gray-100 p-4 flex flex-col items-center justify-center text-center min-h-[100px] gap-2"
+                  className="rounded-2xl border border-gray-100 bg-white shadow-sm p-5 flex flex-col items-center justify-center text-center min-h-[110px] gap-2"
                 >
                   {partner.logoUrl && (
                     <div className="relative w-full h-12">
@@ -78,7 +85,7 @@ export default function PeoplePage() {
                     </div>
                   )}
                   <div>
-                    <p className="text-xs font-semibold text-navy leading-snug">{partner.name}</p>
+                    <p className="text-xs font-semibold leading-snug" style={{ color: NAVY }}>{partner.name}</p>
                     {partner.location && <p className="text-xs text-gray-400 mt-0.5">{partner.location}</p>}
                   </div>
                 </div>
@@ -89,11 +96,11 @@ export default function PeoplePage() {
       )}
 
       {professionalServices.length > 0 && (
-        <section className="py-16" style={{ backgroundColor: "#F8F9FC" }}>
-          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-navy mb-8">Professional Services Staff</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
-              {professionalServices.map((person) => <CompactPersonCard key={person.slug} person={person} />)}
+        <section className="py-20 bg-white">
+          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeading eyebrow="Supporting our research" title={<>Professional <em>services</em></>} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {professionalServices.map((person) => <CompactPersonCard key={person.slug} person={person} label={person.role} />)}
             </div>
           </div>
         </section>
@@ -102,23 +109,54 @@ export default function PeoplePage() {
   );
 }
 
-function CompactPersonCard({ person }: { person: Person }) {
+function SectionHeading({ eyebrow, title }: { eyebrow: string; title: React.ReactNode }) {
+  return (
+    <div className="mb-10">
+      <div className="flex items-center gap-3 mb-4">
+        <span className="block w-8 h-px" style={{ backgroundColor: RED }} />
+        <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: RED }}>{eyebrow}</span>
+      </div>
+      <h2 className="text-4xl sm:text-5xl" style={{ ...SERIF, color: NAVY }}>{title}</h2>
+    </div>
+  );
+}
+
+const initials = (name: string) =>
+  name
+    .replace(/^(Prof\.|Dr)\s+/, "")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w) => w[0])
+    .filter((c) => /[A-Za-zÀ-ž]/.test(c))
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+
+function CompactPersonCard({ person, label }: { person: Person; label?: string }) {
+  const hasPhoto = person.photoUrl && person.photoUrl !== PLACEHOLDER;
   return (
     <Link
       href={`/people/${person.slug}`}
-      className="card overflow-hidden border border-gray-100 hover:border-teal/30 hover:shadow-sm transition-all block"
+      className="group flex items-center gap-4 rounded-2xl border border-gray-100 bg-white p-4 shadow-sm hover:shadow-md transition-shadow"
     >
-      <div className="relative w-full aspect-square">
-        <Image
-          src={person.photoUrl || "/images/placeholdersilhouette.webp"}
-          alt={person.name}
-          fill
-          className="object-cover object-top"
-          unoptimized
-        />
-      </div>
-      <div className="p-2">
-        <h3 className="font-semibold text-navy text-xs leading-snug">{person.name}</h3>
+      {hasPhoto ? (
+        <div className="relative w-12 h-12 flex-shrink-0 rounded-full overflow-hidden bg-gray-100">
+          <Image src={person.photoUrl!} alt="" fill className="object-cover object-top" unoptimized />
+        </div>
+      ) : (
+        <div
+          className="w-12 h-12 flex-shrink-0 rounded-full flex items-center justify-center text-sm font-semibold text-white"
+          style={{ backgroundColor: NAVY }}
+          aria-hidden="true"
+        >
+          {initials(person.name)}
+        </div>
+      )}
+      <div className="min-w-0">
+        <h3 className="font-semibold leading-snug group-hover:text-red-700 transition-colors" style={{ color: NAVY }}>
+          {person.name}
+        </h3>
+        {label && <p className="text-xs text-gray-500 mt-0.5">{label}</p>}
       </div>
     </Link>
   );
@@ -129,23 +167,34 @@ function PersonCard({ person }: { person: Person }) {
   return (
     <Link
       href={`/people/${person.slug}`}
-      className="card overflow-hidden border border-gray-100 hover:border-teal/30 hover:shadow-sm transition-all block"
+      className="group flex flex-col rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-md transition-shadow"
     >
-      <div className="relative w-full aspect-[3/4]">
+      <div className="relative w-full aspect-[3/4] overflow-hidden">
         <Image
-          src={person.photoUrl || "/images/placeholdersilhouette.webp"}
+          src={person.photoUrl || PLACEHOLDER}
           alt={person.name}
           fill
-          className="object-cover object-top"
+          className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
           unoptimized
         />
       </div>
-      <div className="p-5">
-        <h3 className="font-semibold text-navy text-lg leading-snug">{person.name}</h3>
+      <div className="p-5 flex-1 flex flex-col">
+        <h3 className="text-lg leading-snug group-hover:text-red-700 transition-colors" style={{ ...SERIF, color: NAVY }}>
+          {person.name}
+        </h3>
         {person.role && <p className="text-sm text-gray-500 mt-1">{person.role}</p>}
         {areas.length > 0 && (
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {areas.map((a) => <span key={a!.slug} title={a!.title} className="tag text-[9px] px-2 py-0.5 tracking-normal leading-tight whitespace-nowrap">{a!.tag}</span>)}
+          <div className="mt-auto pt-3 flex flex-wrap gap-1.5">
+            {areas.map((a) => (
+              <span
+                key={a!.slug}
+                title={a!.title}
+                className="text-[9px] font-semibold uppercase whitespace-nowrap px-2 py-0.5 rounded-full"
+                style={{ backgroundColor: "rgba(11,27,58,0.06)", color: NAVY }}
+              >
+                {a!.tag}
+              </span>
+            ))}
           </div>
         )}
       </div>

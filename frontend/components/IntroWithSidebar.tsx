@@ -1,67 +1,20 @@
 "use client";
+import Link from "next/link";
 import { Markdown } from "./Markdown";
-import type { PersonPublication } from "@/lib/content/publications-felicity-gavins";
-
-const PREVIEW_COUNT = 5;
-
-function RecentPublications({
-  publications,
-  onViewAll,
-}: {
-  publications: PersonPublication[];
-  onViewAll: () => void;
-}) {
-  const visible = publications.slice(0, PREVIEW_COUNT);
-
-  return (
-    <div>
-      <h3 className="text-sm font-semibold text-navy uppercase tracking-wide mb-4">
-        Recent Publications
-      </h3>
-      <ol className="space-y-4">
-        {visible.map((pub) => {
-          const href = pub.doiUrl ?? undefined;
-          return (
-            <li key={pub.slug} className="text-xs text-gray-700 leading-relaxed border-b border-gray-100 pb-4 last:border-0">
-              {href ? (
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-teal hover:underline block mb-0.5"
-                >
-                  {pub.title}
-                </a>
-              ) : (
-                <span className="font-medium text-navy block mb-0.5">{pub.title}</span>
-              )}
-              <span className="text-gray-500">
-                {pub.year}
-                {pub.journal && <> · <em>{pub.journal}</em></>}
-              </span>
-            </li>
-          );
-        })}
-      </ol>
-
-      <button
-        type="button"
-        onClick={onViewAll}
-        className="mt-5 text-xs text-teal hover:underline"
-      >
-        View all {publications.length} publications →
-      </button>
-    </div>
-  );
-}
+import AreaOutputsCard from "./AreaOutputsCard";
+import type { ExplorerPaper } from "@/lib/content/publication-explorer";
 
 export function IntroWithSidebar({
   bio,
-  publications,
+  slug,
+  papers,
+  memberNames,
   onViewAllPublications,
 }: {
   bio: string;
-  publications: PersonPublication[];
+  slug: string;
+  papers: ExplorerPaper[];
+  memberNames: Record<string, string>;
   onViewAllPublications: () => void;
 }) {
   return (
@@ -70,12 +23,29 @@ export function IntroWithSidebar({
         <Markdown>{bio}</Markdown>
       </div>
       <div className="lg:col-span-1">
-        <div className="bg-gray-50 rounded-xl p-5 sticky top-6">
-          <RecentPublications
-            publications={publications}
-            onViewAll={onViewAllPublications}
-          />
-        </div>
+        <AreaOutputsCard
+          papers={papers}
+          memberNames={memberNames}
+          member={slug}
+          eyebrow="Publication record"
+          footer={
+            <div className="mt-5 flex flex-col items-start gap-2">
+              <button
+                type="button"
+                onClick={onViewAllPublications}
+                className="text-xs font-semibold uppercase tracking-widest text-red-700 hover:opacity-80"
+              >
+                View all {papers.length} publications →
+              </button>
+              <Link
+                href={`/publications?member=${slug}`}
+                className="text-xs font-semibold uppercase tracking-widest text-gray-500 hover:text-red-700"
+              >
+                Explore in the publications map →
+              </Link>
+            </div>
+          }
+        />
       </div>
     </div>
   );

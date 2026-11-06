@@ -2,28 +2,34 @@
 import { useState } from "react";
 import { PersonTabs, type PersonTab } from "./PersonTabs";
 import { IntroWithSidebar } from "./IntroWithSidebar";
-import type { PersonPublication } from "@/lib/content/publications-felicity-gavins";
+import type { ExplorerPaper } from "@/lib/content/publication-explorer";
 
 export function PersonPageClient({
   tabs,
   bio,
-  publications,
+  slug,
+  papers,
+  memberNames,
 }: {
   tabs: PersonTab[];
   bio: string | undefined;
-  publications: PersonPublication[] | undefined;
+  slug: string;
+  papers: ExplorerPaper[];
+  memberNames: Record<string, string>;
 }) {
   const [activeTab, setActiveTab] = useState(tabs[0]?.key ?? "");
 
-  // Replace the intro tab's content with the two-column layout when there are publications
+  // The intro tab gets the publication record alongside the bio when the member has papers in the master list.
   const enrichedTabs: PersonTab[] = tabs.map((tab) => {
-    if (tab.key === "intro" && bio && publications && publications.length > 0) {
+    if (tab.key === "intro" && bio && papers.length > 0) {
       return {
         ...tab,
         content: (
           <IntroWithSidebar
             bio={bio}
-            publications={publications}
+            slug={slug}
+            papers={papers}
+            memberNames={memberNames}
             onViewAllPublications={() => setActiveTab("publications")}
           />
         ),
@@ -32,11 +38,5 @@ export function PersonPageClient({
     return tab;
   });
 
-  return (
-    <PersonTabs
-      tabs={enrichedTabs}
-      activeKey={activeTab}
-      onTabChange={setActiveTab}
-    />
-  );
+  return <PersonTabs tabs={enrichedTabs} activeKey={activeTab} onTabChange={setActiveTab} />;
 }

@@ -30,7 +30,7 @@ export function PersonTabs({
 
   return (
     <div>
-      <div role="tablist" className="border-b border-gray-200 flex flex-wrap gap-1 -mb-px">
+      <div role="tablist" className="border-b border-gray-200 flex flex-wrap gap-x-6 gap-y-1">
         {tabs.map((t) => {
           const isActive = active === t.key;
           return (
@@ -39,10 +39,10 @@ export function PersonTabs({
               role="tab"
               aria-selected={isActive}
               onClick={() => setActive(t.key)}
-              className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors ${
+              className={`-mb-px py-3 text-xs font-semibold uppercase tracking-widest border-b-2 transition-colors ${
                 isActive
-                  ? "border-teal text-navy"
-                  : "border-transparent text-gray-500 hover:text-navy"
+                  ? "border-red-700 text-[#0B1B3A]"
+                  : "border-transparent text-gray-500 hover:text-[#0B1B3A]"
               }`}
             >
               {t.label}
@@ -50,7 +50,7 @@ export function PersonTabs({
           );
         })}
       </div>
-      <div className="pt-8 max-w-none">
+      <div className="pt-10 max-w-none">
         {typeof activeTab.content === "string" ? (
           <Markdown>{activeTab.content}</Markdown>
         ) : (

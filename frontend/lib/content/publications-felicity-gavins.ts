@@ -13,6 +13,8 @@ export type PersonPublication = {
   doi?: string;
   doiUrl?: string;
   openAccessUrl?: string;
+  memberSlugs?: string[];
+  atBrunel?: boolean;
 };
 
 export const felicityGavinsPublications: PersonPublication[] = [

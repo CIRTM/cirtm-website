@@ -17,22 +17,40 @@ export function SidebarCard({ eyebrow, children }: { eyebrow: string; children: 
   );
 }
 
+/**
+ * Publication summary for a research area (default) or a single member (`member` set): headline numbers,
+ * papers per year and the latest papers with CIRTM author pills.
+ */
 export default function AreaOutputsCard({
   papers,
   memberNames,
+  member,
+  eyebrow = "Research outputs",
+  footer,
 }: {
   papers: ExplorerPaper[];
   memberNames: Record<string, string>;
+  member?: string;
+  eyebrow?: string;
+  footer?: React.ReactNode;
 }) {
   if (papers.length === 0) return null;
 
   const yearsAll = papers.map((p) => p.year);
-  const stats = [
-    { label: "Publications", value: papers.length.toLocaleString() },
-    { label: "Members publishing", value: new Set(papers.flatMap((p) => p.people)).size },
-    { label: "Open access", value: `${Math.round((100 * papers.filter((p) => p.oa).length) / papers.length)}%` },
-    { label: "Since", value: Math.min(...yearsAll) },
-  ];
+  const oa = `${Math.round((100 * papers.filter((p) => p.oa).length) / papers.length)}%`;
+  const stats = member
+    ? [
+        { label: "Publications", value: papers.length.toLocaleString() },
+        { label: "At Brunel", value: papers.filter((p) => p.cirtm).length.toLocaleString() },
+        { label: "Open access", value: oa },
+        { label: "Since", value: Math.min(...yearsAll) },
+      ]
+    : [
+        { label: "Publications", value: papers.length.toLocaleString() },
+        { label: "Members publishing", value: new Set(papers.flatMap((p) => p.people)).size },
+        { label: "Open access", value: oa },
+        { label: "Since", value: Math.min(...yearsAll) },
+      ];
 
   const by = new Map<number, number>();
   for (const p of papers) by.set(p.year, (by.get(p.year) ?? 0) + 1);
@@ -45,7 +63,7 @@ export default function AreaOutputsCard({
   const recent = [...papers].sort((a, b) => b.year - a.year).slice(0, 4);
 
   return (
-    <SidebarCard eyebrow="Research outputs">
+    <SidebarCard eyebrow={eyebrow}>
       <dl className="grid grid-cols-2 gap-x-4 gap-y-5 mb-6">
         {stats.map((s) => (
           <div key={s.label}>
@@ -73,40 +91,47 @@ export default function AreaOutputsCard({
 
       <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-500 mb-1">Latest papers</p>
       <ul className="divide-y divide-gray-100">
-        {recent.map((p) => (
-          <li key={p.id} className="py-3">
-            <a
-              href={p.doi ? `https://doi.org/${p.doi}` : undefined}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block"
-            >
-              <p className="text-sm leading-snug group-hover:text-red-700 transition-colors" style={{ color: NAVY }}>{p.title}</p>
-              <p className="text-xs text-gray-500 mt-1">{p.journal ? <em>{p.journal}</em> : null}{p.journal ? ", " : ""}{p.year}</p>
-            </a>
-            <div className="flex flex-wrap gap-1.5 mt-2">
-              {p.people.filter((s) => memberNames[s]).map((s) => (
-                <Link
-                  key={s}
-                  href={`/people/${s}`}
-                  className="text-[11px] px-2.5 py-0.5 rounded-full text-white hover:opacity-85 transition-opacity"
-                  style={{ backgroundColor: NAVY }}
-                >
-                  {memberNames[s]}
-                </Link>
-              ))}
-            </div>
-          </li>
-        ))}
+        {recent.map((p) => {
+          const coauthors = p.people.filter((s) => s !== member && memberNames[s]);
+          return (
+            <li key={p.id} className="py-3">
+              <a
+                href={p.doi ? `https://doi.org/${p.doi}` : undefined}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <p className="text-sm leading-snug group-hover:text-red-700 transition-colors" style={{ color: NAVY }}>{p.title}</p>
+                <p className="text-xs text-gray-500 mt-1">{p.journal ? <em>{p.journal}</em> : null}{p.journal ? ", " : ""}{p.year}</p>
+              </a>
+              {coauthors.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mt-2">
+                  {coauthors.map((s) => (
+                    <Link
+                      key={s}
+                      href={`/people/${s}`}
+                      className="text-[11px] px-2.5 py-0.5 rounded-full text-white hover:opacity-85 transition-opacity"
+                      style={{ backgroundColor: NAVY }}
+                    >
+                      {memberNames[s]}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </li>
+          );
+        })}
       </ul>
 
-      <Link
-        href="/publications"
-        className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest hover:opacity-80"
-        style={{ color: RED }}
-      >
-        Explore all publications →
-      </Link>
+      {footer ?? (
+        <Link
+          href="/publications"
+          className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest hover:opacity-80"
+          style={{ color: RED }}
+        >
+          Explore all publications →
+        </Link>
+      )}
     </SidebarCard>
   );
 }

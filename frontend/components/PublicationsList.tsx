@@ -1,5 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import type { PersonPublication } from "@/lib/content/publications-felicity-gavins";
 
 const BIBTEX_TYPE: Record<PersonPublication["type"], string> = {
@@ -107,7 +108,7 @@ function CitePopover({ pub }: { pub: PersonPublication }) {
         <button
           type="button"
           onClick={copy}
-          className="px-2 py-1 text-xs font-medium text-teal hover:underline"
+          className="px-2 py-1 text-xs font-medium text-red-700 hover:underline"
         >
           {copied ? "Copied" : "Copy"}
         </button>
@@ -119,56 +120,66 @@ function CitePopover({ pub }: { pub: PersonPublication }) {
   );
 }
 
-function PublicationEntry({ pub }: { pub: PersonPublication }) {
+const NAVY = "#0B1B3A";
+
+function PublicationEntry({
+  pub,
+  self,
+  memberNames,
+}: {
+  pub: PersonPublication;
+  self?: string;
+  memberNames?: Record<string, string>;
+}) {
   const [showCite, setShowCite] = useState(false);
   const authors = pub.authors.join(", ");
+  const coauthors = (pub.memberSlugs ?? []).filter((s) => s !== self && memberNames?.[s]);
   return (
-    <li className="py-4 border-b border-gray-100">
-      <p className="text-sm text-gray-700 leading-relaxed">
-        {pub.doiUrl ? (
-          <a
-            href={pub.doiUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-teal font-medium hover:underline"
-          >
-            {pub.title}
-          </a>
-        ) : (
-          <span className="text-navy font-medium">{pub.title}</span>
-        )}{" "}
-        <span className="text-gray-500">({pub.year})</span>{" "}
-        {authors && <span>{authors}.</span>}
-        {pub.journal && (
-          <>
-            . <em className="text-gray-600">{pub.journal}</em>
-          </>
-        )}
+    <li className="py-5 border-b border-gray-100">
+      {pub.doiUrl ? (
+        <a
+          href={pub.doiUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-base leading-snug hover:text-red-700 transition-colors"
+          style={{ fontFamily: "Georgia, serif", color: NAVY }}
+        >
+          {pub.title}
+        </a>
+      ) : (
+        <span className="text-base leading-snug" style={{ fontFamily: "Georgia, serif", color: NAVY }}>{pub.title}</span>
+      )}
+      {authors && <p className="text-sm text-gray-600 mt-1.5 leading-relaxed">{authors}</p>}
+      <p className="text-sm text-gray-500 mt-0.5">
+        {pub.journal && <em>{pub.journal}</em>}
         {(pub.volume || pub.issue) && (
           <>
             , {pub.volume}
             {pub.issue ? ` (${pub.issue})` : ""}
           </>
         )}
-        {pub.pages && <>, pp. {pub.pages}</>}
-        {pub.issn && <span className="text-gray-500"> ISSN: {pub.issn}</span>}
+        {pub.pages && <>, {pub.pages}</>}
       </p>
-      <div className="mt-1 text-xs text-gray-500 flex flex-wrap items-center gap-x-3 gap-y-1">
-        {pub.typeLabel && <span>{pub.typeLabel}</span>}
-        {pub.openAccessUrl && (
-          <a
-            href={pub.openAccessUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-teal hover:underline"
+      <div className="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-2">
+        {coauthors.map((s) => (
+          <Link
+            key={s}
+            href={`/people/${s}`}
+            className="text-[11px] px-2.5 py-0.5 rounded-full text-white hover:opacity-85 transition-opacity"
+            style={{ backgroundColor: NAVY }}
           >
-            Open Access Link
+            {memberNames![s]}
+          </Link>
+        ))}
+        {pub.openAccessUrl && (
+          <a href={pub.openAccessUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-emerald-700 hover:underline">
+            Open access
           </a>
         )}
         <button
           type="button"
           onClick={() => setShowCite((v) => !v)}
-          className="text-teal hover:underline"
+          className="text-xs font-semibold uppercase tracking-widest text-red-700 hover:opacity-80"
         >
           {showCite ? "Hide citation" : "Cite"}
         </button>
@@ -178,50 +189,82 @@ function PublicationEntry({ pub }: { pub: PersonPublication }) {
   );
 }
 
-export function PublicationsList({ publications }: { publications: PersonPublication[] }) {
+export function PublicationsList({
+  publications,
+  self,
+  memberNames,
+}: {
+  publications: PersonPublication[];
+  self?: string;
+  memberNames?: Record<string, string>;
+}) {
   const [query, setQuery] = useState("");
+  const [brunelOnly, setBrunelOnly] = useState(false);
+  const hasScope = publications.some((p) => p.atBrunel !== undefined);
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return publications;
     return publications.filter((p) => {
-      const haystack = [
-        p.title,
-        p.journal ?? "",
-        String(p.year ?? ""),
-        ...p.authors,
-      ]
-        .join(" ")
-        .toLowerCase();
-      return haystack.includes(q);
+      if (brunelOnly && !p.atBrunel) return false;
+      if (!q) return true;
+      return [p.title, p.journal ?? "", String(p.year ?? ""), ...p.authors].join(" ").toLowerCase().includes(q);
     });
-  }, [publications, query]);
+  }, [publications, query, brunelOnly]);
+
+  const groups = useMemo(() => {
+    const m = new Map<number, PersonPublication[]>();
+    for (const p of filtered) m.set(p.year, [...(m.get(p.year) ?? []), p]);
+    return [...m.entries()].sort((a, b) => b[0] - a[0]);
+  }, [filtered]);
 
   return (
     <div>
-      <div className="mb-6">
-        <label htmlFor="pub-search" className="sr-only">
-          Search publications
-        </label>
+      <div className="mb-8 flex flex-col sm:flex-row sm:items-center gap-4">
+        <label htmlFor="pub-search" className="sr-only">Search publications</label>
         <input
           id="pub-search"
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search by title, author, journal, year..."
-          className="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal/40 focus:border-teal"
+          className="flex-1 px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-700/20"
         />
-        <p className="mt-2 text-xs text-gray-500">
-          Showing {filtered.length} of {publications.length} publication{publications.length === 1 ? "" : "s"}.
-        </p>
+        {hasScope && (
+          <div className="inline-flex rounded-full border border-gray-200 p-1 bg-gray-50 self-start">
+            {[
+              { v: false, label: "All" },
+              { v: true, label: "At Brunel" },
+            ].map((o) => (
+              <button
+                key={o.label}
+                type="button"
+                onClick={() => setBrunelOnly(o.v)}
+                className="px-4 py-1.5 rounded-full text-sm font-medium transition-colors"
+                style={brunelOnly === o.v ? { backgroundColor: NAVY, color: "#fff" } : { color: NAVY }}
+              >
+                {o.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
+      <p className="-mt-5 mb-6 text-xs text-gray-500">
+        Showing {filtered.length} of {publications.length} publication{publications.length === 1 ? "" : "s"}.
+      </p>
       {filtered.length === 0 ? (
         <p className="text-gray-500 italic text-sm">No publications match your search.</p>
       ) : (
-        <ol className="list-none p-0">
-          {filtered.map((p) => (
-            <PublicationEntry key={p.slug} pub={p} />
+        <div className="space-y-8">
+          {groups.map(([year, pubs]) => (
+            <section key={year} className="grid grid-cols-1 md:grid-cols-[5rem_1fr] gap-x-6">
+              <h3 className="text-2xl md:pt-4" style={{ fontFamily: "Georgia, serif", color: NAVY }}>{year}</h3>
+              <ol className="list-none p-0">
+                {pubs.map((p) => (
+                  <PublicationEntry key={p.slug} pub={p} self={self} memberNames={memberNames} />
+                ))}
+              </ol>
+            </section>
           ))}
-        </ol>
+        </div>
       )}
     </div>
   );
